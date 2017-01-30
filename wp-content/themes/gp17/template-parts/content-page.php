@@ -2,7 +2,7 @@
 /**
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Wyvex Theme
+ * @package GP Web Design Theme
  */
 
 ?>

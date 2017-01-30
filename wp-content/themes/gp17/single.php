@@ -2,7 +2,7 @@
 
     get_header(); 
 
-    echo '<main class="site-main u-clear u-overflow '. wyvex_page_class() .'" role="main" itemprop="mainContentOfPage">';
+    echo '<main role="main" itemprop="mainContentOfPage">';
 
     while ( have_posts() ) : the_post(); 
 

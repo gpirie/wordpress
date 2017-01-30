@@ -3,7 +3,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Wyvex Theme
+ * @package GP Web Design Theme
  */
 ?><!DOCTYPE html>
 
@@ -24,7 +24,7 @@
 
 		<?php do_action( 'body_open' ); ?>
 		
-		<a class="skip-link screen-reader-text u-visuallyhidden" href="#content"><?php esc_html_e( 'Skip to content', 'wyvex-theme' ); ?></a>
+		<a class="skip-link screen-reader-text u-visuallyhidden" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
 
 		<div class="wrap">
 

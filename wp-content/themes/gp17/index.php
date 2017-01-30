@@ -4,12 +4,12 @@
 	 *
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
-	 * @package Wyvex Theme
+	 * @package GP Web Design Theme
 	 */
 
 	get_header(); 
 
-	echo '<main class="site-main u-clear u-overflow '. wyvex_page_class() .'" role="main" itemprop="mainContentOfPage">';
+	echo '<main role="main" itemprop="mainContentOfPage">';
 
 	if ( have_posts() ) : 
 
