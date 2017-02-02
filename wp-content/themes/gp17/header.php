@@ -26,40 +26,35 @@
 		
 		<a class="skip-link screen-reader-text u-visuallyhidden" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
 
-		<div class="wrap">
+		<header class="u-overflow" itemscope itemtype="http://schema.org/WPHeader" role="banner">				
 
-			<div class="leaderboard leaderboard--desktop u-hidden@print u-hidden@sm u-hidden@md u-centre-text">
-				<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="970x250,728x90"></div>
-			</div>
+			<?php
 
-			<div class="leaderboard leaderboard--tablet u-hidden@print u-hidden@sm u-hidden@lg u-centre-text">
-				<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="728x90"></div>
-			</div>
+				if ( has_custom_logo() ) :
 
-			<div class="leaderboard leaderboard--mobile u-hidden@print u-hidden@md u-hidden@lg u-centre-text">
-				<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="300x250"></div>
-			</div>
+					echo '<a class="u-block site-logo u-aligncenter" href="'. get_home_url() .'" title="'. get_bloginfo() .'" />';
+					echo '<img src="'. gpwd_logo() .'" alt="'. get_bloginfo() .' logo" title="'. get_bloginfo() .'" />';
+					echo '</a>';
 
-			<header itemscope itemtype="http://schema.org/WPHeader" role="banner">				
+				else :
 
-				<?php
+					$description = get_bloginfo( 'description', 'display' );
+					$title = get_bloginfo( 'title', 'display' );
 
-					if ( has_custom_logo() ) :
+					if ( $title || is_customize_preview() ) :
 
-						echo get_custom_logo();
-
-					else :
-
-						$description = get_bloginfo( 'description', 'display' );
-						$title = get_bloginfo( 'title', 'display' );
-
-						if ( $title || is_customize_preview() ) :
-
-							echo '<p class="site-title">'. $title .'</p>';
-
-						endif;
+						echo '<p class="site-title">'. $title .'</p>';
 
 					endif;
-				?>
 
-			</header>
+				endif;
+			
+				if ( has_nav_menu( 'main_menu' ) ) :
+
+					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-mainmenu overflow', 'theme_location' => 'main_menu', 'menu_class' => '' ) );
+				
+				endif;
+
+			?>
+
+		</header>
