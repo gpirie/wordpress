@@ -13,17 +13,11 @@
 
 	if ( have_posts() ) : 
 
-		$postcount = 0;
-
 		while ( have_posts() ) : the_post(); 
 
 			include( get_stylesheet_directory() . '/template-parts/content-o-media.php' );
-
-			$postcount++;
-
+			
 		endwhile;
-
-		wp_reset_postdata();
 
 	else : 
 
