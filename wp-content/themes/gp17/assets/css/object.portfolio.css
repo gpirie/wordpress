@@ -1,0 +1,15 @@
+.o-portfolio__item {
+	margin-bottom: 1.5em;
+}
+
+.o-portfolio__detail {
+    background: rgba(0, 51, 153, 0.25) none repeat scroll 0 0;
+    bottom: -146px;
+    height: 146px;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.o-portfolio__item:hover .o-portfolio__detail {
+	bottom: 0;
+}

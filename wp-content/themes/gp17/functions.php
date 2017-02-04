@@ -100,7 +100,7 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-forms', GPWD_DIRECTORY_URI . '/assets/css/elements.forms.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* Objects */
-	wp_enqueue_style( 'gpwd-theme-category', GPWD_DIRECTORY_URI . '/assets/css/object-category.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-jobs', GPWD_DIRECTORY_URI . '/assets/css/object-jobs-widget.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-signup', GPWD_DIRECTORY_URI . '/assets/css/object-signupform.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-popular', GPWD_DIRECTORY_URI . '/assets/css/object-popular-widget.css' ,null, GPWD_VERSION, 'screen' );	
