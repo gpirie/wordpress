@@ -50,11 +50,11 @@
 
 				endif;
 
-				echo '<div class="o-portfolio__detail u-absolute">';
+				echo '<div class="o-portfolio__detail u-absolute u-centre-text">';
 
 				the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );
 
-				echo '<a class="button" href="'. get_the_permalink() .'" title="'. get_the_title() .'">View</a>';
+				echo '<a class="button u-inline-block" href="'. get_the_permalink() .'" title="'. get_the_title() .'">View</a>';
 
 				echo '</div>';
 
@@ -66,7 +66,7 @@
 
 		endif;
 
-		gpwd_get_latest_posts();
+		gpwd_get_latest_snippets();
 
 	endwhile;
 

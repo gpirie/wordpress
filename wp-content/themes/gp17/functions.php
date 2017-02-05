@@ -96,7 +96,7 @@ function gpwd_theme_scripts()
 
 	/* Elements */
 	wp_enqueue_style( 'wyvex-google-font', '//fonts.googleapis.com/css?family=Droid+Sans:400,700|Montserrat', null, GPWD_VERSION, 'all' );
-	wp_enqueue_style( 'gpwd-theme-type', GPWD_DIRECTORY_URI . '/assets/css/elements.type.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-links', GPWD_DIRECTORY_URI . '/assets/css/elements.links.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-forms', GPWD_DIRECTORY_URI . '/assets/css/elements.forms.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* Objects */
