@@ -66,6 +66,8 @@
 
 		endif;
 
+		gpwd_get_latest_posts();
+
 		gpwd_get_latest_snippets();
 
 	endwhile;

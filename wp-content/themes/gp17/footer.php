@@ -6,7 +6,7 @@
  */
 
 ?>	
-		<footer role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+		<footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
 			<?php
 

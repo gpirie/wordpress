@@ -1,4 +1,18 @@
 <?php
+	function gpwd_excerpt_length($excerpt) {
+	    return substr($excerpt,0,strpos($excerpt,'.')+1);
+	}
+	add_filter( 'the_excerpt', 'gpwd_excerpt_length', 999 );
+
+	function gpwd_get_the_category() {
+		$categories = get_the_category();
+		if ( ! empty( $categories ) ) {
+		    echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+			echo ' / ';
+			echo get_the_date();
+		}
+	}
+
 	function gpwd_get_latest_posts() {
 		$args = array(
 			'post_type' => 'post',
@@ -19,6 +33,10 @@
 
 			echo '<li>';
 			the_title( '<h1 itemprop="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+			
+			gpwd_get_the_category();
+			
+			the_excerpt();
 			echo '</li>';
 
 			endwhile;
@@ -50,6 +68,10 @@
 
 			echo '<li>';
 			the_title( '<h1 itemprop="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+			
+			gpwd_get_the_category();
+			
+			the_excerpt();
 			echo '</li>';
 
 			endwhile;

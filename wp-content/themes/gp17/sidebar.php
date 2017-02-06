@@ -1,6 +1,6 @@
 
 	
-	<aside class="sidebar u-hidden@print" role="complementary">
+	<aside class="sidebar u-hidden@print">
 	
 	<?php dynamic_sidebar('site-sidebar'); ?>
 	

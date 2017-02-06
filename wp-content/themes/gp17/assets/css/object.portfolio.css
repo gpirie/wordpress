@@ -4,8 +4,8 @@
 
 .o-portfolio__detail {
     background: rgba(0, 51, 153, 0.25) none repeat scroll 0 0;
-    bottom: -146px;
-    height: 146px;
+    bottom: -100%;
+    height: 100%;
     width: 100%;
     transition: all 0.5s ease;
     color: #fff;
@@ -13,4 +13,8 @@
 
 .o-portfolio__item:hover .o-portfolio__detail {
 	bottom: 0;
+}
+
+.o-portfolio__image {
+	width: 100%;
 }

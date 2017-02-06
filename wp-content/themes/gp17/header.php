@@ -26,7 +26,7 @@
 		
 		<a class="skip-link screen-reader-text u-visuallyhidden" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
 
-		<header class="u-overflow" itemscope itemtype="http://schema.org/WPHeader" role="banner">				
+		<header class="u-overflow" itemscope itemtype="http://schema.org/WPHeader">				
 
 			<?php
 
