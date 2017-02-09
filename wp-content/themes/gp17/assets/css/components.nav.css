@@ -4,7 +4,7 @@
   border-left: 1px dotted;
 }
 
-.c-mainmenu li {
+.c-menuitem--main_menu {
   background: #bfbfbf none repeat scroll 0 0;
   border-right: 1px dotted;
   border-bottom: 1px dotted;

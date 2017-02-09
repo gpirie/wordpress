@@ -70,6 +70,19 @@
 
 		gpwd_get_latest_snippets();
 
+		if( have_rows('services') ) :
+
+		 	// loop through the rows of data
+		    while ( have_rows('services') ) : the_row();
+
+			echo '<h2>'. get_sub_field( 'title' ) .'</h2>';
+
+			echo get_sub_field( 'text' );
+
+			endwhile;
+
+		endif;
+
 	endwhile;
 
 	echo '</main>';

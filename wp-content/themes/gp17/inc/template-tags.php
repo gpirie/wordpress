@@ -13,6 +13,32 @@
 		}
 	}
 
+	function gpwd_menu_class($classes, $item, $args) {
+
+		/* Add generic class to all menu-items across the site*/
+		$classes[] = 'c-menuitem c-menuitem--'. $args->theme_location;
+
+		/* Add class to top-level items*/
+		if ( $item->menu_item_parent == 0 ) 
+		{
+			$classes[] = 'c-menuitem--'. $args->theme_location . '__item--parent';	
+		}
+		/* Add class to child-items*/
+		else
+		{
+			$classes[] = 'c-menuitem--'. $args->theme_location . '__item--child';	
+		}
+    	return $classes;
+	}
+	add_filter('nav_menu_css_class' , 'gpwd_menu_class' , 10 , 3);
+
+	/* Add class to menu links*/
+	function gpwd_add_menuclass($ulclass, $args) {
+		return preg_replace('/<a /', '<a class="c-'. $args->theme_location .'__link"', $ulclass);
+	}
+	add_filter('wp_nav_menu','gpwd_add_menuclass', 10, 3);
+
+
 	function gpwd_get_latest_posts() {
 		$args = array(
 			'post_type' => 'post',
