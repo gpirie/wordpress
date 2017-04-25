@@ -1,3 +1,12 @@
+form {
+	margin-bottom: 1.5em;
+}
+
+input, select, textarea {
+	padding: .25em .5em;
+	margin-bottom: .75em;
+}
+
 .button {
 	background: #003399;
 	color: #fff;
@@ -9,3 +18,4 @@
 
 .button:focus {
 	box-shadow: none;
+}

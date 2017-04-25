@@ -57,7 +57,7 @@
 
 			while ( $query->have_posts() ) : $query->the_post();
 
-			echo '<li>';
+			echo '<li class="o-latest__item">';
 			the_title( '<h1 itemprop="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 			
 			gpwd_get_the_category();
@@ -88,16 +88,18 @@
 
 			echo '<h1 class="section-title">Latest Code</h1>';
 
-			echo '<ul class="o-snippet">';
+			echo '<ul class="o-snippet o-latest">';
 
 			while ( $query->have_posts() ) : $query->the_post();
 
-			echo '<li>';
+			echo '<li class="o-snippet__item  o-latest__item">';
+
 			the_title( '<h1 itemprop="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 			
 			gpwd_get_the_category();
 			
 			the_excerpt();
+			
 			echo '</li>';
 
 			endwhile;

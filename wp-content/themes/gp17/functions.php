@@ -138,6 +138,12 @@ function gpwd_theme_scripts()
 }
 add_action( 'wp_enqueue_scripts', 'gpwd_theme_scripts' );
 
+function gpwd_deregister_styles() {
+    wp_deregister_style( 'contact-form-7' );
+}
+add_action( 'wp_print_styles', 'gpwd_deregister_styles', 100 );
+
+
 //Remove height and width attributes
 add_filter( 'post_thumbnail_html', 'gpwd_remove_image_attributes', 10 );
 add_filter( 'image_send_to_editor', 'gpwd_remove_image_attributes', 10 );

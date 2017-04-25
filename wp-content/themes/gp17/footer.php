@@ -8,17 +8,17 @@
 ?>	
 		<footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
+			<small>&copy; <?php echo get_bloginfo();?> 2008 &ndash; <?php echo date('Y');?></small>
+
 			<?php
 
 				if ( has_nav_menu( 'footer' ) ) :
 
-					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-footermenu overflow', 'theme_location' => 'footer', 'menu_class' => '' ) );
+					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-footermenu u-overflow', 'theme_location' => 'footer', 'menu_class' => '' ) );
 				
 				endif;
 
 			?>
-
-			<small>&copy; <?php echo get_bloginfo();?> 2008 &ndash; <?php echo date('Y');?></small>
 
 		</footer>
 
