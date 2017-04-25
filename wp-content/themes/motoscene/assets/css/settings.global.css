@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font: 300 16px/1.412 "Droid Sans", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #444;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 59.999em) {
+    body {
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 45.499em) {
+
+    .u-hidden\@sm {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 45.5em) and (max-width: 60.624em) {
+
+    .u-hidden\@md {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 60.625em) {
+    .u-hidden\@lg {
+        display: none;
+    }
+}
