@@ -1,15 +1,25 @@
-.c-mainmenu {
-  clear: both;
-  border-top: 1px dotted;
-  border-left: 1px dotted;
+.o-navtoggle {
+    background: #003399;
+    margin-bottom: 1em;
+    color: #fff;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.c-main_menu {
+    clear: both;
+    border-top: 1px dotted #003399;
+    border-left: 1px dotted #003399;
+    border-right: 1px dotted #003399;
+    margin-bottom: 1em;
 }
 
 .c-menuitem--main_menu {
-  background: #bfbfbf none repeat scroll 0 0;
-  border-right: 1px dotted;
-  border-bottom: 1px dotted;
-  float: left;
-  padding: 0.5em;
-  text-align: center;
-  width: 50%;
+    border-bottom: 1px dotted #003399;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.c-main_menu__link {
+    color: #003399;
 }

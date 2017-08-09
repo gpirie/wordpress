@@ -32,7 +32,7 @@
 
 				if ( has_custom_logo() ) :
 
-					echo '<a class="u-block site-logo u-aligncenter" href="'. get_home_url() .'" title="'. get_bloginfo() .'" />';
+					echo '<a class="u-block site-logo u-aligncenter u-centre-text" href="'. get_home_url() .'" title="'. get_bloginfo() .'" />';
 					echo '<img src="'. gpwd_logo() .'" alt="'. get_bloginfo() .' logo" title="'. get_bloginfo() .'" />';
 					echo '</a>';
 
@@ -50,8 +50,8 @@
 				endif;
 			
 				if ( has_nav_menu( 'main_menu' ) ) :
-
-					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-mainmenu overflow', 'theme_location' => 'main_menu', 'menu_class' => '' ) );
+					echo '<a class="o-navtoggle o-navtoggle--main_menu u-block u-centre-text" href="#">Menu</a>';
+					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-main_menu overflow', 'theme_location' => 'main_menu', 'menu_class' => '' ) );
 				
 				endif;
 

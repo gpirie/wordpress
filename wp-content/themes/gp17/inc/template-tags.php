@@ -110,3 +110,9 @@
 
 		endif;
 	}
+
+	function gpwd_get_the_post_thumbnail() {
+		if ( has_post_thumbnail() ) :
+			the_post_thumbnail();
+		endif;
+	}

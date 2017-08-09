@@ -94,19 +94,16 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-reset', GPWD_DIRECTORY_URI . '/assets/css/generic.reset.css' ,array(), GPWD_VERSION, 'screen' );
 	wp_enqueue_style( 'gpwd-theme-settings', GPWD_DIRECTORY_URI . '/assets/css/settings.global.css' ,array(), GPWD_VERSION, 'screen' );		
 
-	/* Elements */
-	wp_enqueue_style( 'wyvex-google-font', '//fonts.googleapis.com/css?family=Droid+Sans:400,700|Montserrat', array(), GPWD_VERSION, 'all' );
+	// /* Elements */
 	wp_enqueue_style( 'gpwd-theme-links', GPWD_DIRECTORY_URI . '/assets/css/elements.links.css' ,array(), GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-forms', GPWD_DIRECTORY_URI . '/assets/css/elements.forms.css' ,array(), GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-type', GPWD_DIRECTORY_URI . '/assets/css/elements.type.css' ,array(), GPWD_VERSION, 'screen' );	
 
 	/* Objects */
 	wp_enqueue_style( 'gpwd-theme-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,array(), GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-jobs', GPWD_DIRECTORY_URI . '/assets/css/object-jobs-widget.css' ,array(), GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-signup', GPWD_DIRECTORY_URI . '/assets/css/object-signupform.css' ,array(), GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-popular', GPWD_DIRECTORY_URI . '/assets/css/object-popular-widget.css' ,array(), GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-media', GPWD_DIRECTORY_URI . '/assets/css/object-media.css' ,array(), GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-gallery', GPWD_DIRECTORY_URI . '/assets/css/object-gallery.css' ,array(), GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-packages', GPWD_DIRECTORY_URI . '/assets/css/object-packages.css' ,array(), GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-block-text', GPWD_DIRECTORY_URI . '/assets/css/block.text.css' ,array(), GPWD_VERSION, 'screen' );	
 
 	/* Components */
 	wp_enqueue_style( 'gpwd-theme-header', GPWD_DIRECTORY_URI . '/assets/css/components.header.css' ,array(), GPWD_VERSION, 'screen' );	

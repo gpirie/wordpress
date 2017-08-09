@@ -5,10 +5,10 @@
     //Document Ready
     $(document).ready(function ()
     {
-	 //    $('.c-mainmenu').hide();
-		// $('.menu-toggle').on('click', function() {
-		// 	$('.c-mainmenu').toggle('slow');
-		// });		
+    	$('.o-navtoggle').next().hide();
+		$('.o-navtoggle').on('click', function() {
+			$('.o-navtoggle').next().slideToggle('slow');
+		});		
     });
 
 }(jQuery));

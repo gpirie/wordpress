@@ -1,0 +1,7 @@
+.o-block--background-image {
+	background-size: cover;
+    color: #fff;
+    padding: 3em 1em;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.73);
+}
