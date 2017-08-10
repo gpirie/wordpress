@@ -12,12 +12,12 @@
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
 	 * @package WordPress
-	 * @subpackage Wyvex
+	 * @subpackage Theme Name
 	 */
 
 	get_header(); 
 
-	echo '<main role="main" itemprop="mainContentOfPage">';
+	echo '<main itemprop="mainContentOfPage">';
 
 	if ( have_posts() ) : ?>
 
@@ -36,9 +36,9 @@
 		endwhile;
 
 		the_posts_pagination( array(
-			'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-			'next_text'          => __( 'Next page', 'twentysixteen' ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+			'prev_text'          => __( 'Previous page', 'starter-theme' ),
+			'next_text'          => __( 'Next page', 'starter-theme' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'starter-theme' ) . ' </span>',
 		) );
 
 	else :
@@ -51,4 +51,3 @@
 	get_sidebar();
 
 	get_footer();
-?>

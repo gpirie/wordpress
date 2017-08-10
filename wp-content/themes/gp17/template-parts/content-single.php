@@ -2,12 +2,12 @@
 /**
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package GP Web Design Theme
+ * @package Theme Name
  */
 
 ?>
 
-<article <?php post_class('o-post'); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+<article <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
 	<header class="o-post__header u-overflow u-relative">
 
@@ -15,19 +15,7 @@
 
 			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );			
 
-			if ( has_post_thumbnail() ) :
-
-				echo '<figure class="o-post__media">';
-
-				the_post_thumbnail('large', array( 'class' => 'o-post__image u-full-width', 'itemprop' => 'image' ) );
-				
-				if ( $caption ) :
-					echo '<figcaption class="o-post__caption u-relative">'. $caption .'</figcaption>';
-				endif;
-
-				echo '</figure>';
-
-			endif;
+			starter_post_thumbnail();
 
 		?>
 
@@ -44,8 +32,12 @@
 
 	<footer class="o-post__footer u-clear u-hidden@print">
 		
-		
+		<?php
+			starter_get_the_categories();
 
+			starter_get_the_tags();
+		?>
+		
 	</footer>
 
 </article>

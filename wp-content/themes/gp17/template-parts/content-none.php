@@ -2,22 +2,32 @@
 /**
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package GP Web Design Theme
+ * @package Theme Name
  */
 
 ?>
 
-<article <?php post_class('o-page'); ?> itemscope itemtype="http://schema.org/WebPage">
+<article <?php post_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-	<header>
+	<header class="o-page__header u-overflow u-relative">
 
-		<h1>Error: Page not found</h1>
+		<?php
 
-	</header><!-- .entry-header -->
+			the_title( '<h1 itemprop="title" class="o-post__title">', '</h1>' );			
+			
+			starter_post_thumbnail();
+		?>
 
+	</header>
 
 	<div class="o-page__content" itemprop="text articleBody">
-		 
-	</div>	
+
+		<?php the_content(); ?>
+
+	</div>
+
+	<footer class="o-page__footer u-clear u-hidden@print">
+		
+	</footer>
 
 </article>

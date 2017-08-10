@@ -3,7 +3,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package GP Web Design Theme
+ * @package Theme Name
  */
 ?><!DOCTYPE html>
 
@@ -16,6 +16,9 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+		<!--IE Edge -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
 		<?php wp_head(); ?>
 
 	</head>
@@ -24,37 +27,49 @@
 
 		<?php do_action( 'body_open' ); ?>
 		
-		<a class="skip-link screen-reader-text u-visuallyhidden" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
+		<div class="site-wrap">
 
-		<header class="u-overflow" itemscope itemtype="http://schema.org/WPHeader">				
+			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
 
 			<?php
+				if( true === get_theme_mod( 'leaderboard' ) ) :
+					?>
+						<div class="leaderboard leaderboard--desktop u-hidden@print u-hidden@sm u-hidden@md u-centre-text">
+							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="970x250,728x90"></div>
+						</div>
 
-				if ( has_custom_logo() ) :
+						<div class="leaderboard leaderboard--tablet u-hidden@print u-hidden@sm u-hidden@lg u-centre-text">
+							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="728x90"></div>
+						</div>
 
-					echo '<a class="u-block site-logo u-aligncenter u-centre-text" href="'. get_home_url() .'" title="'. get_bloginfo() .'" />';
-					echo '<img src="'. gpwd_logo() .'" alt="'. get_bloginfo() .' logo" title="'. get_bloginfo() .'" />';
-					echo '</a>';
-
-				else :
-
-					$description = get_bloginfo( 'description', 'display' );
-					$title = get_bloginfo( 'title', 'display' );
-
-					if ( $title || is_customize_preview() ) :
-
-						echo '<p class="site-title">'. $title .'</p>';
-
-					endif;
-
+						<div class="leaderboard leaderboard--mobile u-hidden@print u-hidden@md u-hidden@lg u-centre-text">
+							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="300x250"></div>
+						</div>
+					<?php
 				endif;
-			
-				if ( has_nav_menu( 'main_menu' ) ) :
-					echo '<a class="o-navtoggle o-navtoggle--main_menu u-block u-centre-text" href="#">Menu</a>';
-					wp_nav_menu( array( 'container'=> 'nav', 'container_class' => 'c-main_menu overflow', 'theme_location' => 'main_menu', 'menu_class' => '' ) );
-				
-				endif;
-
 			?>
 
-		</header>
+			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
+
+				<?php
+
+					if ( has_custom_logo() ) 
+					{
+						the_custom_logo();
+					}
+					else 
+					{
+						$description = get_bloginfo( 'description', 'display' );
+						$title = get_bloginfo( 'title', 'display' );
+
+						if ( $title ) 
+						{
+							echo '<h1 class="site-title">'. $title .'</h1>';
+						}
+					}			
+
+					starter_navigation( 'main_menu', 'c-navmenu c-navmenu--main_menu', 'c-navmenu__menu', true );
+					
+				?>	
+
+			</header>

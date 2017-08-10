@@ -4,13 +4,13 @@
 	 *
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
-	 * @package GP Web Design Theme
+	 * @package Theme Name
 	 */
 
 
 	get_header();
 
-	echo '<main role="main" itemprop="mainContentOfPage">';
+	echo '<main itemprop="mainContentOfPage">';
 
 	if ( have_posts() ) : 
 		?>
@@ -42,5 +42,4 @@
 
 	echo '</main>';
 
-	get_footer(); 
-?>
+	get_footer();

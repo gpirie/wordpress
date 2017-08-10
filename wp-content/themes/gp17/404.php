@@ -3,12 +3,12 @@
 	 * The template for displaying 404 pages (not found)
 	 *
 	 * @package WordPress
-	 * @subpackage Wyvex
+	 * @subpackage Theme Name
 	 */
 
 	get_header(); 
 
-	echo '<main role="main" itemprop="mainContentOfPage">';
+	echo '<main itemprop="mainContentOfPage">';
 
 	get_template_part( 'template-parts/content', 'none' ); 
 

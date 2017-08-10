@@ -1,13 +1,13 @@
 /*
-Theme Name: GP17
-Theme URI: http://graemepirie.com
+Theme Name: Starter Theme
+Theme URI: http://www.dcthomson.co.uk/
 Author: Graeme Pirie
 Author URI: http://graemepirie.com
-Description: Theme for GP Web Design
+Description: Basis theme for creating new themes.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: gpwd-theme
+Text Domain: starter-theme
 Tags:
 
 Contents:
@@ -16,5 +16,3 @@ $trumps
 
 
 /* $trumps - Really specific styles that override styles set above. */
-
-/* FB Comment Box */

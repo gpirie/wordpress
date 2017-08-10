@@ -4,14 +4,12 @@
 	 *
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
-	 * @package GP Web Design Theme
+	 * @package Theme Name
 	 */
-
-	global $cat_color;		
 
 	get_header();
 
-	echo '<main role="main" itemprop="mainContentOfPage">';
+	echo '<main itemprop="mainContentOfPage">';
 
 	if ( have_posts() ) : 
 
@@ -38,6 +36,4 @@
 
 	wp_reset_postdata();
 
-	get_footer(); 
-
-?>
+	get_footer();

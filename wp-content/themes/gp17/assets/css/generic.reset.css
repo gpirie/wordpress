@@ -76,7 +76,6 @@ table {
 }
 
 th, td {
-    padding: 0;
     text-align: left;
     vertical-align: middle;
 	font-weight: normal;
@@ -121,6 +120,7 @@ form, fieldset {
 
 select, input, textarea, button {
 	font-family: inherit;
+	font-size : inherit;
 	font-weight: inherit;
 }
 
@@ -142,7 +142,7 @@ input[type="button"], input[type="submit"], input[type="image"], button {
 }
 
 input[type="checkbox"], input[type="radio"] {
-	box-sizing: border-box;
+    box-sizing: border-box;
 	padding: 0;
 }
 
@@ -184,16 +184,8 @@ textarea {
 	text-shadow : none;
 }
 
-.skip-link {
-	height: 1px;
-	width: 1px;
-	position: absolute;
-	overflow: hidden;
-	top: -10px;
-}
-
 /* User Alerts */
-.notice {
+.c-notice {
 	border: 1px solid;
 	padding: .75em;
 	background-repeat: no-repeat;
@@ -201,19 +193,19 @@ textarea {
 	display: block;
 }
 
-.info {
+.c-notice--info {
 	color: #00529B;
 	background-color: #BDE5F8;
 }
-.success {
+.c-notice--success {
 	color: #4F8A10;
 	background-color: #DFF2BF;
 }
-.warning {
+.c-notice--warning {
 	color: #9F6000;
 	background-color: #FEEFB3;
 }
-.error {
+.c-notice--error {
 	color: #D8000C;
 	background-color: #FFBABA;
 }

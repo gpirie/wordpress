@@ -1,8 +1,0 @@
-@import url('generic-helper.css');
-@import url('elements.type.css');
-
-body {
-	/*max-width: 642px;*/
-	font: 300 16px/1.412 "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
-    color: #444;
-}

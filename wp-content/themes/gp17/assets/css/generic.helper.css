@@ -130,37 +130,37 @@
 /* Basic WP Styles */
 
 .alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 0.357em auto;
 }
 
 .alignright {
     float:right;
-    margin: 5px 0 20px 20px;
+    margin: 0.357em 0 1.429em 1.429em;
 }
 
 .alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 a img.alignright {
     float: right;
-    margin: 5px 0 20px 20px;
+    margin: 0.357em 0 1.429em 1.429em;
 }
 
 a img.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 a img.alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 a img.aligncenter {
@@ -173,20 +173,20 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #f0f0f0;
     max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
+    padding: 0.357em 3px 0;
     text-align: center;
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+    margin: 0.357em 1.429em 1.429em 0;
 }
 
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+    margin: 0.357em 0 1.429em 1.429em;
 }
 
 .wp-caption img {
@@ -202,7 +202,7 @@ a img.aligncenter {
     font-size: 11px;
     line-height: 17px;
     margin: 0;
-    padding: 0 4px 5px;
+    padding: 0 4px 0.357em;
 }
 
 /* Text meant only for screen readers. */
