@@ -12,7 +12,7 @@
 	function starter_logo_class() {
 	    $custom_logo_id = get_theme_mod( 'custom_logo' );
 
-	    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+	    $html = sprintf( '<a href="%1$s" class="custom-logo-link u-block" rel="home" itemprop="url">%2$s</a>',
 	            esc_url( home_url( '/' ) ),
 	            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
 	                'class'    => 'site-logo',

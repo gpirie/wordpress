@@ -21,13 +21,6 @@ body {
     overflow: hidden;
 }
 
-.site-wrap {  
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transition: .3s ease all;
-    transition: .3s ease all;
-}
-
 .has-visible-menu {
     -webkit-transform: translateX(150px);
     transform: translateX(150px);
