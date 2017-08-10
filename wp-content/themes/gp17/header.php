@@ -31,24 +31,6 @@
 
 			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
 
-			<?php
-				if( true === get_theme_mod( 'leaderboard' ) ) :
-					?>
-						<div class="leaderboard leaderboard--desktop u-hidden@print u-hidden@sm u-hidden@md u-centre-text">
-							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="970x250,728x90"></div>
-						</div>
-
-						<div class="leaderboard leaderboard--tablet u-hidden@print u-hidden@sm u-hidden@lg u-centre-text">
-							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="728x90"></div>
-						</div>
-
-						<div class="leaderboard leaderboard--mobile u-hidden@print u-hidden@md u-hidden@lg u-centre-text">
-							<div class="dfp-ad" rel="advert" pos="top" data-companion="yes" data-sizes="300x250"></div>
-						</div>
-					<?php
-				endif;
-			?>
-
 			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
 
 				<?php
