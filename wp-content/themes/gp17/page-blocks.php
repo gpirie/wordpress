@@ -15,9 +15,9 @@
 
 	while ( have_posts() ) : the_post(); 
 
-		if( have_rows('home_blocks') ) :
+		if( have_rows('blocks') ) :
 
-		    while ( have_rows('home_blocks') ) : the_row();
+		    while ( have_rows('blocks') ) : the_row();
 		        get_template_part( 'blocks/block', get_row_layout() );
 		    endwhile;
 		
