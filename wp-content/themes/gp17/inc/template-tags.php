@@ -15,7 +15,7 @@
 	    $html = sprintf( '<a href="%1$s" class="custom-logo-link u-block" rel="home" itemprop="url">%2$s</a>',
 	            esc_url( home_url( '/' ) ),
 	            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-	                'class'    => 'site-logo',
+	                'class'    => 'site-logo u-block u-centre',
 	            ) )
 	        );
 	    return $html;   

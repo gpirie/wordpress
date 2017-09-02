@@ -1,30 +1,28 @@
-<section class="o-block o-block--portfolio">
 
-	<h1><?php echo get_sub_field( 'title' );?></h1>
-
+<section class="o-block o-block--services">
 	<?php
 
-		if( have_rows('my_service') ) :
-
+		if( have_rows( 'my_service' ) ) :
 			?>
 				<ul class="c-services">
 			<?php
+			
+				while ( have_rows('my_service') ) : the_row();
+					?>
+						<li class="c-services__service">
+							<?php
+								if( false === empty( get_sub_field( 'title' ) ) ) {
+									echo '<h1>'. get_sub_field( 'title' ) .'</h1>';
+								}
 
-			while ( have_rows('my_service') ) : the_row();
-
-				if( false === empty( get_sub_field( 'title' ) ) ) :
-
-					echo '<h1 class="c-services__title">'. get_sub_field( 'title' ) .'</h1>';
-
-				endif;
-
-				if( false === empty( get_sub_field( 'text' ) ) ) :
-
-					echo '<p class="c-services__text">'. get_sub_field( 'text' ) .'</p>';
-
-				endif;
-
-			endwhile;
+								if( false === empty( get_sub_field( 'text' ) ) ) {
+									echo '<h1>'. get_sub_field( 'text' ) .'</h1>';
+								}
+							?>
+						</li>
+					<?php
+				
+				endwhile;
 
 			?>
 				</ul>

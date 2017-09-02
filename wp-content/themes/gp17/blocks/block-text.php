@@ -1,17 +1,9 @@
-<?php
-	$bg_image = get_sub_field( 'background_image' );
-
-?>
-
-<section class="o-block o-block--text <?php if( $bg_image ) : echo 'o-block--background-image" style="background-image: url('. $bg_image['url'] .')"'; endif; ?>">
-
+<section class="o-block o-block--text" <?php echo ( get_sub_field( 'background_colour' ) ? 'style="background-color: '. get_sub_field( 'background_colour' ) .';"' : '' ) ?>>
 	<?php
 
-		if ( false === empty( get_sub_field('text') ) ) :
+		if( false === empty( the_sub_field( 'text' ) ) ) {
+			the_sub_field( 'text' );
+		}
 
-			echo get_sub_field('text');
-
-		endif;
 	?>
-
 </section>
