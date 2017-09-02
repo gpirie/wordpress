@@ -20,7 +20,7 @@
 					        	setup_postdata($post);
 					        	?>
 							        <li class="o-portfoliolist__item u-relative">
-							        	<?php gpwd_get_the_post_thumbnail(); ?>
+							        	<?php starter_post_thumbnail(); ?>
 							        	<a class="o-portfoliolist__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							        </li>
 					    		<?php
