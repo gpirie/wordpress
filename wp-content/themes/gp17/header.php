@@ -31,7 +31,7 @@
 
 			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
 
-			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
+			<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">				
 
 				<?php
 
@@ -50,7 +50,7 @@
 						}
 					}			
 
-					starter_navigation( 'main_menu', 'c-navmenu c-navmenu--main_menu', 'c-navmenu__menu', true );
+					starter_navigation( 'main_menu', true );
 					
 				?>	
 

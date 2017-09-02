@@ -1,12 +1,17 @@
 @media only screen and (max-width: 45.499em) {
 	.c-navmenu--main_menu {
-		width: 150px;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: -150px;
-		background: #428bca;
-		padding: 15px;
+		background: #003399;
+		text-align: center;
+		color: #fff;
+	}
+
+	.c-toggle {
+		background: #003399;
+	    color: #fff;
+	    display: block;
+	    padding: 0.5em;
+	    text-align: center;
+	    margin-top: 1em;
 	}
 }
 
@@ -14,6 +19,25 @@
 	.c-navmenu__close {
 		display: none;
 	}
+
+	.c-navmenu--main_menu {
+		float: right;
+		width: 75%;
+		text-align: right;
+	}
+
+	.c-navmenu__menu {
+		overflow: hidden;
+		display: inline-block;
+	}
+
+	.c-navmenu__item--main_menu {
+		float: left;
+		margin-left: 2.5em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}	
+}
 
 .o-breadcrumb__crumb {
 	float: left;
