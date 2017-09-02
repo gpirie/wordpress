@@ -15,7 +15,7 @@
 	    $html = sprintf( '<a href="%1$s" class="custom-logo-link u-block" rel="home" itemprop="url">%2$s</a>',
 	            esc_url( home_url( '/' ) ),
 	            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-	                'class'    => 'site-logo u-block u-centre',
+	                'class'    => 'site-logo u-centre u-block',
 	            ) )
 	        );
 	    return $html;   
@@ -45,7 +45,7 @@
 
 	/* Add class to menu links*/
 	function add_specific_menu_location_atts( $atts, $item, $args ) {
-		$atts['class'] = 'c-navmenu__link c-'. esc_attr( $args->theme_location ) .'__link"';
+		$atts['class'] = 'c-navmenu__link c-navmenu__link--'. esc_attr( $args->theme_location );
 		return $atts;
 	}
 	add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
@@ -96,20 +96,20 @@
 		return implode( '', $paragraphs );
 	}
 
-	function starter_navigation( $theme_location, $container_class, $menu_class, $menu_toggle ) {
+	function starter_navigation( $theme_location, $menu_toggle = false ) {
 
 		if ( has_nav_menu( $theme_location ) ) { 
 
 			if( $menu_toggle === true ) {
-				echo '<a class="c-toggle u-hidden@md u-hidden@lg u-hidden@print" href="#">Menu</a>';	
+				echo '<a class="c-toggle c-toggle--'. $theme_location .' u-hidden@md u-hidden@lg u-hidden@print" href="#">Menu</a>';	
 		    }
 
 		    wp_nav_menu( array(
 		        'theme_location' 	=> $theme_location,
 		        'container'      	=> 'nav',
-		        'container_class' 	=> $container_class .' u-hidden@print',
-		        'menu_class'     	=> $menu_class,
-		        'items_wrap'     	=> ($menu_toggle == true ? '<a class="c-navmenu__close c-toggle" href="#">Close</a>' : '') . '<ul class="%2$s">%3$s</ul>'
+		        'container_class' 	=> 'c-navmenu c-navmenu--'. $theme_location .' u-hidden@print',
+		        'menu_class'     	=> 'c-navmenu__menu c-navmenu__menu--'. $theme_location,
+		        'items_wrap'     	=> '<ul class="%2$s">%3$s</ul>'
 		    ));
 
 		}
