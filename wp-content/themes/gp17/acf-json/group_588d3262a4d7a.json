@@ -31,7 +31,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "75",
                                 "class": "",
                                 "id": ""
                             },
@@ -43,27 +43,18 @@
                         },
                         {
                             "key": "field_595ea0cfea667",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
-                            "instructions": "Background Image for text blocks.",
+                            "label": "Background Colour",
+                            "name": "background_colour",
+                            "type": "color_picker",
+                            "instructions": "Background colour for text blocks.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "default_value": ""
                         }
                     ],
                     "min": "",
@@ -235,5 +226,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1503444811
+    "modified": 1504388712
 }
