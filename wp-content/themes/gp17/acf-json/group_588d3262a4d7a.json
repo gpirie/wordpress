@@ -155,11 +155,11 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5964013d550cb",
+                            "key": "field_59ac68077e8b6",
                             "label": "Projects",
                             "name": "projects",
-                            "type": "repeater",
-                            "instructions": "Inserting post types.",
+                            "type": "relationship",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -167,35 +167,56 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "Add Portfolio Item",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5964025d550cc",
-                                    "label": "Portfolio Item",
-                                    "name": "portfolio_item",
-                                    "type": "post_object",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "post_type": [
-                                        "portfolio"
-                                    ],
-                                    "taxonomy": [],
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "return_format": "object",
-                                    "ui": 1
-                                }
-                            ]
+                            "post_type": [
+                                "portfolio"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": "",
+                            "max": "",
+                            "return_format": "object"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "59ac663df4cd5": {
+                    "key": "59ac663df4cd5",
+                    "name": "featured",
+                    "label": "Featured",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59ac6646f4cd6",
+                            "label": "Post",
+                            "name": "post",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": 1,
+                            "max": 1,
+                            "return_format": "object"
                         }
                     ],
                     "min": "",
@@ -226,5 +247,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1504388712
+    "modified": 1504471101
 }
