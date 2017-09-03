@@ -4,19 +4,19 @@
 
 		if( have_rows( 'my_service' ) ) :
 			?>
-				<ul class="c-services">
+				<ul class="c-services u-overflow">
 			<?php
 			
 				while ( have_rows('my_service') ) : the_row();
 					?>
-						<li class="c-services__service">
+						<li class="c-services__service u-centre-text">
 							<?php
 								if( false === empty( get_sub_field( 'title' ) ) ) {
 									echo '<h1>'. get_sub_field( 'title' ) .'</h1>';
 								}
 
 								if( false === empty( get_sub_field( 'text' ) ) ) {
-									echo '<h1>'. get_sub_field( 'text' ) .'</h1>';
+									the_sub_field( 'text' );
 								}
 							?>
 						</li>

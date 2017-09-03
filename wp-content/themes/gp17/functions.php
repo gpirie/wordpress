@@ -141,6 +141,7 @@ function starter_theme_scripts()
 
 	/* Blocks */
 	wp_enqueue_style( 'starter-theme-block-text', STARTER_DIRECTORY_URI . '/assets/css/block.text.css' ,null, STARTER_VERSION, 'screen' );	
+	wp_enqueue_style( 'starter-theme-block-services', STARTER_DIRECTORY_URI . '/assets/css/block.services.css' ,null, STARTER_VERSION, 'screen' );	
 
 	/* WooCommerce */
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
