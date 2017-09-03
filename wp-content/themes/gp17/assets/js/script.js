@@ -3,12 +3,15 @@
 	$(document).ready(function() {
 
 		//Nav Toggle
-		$('.c-toggle').next().hide();
+		if( $(window).width() < 45.499 + 'em' ) {
 
+			$('.c-toggle').next().hide();
+		}
+		
 		$('.c-toggle').on('click', function() {
 			$(this).next().slideToggle();
 		});
-
+	
 		//Off Canvas Nav
 		// $('.c-toggle').on('click', function() {
 		// 	slide_off_canvas_menu();
