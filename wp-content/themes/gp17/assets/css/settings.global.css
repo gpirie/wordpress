@@ -50,7 +50,7 @@ body {
         display: none;
     }
 
-    body {
+    .site-wrap {
         margin: 0 10%;
     }
 
@@ -61,7 +61,7 @@ body {
         display: none;
     }
 
-    body {
+    .site-wrap {
         margin: 0 15%;
     }
 }
