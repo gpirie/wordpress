@@ -91,11 +91,10 @@ img {
     -ms-interpolation-mode: bicubic;
 	vertical-align: middle;
 	max-width: 100%;
-	min-height: 50px;
 }
 
 img:before {  
-  content: " ";
+  content: "";
   display: block;
   top: -10px;
   left: 0;
@@ -104,6 +103,7 @@ img:before {
   background-color: rgb(230, 230, 230);
   border: 1px solid rgb(200, 200, 200);
   text-align: center;
+min-height: 50px;
 }
 
 video {
