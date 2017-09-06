@@ -3,19 +3,19 @@
 	/* Woocommerce Globals*/
 	define( 'ADD_TO_CART_TEXT', 'Add to Basket' );
 
-	add_filter( 'woocommerce_product_single_add_to_cart_text', 'starter_single_add_to_cart_text' );
-	function starter_single_add_to_cart_text() {
-	        return __( ADD_TO_CART_TEXT, 'starter-theme' );
+	add_filter( 'woocommerce_product_single_add_to_cart_text', 'gpwd_single_add_to_cart_text' );
+	function gpwd_single_add_to_cart_text() {
+	        return __( ADD_TO_CART_TEXT, 'gpwd-theme' );
 	}
 
-	add_filter( 'woocommerce_product_add_to_cart_text', 'starter_archive_add_to_cart_text' );
-	function starter_archive_add_to_cart_text() {
-	    return __( ADD_TO_CART_TEXT, 'starter-theme' );
+	add_filter( 'woocommerce_product_add_to_cart_text', 'gpwd_archive_add_to_cart_text' );
+	function gpwd_archive_add_to_cart_text() {
+	    return __( ADD_TO_CART_TEXT, 'gpwd-theme' );
 	}
 
 	//Breadcrumbs
-	add_filter( 'woocommerce_breadcrumb_defaults', 'starter_woocommerce_breadcrumbs' );
-	function starter_woocommerce_breadcrumbs() {
+	add_filter( 'woocommerce_breadcrumb_defaults', 'gpwd_woocommerce_breadcrumbs' );
+	function gpwd_woocommerce_breadcrumbs() {
 	    return array(
             'delimiter'   => '',
             'wrap_before' => '<nav class="o-breadcrumb u-overflow u-hidden@print" itemprop="breadcrumb"><ul>',

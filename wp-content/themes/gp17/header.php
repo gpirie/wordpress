@@ -29,7 +29,7 @@
 		
 		<div class="site-wrap">
 
-			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
+			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
 
 			<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">				
 
@@ -50,7 +50,7 @@
 						}
 					}			
 
-					starter_navigation( 'main_menu', true );
+					gpwd_navigation( 'main_menu', true );
 					
 				?>	
 

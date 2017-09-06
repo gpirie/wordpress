@@ -10,6 +10,8 @@
 				
 				<?php
 
+					gpwd_navigation( 'footer_menu' );
+
 					if ( get_theme_mod( 'copyright' ) ) 
 					{				
 						echo '<small>&copy; '. date('Y') . ' ' . get_theme_mod( 'copyright' ) .'</small>';

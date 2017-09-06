@@ -15,7 +15,7 @@
 
 			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );			
 
-			starter_post_thumbnail();
+			gpwd_post_thumbnail();
 
 		?>
 
@@ -33,9 +33,9 @@
 	<footer class="o-post__footer u-clear u-hidden@print">
 		
 		<?php
-			starter_get_the_categories();
+			gpwd_get_the_categories();
 
-			starter_get_the_tags();
+			gpwd_get_the_tags();
 		?>
 		
 	</footer>

@@ -1,15 +1,15 @@
 <?php
 	/* Add editor styles */
-	function starter_add_editor_styles() {
+	function gpwd_add_editor_styles() {
 
-		if( file_exists(  STARTER_THEME_INC . 'assets/css/editor-style.css' ) ) :
+		if( file_exists(  GPWD_THEME_INC . 'assets/css/editor-style.css' ) ) :
 	    	add_editor_style( 'assets/css/editor-style.css' );
 		endif;
 	}
-	add_action( 'admin_init', 'starter_add_editor_styles' );
+	add_action( 'admin_init', 'gpwd_add_editor_styles' );
 
 	/* Customise logo output*/
-	function starter_logo_class() {
+	function gpwd_logo_class() {
 	    $custom_logo_id = get_theme_mod( 'custom_logo' );
 
 	    $html = sprintf( '<a href="%1$s" class="custom-logo-link u-block" rel="home" itemprop="url">%2$s</a>',
@@ -20,11 +20,11 @@
 	        );
 	    return $html;   
 	}
-	add_filter( 'get_custom_logo', 'starter_logo_class' );
+	add_filter( 'get_custom_logo', 'gpwd_logo_class' );
 
 
 	/* Add meaningful class to menu items*/
-	function starter_menu_class($classes, $item, $args) {
+	function gpwd_menu_class($classes, $item, $args) {
 
 		/* Add generic class to all menu-items across the site*/
 		$classes[] = 'c-navmenu__item c-navmenu__item--'. $args->theme_location;
@@ -41,7 +41,7 @@
 		}
     	return $classes;
 	}
-	add_filter('nav_menu_css_class' , 'starter_menu_class' , 10 , 3);
+	add_filter('nav_menu_css_class' , 'gpwd_menu_class' , 10 , 3);
 
 	/* Add class to menu links*/
 	function add_specific_menu_location_atts( $atts, $item, $args ) {
@@ -50,16 +50,16 @@
 	}
 	add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
 
-	function starter_submenu_class($menu, $args) {  
+	function gpwd_submenu_class($menu, $args) {  
 
 		$menu = preg_replace( '/ class="sub-menu"/','/ class="c-navmenu__submenu c-navmenu__submenu--'. $args->theme_location .'" /',$menu );
 
 		return $menu;  
 	}  
-	add_filter('wp_nav_menu','starter_submenu_class', 10, 2);
+	add_filter('wp_nav_menu','gpwd_submenu_class', 10, 2);
 
 	/* In-article adverts*/
-	function starter_insert_post_ads( $content ) 
+	function gpwd_insert_post_ads( $content ) 
 	{
 		if ( true === get_theme_mod( 'in_article' ) ) 
 		{
@@ -69,7 +69,7 @@
 				$ad_code = '<div class="dfp-ad mpu alignleft" rel="advert" data-companion="yes" data-sizes="300x250" data-targeting="pos=article"></div>';
 
 				if ( is_single() && ! is_admin() ) {
-					return starter_insert_after_paragraph( $ad_code, $paragraph_number, $content );
+					return gpwd_insert_after_paragraph( $ad_code, $paragraph_number, $content );
 				}
 
 			}
@@ -77,9 +77,9 @@
 		
 		return $content;
 	}
-	add_filter( 'the_content', 'starter_insert_post_ads' );
+	add_filter( 'the_content', 'gpwd_insert_post_ads' );
 
-	function starter_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
+	function gpwd_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 		$closing_p = '</p>';
 		$paragraphs = explode( $closing_p, $content );
 		foreach ($paragraphs as $index => $paragraph) {
@@ -96,7 +96,7 @@
 		return implode( '', $paragraphs );
 	}
 
-	function starter_navigation( $theme_location, $menu_toggle = false ) {
+	function gpwd_navigation( $theme_location, $menu_toggle = false ) {
 
 		if ( has_nav_menu( $theme_location ) ) { 
 
@@ -116,7 +116,7 @@
 	}
 
 	// Posts > Paragraph Count
-	function starter_paragraph_count() {
+	function gpwd_paragraph_count() {
 
 	    $content = apply_filters('the_content', get_the_content());
 	    $content = explode("</p>", $content);
@@ -126,9 +126,9 @@
 	}
 
 	// Posts > Post length logic
-	function starter_post_length( $classes ) {
+	function gpwd_post_length( $classes ) {
 
-	    $length = starter_paragraph_count();
+	    $length = gpwd_paragraph_count();
 
 	    if ( $length <= 6 ) {
 	        $classes[] = 'o-post--short-form';
@@ -140,9 +140,9 @@
 
 	    return $classes;
 	}
-	add_filter( 'post_class', 'starter_post_length' );
+	add_filter( 'post_class', 'gpwd_post_length' );
 
-	function starter_post_format_class( $classes ) {
+	function gpwd_post_format_class( $classes ) {
 		
 		if( get_post_type() == 'post' ) {
 
@@ -166,9 +166,9 @@
 		
 		return $classes;
 	}
-	add_filter( 'post_class', 'starter_post_format_class' );
+	add_filter( 'post_class', 'gpwd_post_format_class' );
 
-	function starter_post_thumbnail( $size = 'large' ) {
+	function gpwd_post_thumbnail( $size = 'large' ) {
 
 		if( has_post_thumbnail() )
 		{
@@ -185,7 +185,7 @@
 		}
 	}
 
-	function starter_get_the_categories() {
+	function gpwd_get_the_categories() {
 		$categories = get_the_category();
 		if ( ! empty( $categories ) ) 
 		{
@@ -202,7 +202,7 @@
 		}
 	}
 
-	function starter_get_the_tags() {
+	function gpwd_get_the_tags() {
 		$posttags = get_the_tags();
 		if ( $posttags ) 
 		{
@@ -219,7 +219,7 @@
 		echo $output;
 	}
 
-	function starter_gallery($html, $attr) {
+	function gpwd_gallery($html, $attr) {
 		
 		global $post;
 
@@ -293,4 +293,4 @@
 	        return '';
 	    }   
 	}
-	add_filter('post_gallery', 'starter_gallery', 10, 2);
+	add_filter('post_gallery', 'gpwd_gallery', 10, 2);

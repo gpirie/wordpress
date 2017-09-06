@@ -15,7 +15,7 @@
 
 			the_title( '<h1 itemprop="title" class="o-post__title">', '</h1>' );			
 			
-			starter_post_thumbnail();
+			gpwd_post_thumbnail();
 		?>
 
 	</header>

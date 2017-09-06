@@ -3,39 +3,27 @@
 	<h1><?php echo get_sub_field( 'title' );?></h1>
 
 	<?php
+		if( false === empty( get_sub_field( 'projects' ) ) ) 
+		{
+			$posts = get_sub_field('projects');
 
-		if( have_rows('projects') ) :
-
-			while ( have_rows('projects') ) : the_row();
-
-				$post_objects = get_sub_field( 'portfolio_item' );
-
-				$count = count( $post_objects );
-
-				if( $post_objects ) : ?>
-
-					<ul class="o-portfoliolist">
-					    <?php 
-					    	foreach( $post_objects as $post) :
-					        	setup_postdata($post);
-					        	?>
-							        <li class="o-portfoliolist__item u-relative">
-							        	<?php starter_post_thumbnail(); ?>
-							        	<a class="o-portfoliolist__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							        </li>
-					    		<?php
-					    	endforeach; 
-					    ?>
-				    </ul>
-
-				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-				
-				<?php endif;
-
-			endwhile;
-
-		endif;
-
+			if( $posts )
+			{
+				?>
+					<ul class="o-featuredposts">
+						<?php foreach( $posts as $p )
+						{
+							?>
+								<li class-"o-featuredposts__post">
+									<?php echo get_the_post_thumbnail( $p->ID, 'small', array( 'class' => 'o-featuredposts__image' ) );?>
+									<a class="o-featuredposts__link" href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a>
+								</li>
+							<?php 
+						} ?>
+					</ul>
+				<?php
+			} 
+		}
 	?>
 
 </section>

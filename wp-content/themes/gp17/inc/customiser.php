@@ -1,5 +1,5 @@
 <?php
-	function starter_customiser( $wp_customize )
+	function gpwd_customiser( $wp_customize )
 	{
 		
 		//Social Media
@@ -17,8 +17,8 @@
 			'label'	=>	__('Instagram Page Link')
 		);
 
-		$wp_customize->add_section( 'starter_theme_social' , array(
-			'title'      => __( 'Social Media Accounts', 'starter-theme' ),
+		$wp_customize->add_section( 'gpwd_theme_social' , array(
+			'title'      => __( 'Social Media Accounts', 'gpwd-theme' ),
 			'priority'   => 50,
 		) );
 
@@ -34,7 +34,7 @@
 					$link['slug'],
 					array(
 						'label' => $link['label'],
-						'section' => 'starter_theme_social',
+						'section' => 'gpwd_theme_social',
 						'settings' => $link['slug'],
 						'type' => 'url',
 					) 
@@ -44,8 +44,8 @@
 
 		
 		//Footer
-		$wp_customize->add_section( 'starter_theme_footer' , array(
-			'title'      => __( 'Footer', 'starter-theme' ),
+		$wp_customize->add_section( 'gpwd_theme_footer' , array(
+			'title'      => __( 'Footer', 'gpwd-theme' ),
 			'priority'   => 50,
 		) );
 
@@ -55,12 +55,12 @@
 
 		$wp_customize->add_control( 'copyright', array(
 			'label' => 'Copyright',
-			'section' => 'starter_theme_footer',
+			'section' => 'gpwd_theme_footer',
 			'settings' => 'copyright',
 			'type' => 'text',
 		) );
 	}
 		
-	add_action('customize_register', 'starter_customiser');
+	add_action('customize_register', 'gpwd_customiser');
 
 ?>
