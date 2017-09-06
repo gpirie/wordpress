@@ -2,5 +2,12 @@
 	.o-featuredposts__image {
 		float: left;
 		margin-right: 1em;
+		width: 40%;
+	}
+
+	.o-featuredposts__content {
+		float: left;
+		width: 55%;
+		width: calc(60%-1em);
 	}
 }
