@@ -6,20 +6,18 @@
  */
 
 ?>	
-			<footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<footer class="site-footer u-overflow" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				
 				<?php
 
 					gpwd_navigation( 'footer_menu' );
-
-					{				
-						echo '<small>&copy; '. date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() ) .'</small>';
-					}
-
+					
 				?>
 
-			</footer>		
+			</footer>
 
+			<small class="copyright u-block u-clear">&copy; <?php echo date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() );?></small>
+			
 			<?php wp_footer();?>
 
 		</div> <!--End site-wrap-->

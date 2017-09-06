@@ -142,6 +142,8 @@ function gpwd_theme_scripts()
 	/* Blocks */
 	wp_enqueue_style( 'gpwd-theme-block-text', GPWD_DIRECTORY_URI . '/assets/css/block.text.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-services', GPWD_DIRECTORY_URI . '/assets/css/block.services.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/block.portfolio.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-block-featured', GPWD_DIRECTORY_URI . '/assets/css/block.featured.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* WooCommerce */
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {

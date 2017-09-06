@@ -22,6 +22,23 @@
 	}
 	add_filter( 'get_custom_logo', 'gpwd_logo_class' );
 
+	function gpwd_get_site_logo() {
+		if ( has_custom_logo() ) 
+		{
+			the_custom_logo();
+		}
+		else 
+		{
+			$description = get_bloginfo( 'description', 'display' );
+			$title = get_bloginfo( 'title', 'display' );
+
+			if ( $title ) 
+			{
+				echo '<h1 class="site-title">'. $title .'</h1>';
+			}
+		}
+	}
+
 
 	/* Add meaningful class to menu items*/
 	function gpwd_menu_class($classes, $item, $args) {

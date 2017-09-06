@@ -1,0 +1,10 @@
+.site-footer {
+	background: #00798c;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.c-navmenu__item--footer_menu {
+	float: left;
+	margin-right: .35em;
+}

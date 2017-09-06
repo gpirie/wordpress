@@ -10,13 +10,13 @@
 			if( $posts )
 			{
 				?>
-					<ul class="o-featuredposts">
+					<ul class="o-portfolio u-overflow">
 						<?php foreach( $posts as $p )
 						{
 							?>
-								<li class-"o-featuredposts__post">
-									<?php echo get_the_post_thumbnail( $p->ID, 'small', array( 'class' => 'o-featuredposts__image' ) );?>
-									<a class="o-featuredposts__link" href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a>
+								<li class="o-portfolio__post">
+									<?php echo get_the_post_thumbnail( $p->ID, 'small', array( 'class' => 'o-portfolio__image' ) );?>
+									<a class="o-portfolio__link" href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a>
 								</li>
 							<?php 
 						} ?>
