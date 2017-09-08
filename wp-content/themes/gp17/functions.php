@@ -52,15 +52,6 @@ function gpwd_theme_setup()
     remove_action('wp_head', 'feed_links', 2); 
 	remove_action('wp_head', 'feed_links_extra', 3);
 
-	//DFP
-	if ( get_theme_mod( 'dfp_network' ) ) 
-	{
-		add_theme_support( 'dfp', array(
-		    'network' => get_theme_mod( 'dfp_network' ),
-		    'zepto'	  => get_theme_mod( 'zepto' )
-		) );
-	}
-
 	//Woocommerce
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 		add_theme_support( 'woocommerce' );
