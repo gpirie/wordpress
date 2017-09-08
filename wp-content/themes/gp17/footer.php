@@ -9,9 +9,11 @@
 			<footer class="site-footer u-overflow" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				
 				<?php
+					gpwd_get_the_custom_logo( 'site-footer' );
+
+					gpwd_contact_details();
 
 					gpwd_navigation( 'footer_menu' );
-					
 				?>
 
 			</footer>

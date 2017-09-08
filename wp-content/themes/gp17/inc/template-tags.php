@@ -311,3 +311,32 @@
 	    }   
 	}
 	add_filter('post_gallery', 'gpwd_gallery', 10, 2);
+
+	function gpwd_contact_details() {
+
+		$gpwd_email = get_theme_mod( 'contact_email' );
+		$gpwd_phone_number = get_theme_mod( 'contact_phone_number' );
+
+		if( $gpwd_email || $gpwd_phone_number ) {
+
+			echo '<ul class="o-contact">';
+
+			if( get_theme_mod( 'contact_email' ) ) {
+				printf( '<li class="o-contact__detail o-contact__detail--email"><a class="o-contact__link o-contact__link--email" href="mailto:%1$s">%1$s</a></li>', $gpwd_email );
+			}
+
+			if( get_theme_mod( 'contact_phone_number' ) ) {
+				printf( '<li class="o-contact__detail o-contact__detail--phone"><a class="o-contact__link o-contact__link--phone" href="tel:%1$s">%1$s</a></li>', $gpwd_phone_number );
+			}
+
+			echo '</ul>';
+		}
+	}
+
+	function gpwd_get_the_custom_logo( $theme_location ) {
+		if( get_theme_mod( 'custom_logo' ) ) {
+			$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'full' );
+			
+			echo '<a href="'. get_home_url() .'" class="o-logo o-logo--'. $theme_location .'" itemprop="url" rel="home"><img class="o-logo__img o-logo__img--'. $theme_location .'" src="'. $image[0] .'" alt="" title=""></a>';
+		}
+	}

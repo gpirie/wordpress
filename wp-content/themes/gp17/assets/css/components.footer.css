@@ -4,6 +4,28 @@
 	margin-bottom: 1em;
 }
 
+.o-logo--site-footer, .o-contact {
+	float: left;		
+}
+
+@media only screen and (max-width: 45.499em) {
+	.o-logo--site-footer {
+		margin-right: 1em;
+		margin-bottom: 1em;
+		width: 25%;
+	}
+
+	.o-contact {
+		width: 71%;
+		width: calc(75%-1em);
+	}
+
+	.c-navmenu--footer-menu {
+		clear: both;
+	}
+
+}
+
 .c-navmenu__item--footer_menu {
 	float: left;
 	margin-right: .35em;
