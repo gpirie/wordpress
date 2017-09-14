@@ -4,7 +4,11 @@
 	margin-bottom: 1em;
 }
 
-.o-logo--site-footer, .o-contact {
+.site-footer a {
+	color: #fff;
+}
+
+.o-logo--site-footer {
 	float: left;		
 }
 
@@ -16,17 +20,24 @@
 	}
 
 	.o-contact {
-		width: 71%;
-		width: calc(75%-1em);
+		float: right;
+		text-align: right;
 	}
 
-	.c-navmenu--footer-menu {
+	.c-navmenu--footer_menu {
 		clear: both;
+		margin-bottom: 0;
 	}
 
+}
+
+.c-navmenu__menu--footer_menu {
+	overflow: hidden;
+	margin-bottom: 0;
 }
 
 .c-navmenu__item--footer_menu {
 	float: left;
 	margin-right: .35em;
+	margin-bottom: 0;
 }
