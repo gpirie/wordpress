@@ -5,6 +5,10 @@
 		color: #fff;
 	}
 
+	.c-navmenu__link--main_menu {
+		color: #fff;
+	}
+
 	.c-toggle {
 		background: #003399;
 	    color: #fff;
