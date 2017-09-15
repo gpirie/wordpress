@@ -1,35 +1,40 @@
-
-<section class="o-block o-block--services">
+<section class="o-block o-block--featured">
 	<?php
+		if( false === empty( get_sub_field( 'post' ) ) ) 
+		{
+			$posts = get_sub_field('post');
 
-		if( have_rows( 'my_service' ) ) :
-			?>
-				<ul class="c-services u-overflow">
-			<?php
-			
-				while ( have_rows('my_service') ) : the_row();
-					?>
-						<li class="c-services__service u-centre-text">
-							<?php
-								if( false === empty( get_sub_field( 'title' ) ) ) {
-									echo '<h1>'. get_sub_field( 'title' ) .'</h1>';
-								}
-
-								if( false === empty( get_sub_field( 'text' ) ) ) {
-									the_sub_field( 'text' );
-								}
+			if( $posts )
+			{
+				?>
+					<ul class="o-featuredposts">
+						<?php foreach( $posts as $p )
+						{
 							?>
-						</li>
-					<?php
-				
-				endwhile;
+								<li class="o-featuredposts__post u-overflow" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+									
+									<?php echo get_the_post_thumbnail( $p->ID, 'small', array( 'class' => 'o-featuredposts__image', 'itemprop' => 'image' ) );?>
+									
+									<div class="o-featuredposts__content">
 
-			?>
-				</ul>
-			<?php
+										<h2 itemprop="title">
+											<a class="o-featuredposts__link" href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a>
+										</h2>
 
-		endif;
+										<div itemprop="text articleBody">
+											<?php the_excerpt( $p->ID );?>
+										</div>
 
+									</div>
+
+									<a class="button" href="<?php echo get_permalink( $p->ID );?>">Continue&hellip;</a>
+								</li>
+							<?php 
+						} ?>
+					</ul>
+				<?php
+			} 
+		}
 	?>
 
 </section>

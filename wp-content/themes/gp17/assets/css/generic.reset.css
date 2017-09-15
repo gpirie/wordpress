@@ -93,6 +93,19 @@ img {
 	max-width: 100%;
 }
 
+img:before {  
+  content: "";
+  display: block;
+  top: -10px;
+  left: 0;
+  height: calc(100% + 10px);
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid rgb(200, 200, 200);
+  text-align: center;
+min-height: 50px;
+}
+
 video {
 	max-width: 100%;
 }

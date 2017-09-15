@@ -1,0 +1,43 @@
+.site-footer {
+	background: #00798c;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.site-footer a {
+	color: #fff;
+}
+
+.o-logo--site-footer {
+	float: left;		
+}
+
+@media only screen and (max-width: 45.499em) {
+	.o-logo--site-footer {
+		margin-right: 1em;
+		margin-bottom: 1em;
+		width: 25%;
+	}
+
+	.o-contact {
+		float: right;
+		text-align: right;
+	}
+
+	.c-navmenu--footer_menu {
+		clear: both;
+		margin-bottom: 0;
+	}
+
+}
+
+.c-navmenu__menu--footer_menu {
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+.c-navmenu__item--footer_menu {
+	float: left;
+	margin-right: .35em;
+	margin-bottom: 0;
+}

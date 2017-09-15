@@ -36,9 +36,9 @@
 		endwhile;
 
 		the_posts_pagination( array(
-			'prev_text'          => __( 'Previous page', 'starter-theme' ),
-			'next_text'          => __( 'Next page', 'starter-theme' ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'starter-theme' ) . ' </span>',
+			'prev_text'          => __( 'Previous page', 'gpwd-theme' ),
+			'next_text'          => __( 'Next page', 'gpwd-theme' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'gpwd-theme' ) . ' </span>',
 		) );
 
 	else :
