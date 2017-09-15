@@ -6,12 +6,20 @@
  */
 
 ?>	
-			<footer class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<footer class="site-footer u-overflow" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				
-				<small class="copyright">&copy; <?php echo date('Y');?> <?php echo ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() ) ?> </small>
-					
-			</footer>		
+				<?php
+					gpwd_get_the_custom_logo( 'site-footer' );
 
+					gpwd_contact_details();
+
+					gpwd_navigation( 'footer_menu' );
+				?>
+
+			</footer>
+
+			<small class="copyright u-block u-clear">&copy; <?php echo date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() );?></small>
+			
 			<?php wp_footer();?>
 
 		</div> <!--End site-wrap-->
