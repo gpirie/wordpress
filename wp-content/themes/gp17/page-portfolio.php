@@ -4,6 +4,8 @@
 	 *
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
+	 * Template Name: Portfolio
+	 * 
 	 * @package Theme Name
 	 */
 

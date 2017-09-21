@@ -2,8 +2,6 @@
 /**
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * Template Name: Portfolio
- *
  * @package Theme Name
  */
 
@@ -24,7 +22,11 @@
 
 	<div class="o-page__content" itemprop="text articleBody">
 
-		<?php the_content(); ?>
+		<?php
+			the_content();
+
+			gpwd_get_portfolio();
+		?>
 
 	</div>
 

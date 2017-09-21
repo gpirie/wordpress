@@ -340,3 +340,29 @@
 			echo '<a href="'. get_home_url() .'" class="o-logo o-logo--'. $theme_location .'" itemprop="url" rel="home"><img class="o-logo__img o-logo__img--'. $theme_location .'" src="'. $image[0] .'" alt="" title=""></a>';
 		}
 	}
+
+	function gpwd_get_portfolio() {
+		$args = array(
+			'post_type' => 'web_portfolio',
+			'posts_per_page' => -1
+		);
+
+		$the_query = new WP_Query( $args );
+
+		// The Loop
+		if ( $the_query->have_posts() ) 
+		{
+			echo '<ul class="o-porfolio">';
+			while ( $the_query->have_posts() ) 
+			{
+				$the_query->the_post();
+				
+				echo '<li class="o-portfolio__item">' . get_the_title() . '</li>';
+			}
+			echo '</ul>';
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		} else {
+			// no posts found
+		}
+	}
