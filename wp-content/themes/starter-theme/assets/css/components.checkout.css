@@ -1,0 +1,18 @@
+.o-checkout label {
+	float: left;
+	width: 35%;
+}
+
+.o-checkout input, .o-checkout select, .o-checkout span, .o-checkout textarea {
+	float: right;
+	width: 60%;
+}
+
+.o-checkout span {
+	width: 77%;
+}
+
+.form-row {
+	clear: both;
+	overflow: hidden;
+}
