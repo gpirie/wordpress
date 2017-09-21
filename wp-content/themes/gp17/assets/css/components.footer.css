@@ -12,23 +12,20 @@
 	float: left;		
 }
 
-@media only screen and (max-width: 45.499em) {
-	.o-logo--site-footer {
-		margin-right: 1em;
-		margin-bottom: 1em;
-		width: 25%;
-	}
+.o-logo--site-footer {
+	margin-right: 1em;
+	margin-bottom: 1em;
+	width: 25%;
+}
 
-	.o-contact {
-		float: right;
-		text-align: right;
-	}
+.o-contact {
+	float: right;
+	text-align: right;
+}
 
-	.c-navmenu--footer_menu {
-		clear: both;
-		margin-bottom: 0;
-	}
-
+.c-navmenu--footer_menu {
+	clear: both;
+	margin-bottom: 0;
 }
 
 .c-navmenu__menu--footer_menu {
@@ -40,4 +37,8 @@
 	float: left;
 	margin-right: .35em;
 	margin-bottom: 0;
+}
+
+.copyright {
+	margin-bottom: 1em;
 }

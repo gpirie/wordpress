@@ -189,7 +189,7 @@
 
 		if( has_post_thumbnail() )
 		{
-			echo '<figure class="o-thumbnail">';
+			echo '<figure class="o-thumbnail o-'. get_post_type() .'__thumbnail">';
 
 			the_post_thumbnail( $size , array( 'class' => 'o-thumbnail__image', 'itemprop' => 'image' ) );
 			
