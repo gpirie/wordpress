@@ -1,0 +1,25 @@
+.o-portfolio__item {
+	float: left;
+	margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 45.5em) {
+	.o-portfolio__item--block {
+		width: 30%;
+	}
+
+	.o-portfolio__item--block:not(:nth-child(3n)) {
+		margin-right: 5%;
+	}
+
+	.o-portfolio__thumb {
+		float: left;
+		width: 30%;
+		margin-right: 5%;
+	}
+
+	.o-portfolio__description {
+		float: left;
+		width: 65%;
+	}
+}
