@@ -122,7 +122,8 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-titillium', '//fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i' ,null, GPWD_VERSION, 'screen' );	
 	
 	/* Objects */
-	wp_enqueue_style( 'gpwd-theme-pagination', GPWD_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-pagination', GPWD_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, GPWD_VERSION, 'screen' );
+	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );		
 
 	/* Components */
 	wp_enqueue_style( 'gpwd-theme-header', GPWD_DIRECTORY_URI . '/assets/css/components.header.css' ,null, GPWD_VERSION, 'screen' );	
@@ -134,7 +135,6 @@ function gpwd_theme_scripts()
 	/* Blocks */
 	wp_enqueue_style( 'gpwd-theme-block-text', GPWD_DIRECTORY_URI . '/assets/css/block.text.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-services', GPWD_DIRECTORY_URI . '/assets/css/block.services.css' ,null, GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/block.portfolio.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-featured', GPWD_DIRECTORY_URI . '/assets/css/block.featured.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* WooCommerce */

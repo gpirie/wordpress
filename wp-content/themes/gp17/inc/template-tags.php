@@ -348,6 +348,7 @@
 		);
 
 		$the_query = new WP_Query( $args );
+		update_post_thumbnail_cache();
 
 		// The Loop
 		if ( $the_query->have_posts() ) 
@@ -356,13 +357,37 @@
 			while ( $the_query->have_posts() ) 
 			{
 				$the_query->the_post();
-				
-				echo '<li class="o-portfolio__item">' . get_the_title() . '</li>';
+
+				?>
+					<li class="o-portfolio__item o-portfolio__item--page u-overflow">
+						<a class="o-portfolio__thumb" href="<?php the_permalink();?>" title="">
+							<?php gpwd_post_thumbnail( 'large' );?>
+						</a>
+
+						<section class="o-portfolio__description">
+							<h2 class="o-portfolio__title"><?php esc_attr_e( get_the_title() );?></h2>
+
+							<?php the_excerpt();?>
+
+							<a class="o-button o-button--portfolio" href="<?php the_permalink();?>">
+								Read More
+							</a>
+						</section>
+					</li>
+				<?php
+
 			}
 			echo '</ul>';
 			/* Restore original Post Data */
 			wp_reset_postdata();
-		} else {
+		} 
+		else {
 			// no posts found
 		}
 	}
+
+	function gpwd_wpcf7_class_attr( $class ) {
+	  $class .= ' o-form';
+	  return $class;
+	}
+	add_filter( 'wpcf7_form_class_attr', 'gpwd_wpcf7_class_attr' );

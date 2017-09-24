@@ -1,3 +1,14 @@
+.o-form {
+	margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 45.5em) {
+	.o-form {
+		float: right;
+		width: 65%;
+	}
+}
+
 .o-button {
 	display: block;
 }
