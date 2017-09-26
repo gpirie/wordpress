@@ -191,6 +191,7 @@ textarea {
 	background-repeat: no-repeat;
 	background-position: 10px center;
 	display: block;
+	margin-bottom: 1em;
 }
 
 .o-notice__message {

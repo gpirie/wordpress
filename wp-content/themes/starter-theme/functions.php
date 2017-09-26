@@ -8,7 +8,7 @@
  * @package Theme Name
  */
 
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) or die( 'Nice try' );
 
 define( 'STARTER_VERSION', '1.0.0-beta1' );
 define( 'STARTER_DIRECTORY_URI', get_template_directory_uri() );

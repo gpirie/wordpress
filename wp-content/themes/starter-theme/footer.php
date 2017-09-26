@@ -8,15 +8,8 @@
 ?>	
 			<footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				
-				<?php
-
-					if ( get_theme_mod( 'copyright' ) ) 
-					{				
-						echo '<small>&copy; '. date('Y') . ' ' . get_theme_mod( 'copyright' ) .'</small>';
-					}
-
-				?>
-
+				<small class="copyright u-block u-clear">&copy; <?php echo date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() );?></small>
+				
 			</footer>		
 
 			<?php wp_footer();?>

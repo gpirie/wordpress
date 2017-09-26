@@ -23,7 +23,7 @@
 	function starter_add_editor_styles() {
 
 		if( file_exists(  STARTER_THEME_INC . 'assets/css/editor-style.css' ) ) {
-	    	add_editor_style( 'assets/css/editor-style.css' );
+	    	add_editor_style( STARTER_THEME_INC . 'assets/css/editor-style.css' );
 		}
 	}
 	add_action( 'admin_init', 'starter_add_editor_styles' );
@@ -193,7 +193,7 @@
 				$copyright = ( $metadata['image_meta']['copyright'] ) ? $metadata['image_meta']['copyright'] : '';
 			}
 			//Render image
-			echo '<figure class="o-thumbnail">';
+			echo '<figure class="o-thumbnail u-relative">';
 
 			the_post_thumbnail( $size , array( 'class' => 'o-thumbnail__image', 'itemprop' => 'image', 'alt' => $alt, 'title' => $title ) );
 			

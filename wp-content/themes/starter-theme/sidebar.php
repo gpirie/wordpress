@@ -1,7 +1,5 @@
+<aside class="sidebar u-hidden@print">
 
-	
-	<aside class="sidebar u-hidden@print">
-	
-	<?php dynamic_sidebar('site-sidebar'); ?>
-	
-	</aside>
+<?php dynamic_sidebar('site-sidebar'); ?>
+
+</aside>
