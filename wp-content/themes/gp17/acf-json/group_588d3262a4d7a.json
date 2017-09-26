@@ -168,7 +168,7 @@
                                 "id": ""
                             },
                             "post_type": [
-                                "web_portfolio"
+                                "portfolio"
                             ],
                             "taxonomy": [],
                             "filters": [
@@ -248,5 +248,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1506285005
+    "modified": 1506469891
 }

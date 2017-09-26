@@ -119,11 +119,12 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-headings', GPWD_DIRECTORY_URI . '/assets/css/elements.headings.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-type', GPWD_DIRECTORY_URI . '/assets/css/elements.type.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-forms', GPWD_DIRECTORY_URI . '/assets/css/elements.forms.css' ,null, GPWD_VERSION, 'screen' );	
-	wp_enqueue_style( 'gpwd-theme-titillium', '//fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-gfonts', '//fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Nunito:700' ,null, GPWD_VERSION, 'screen' );	
 	
 	/* Objects */
 	wp_enqueue_style( 'gpwd-theme-pagination', GPWD_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, GPWD_VERSION, 'screen' );
-	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );		
+	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );
+	wp_enqueue_style( 'gpwd-theme-object-snippets', GPWD_DIRECTORY_URI . '/assets/css/object.snippets.css' ,null, GPWD_VERSION, 'screen' );		
 
 	/* Components */
 	wp_enqueue_style( 'gpwd-theme-header', GPWD_DIRECTORY_URI . '/assets/css/components.header.css' ,null, GPWD_VERSION, 'screen' );	
@@ -151,6 +152,8 @@ function gpwd_theme_scripts()
 	wp_enqueue_script( 'starter-script', GPWD_DIRECTORY_URI . '/assets/js/script.js', array(), GPWD_VERSION, true );
 	
 	wp_enqueue_script( 'html5shiv', GPWD_DIRECTORY_URI . '/assets/js/html5-shiv.js', array(), '3.7.2', false );
+	wp_enqueue_script( 'google-syntax-highlighter', '//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', array(), false );
+
 	add_filter( 'script_loader_tag', function( $tag, $handle ) 
 	{
 	    if ( $handle === 'html5shiv' ) :

@@ -1,3 +1,20 @@
+h1, h2, h3 {
+	font-family: Nunito;
+	color: #003399;
+}
+
+h1 {
+	font-size: 2.405em;
+}
+
+h2 {
+	font-size: 1.82em;
+}
+
+h3 {
+	font-size: 1.645em;
+}
+
 a {
 	text-decoration: none;
 }

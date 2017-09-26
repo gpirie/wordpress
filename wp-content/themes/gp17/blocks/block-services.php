@@ -12,7 +12,7 @@
 						<li class="c-services__service u-centre-text">
 							<?php
 								if( false === empty( get_sub_field( 'title' ) ) ) {
-									echo '<h1>'. get_sub_field( 'title' ) .'</h1>';
+									echo '<h2>'. get_sub_field( 'title' ) .'</h2>';
 								}
 
 								if( false === empty( get_sub_field( 'text' ) ) ) {

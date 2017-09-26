@@ -25,7 +25,7 @@
 		<?php
 			the_content();
 
-			gpwd_get_portfolio();
+			gpwd_get_snippets();
 		?>
 
 	</div>

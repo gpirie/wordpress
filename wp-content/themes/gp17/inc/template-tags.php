@@ -343,7 +343,7 @@
 
 	function gpwd_get_portfolio() {
 		$args = array(
-			'post_type' => 'web_portfolio',
+			'post_type' => 'portfolio',
 			'posts_per_page' => -1
 		);
 
@@ -391,3 +391,43 @@
 	  return $class;
 	}
 	add_filter( 'wpcf7_form_class_attr', 'gpwd_wpcf7_class_attr' );
+
+	function gpwd_get_snippets() {
+		$args = array(
+			'post_type' => 'snippets',
+			'posts_per_page' => -1
+		);
+
+		$the_query = new WP_Query( $args );
+		update_post_thumbnail_cache();
+
+		// The Loop
+		if ( $the_query->have_posts() ) 
+		{
+			echo '<ul class="o-snippets">';
+			while ( $the_query->have_posts() ) 
+			{
+				$the_query->the_post();
+
+				?>
+					<li class="o-snippets__item o-snippets__item--page u-overflow">
+						
+						<h2 class="o-snippets__title"><?php esc_attr_e( get_the_title() );?></h2>
+
+						<pre class="o-snippets__code prettyprint linenums">
+							<?php echo htmlentities( get_field( 'code_block' ) );?>
+						</pre>
+
+						<section class="o-snippets__description">
+							
+							<?php the_content();?>
+
+						</section>
+					</li>
+				<?php
+			}
+			echo '</ul>';
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		}
+	}

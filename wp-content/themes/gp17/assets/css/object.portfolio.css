@@ -3,6 +3,11 @@
 	margin-bottom: 1em;
 }
 
+.o-portfolio__item--page {
+	border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 1em;
+}
+
 @media only screen and (min-width: 45.5em) {
 	.o-portfolio__item--block {
 		width: 30%;

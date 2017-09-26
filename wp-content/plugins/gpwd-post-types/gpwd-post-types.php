@@ -62,7 +62,7 @@ function gpwd_custom_post_type_init() {
       'publicly_queryable'  => true,
       'capability_type'     => 'page',
     );
-    register_post_type( 'web_portfolio', $args );
+    register_post_type( 'portfolio', $args );
     
     register_taxonomy(
       'portfolio_type',

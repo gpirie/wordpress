@@ -1,0 +1,43 @@
+{
+    "key": "group_59cad352a7c41",
+    "title": "Code",
+    "fields": [
+        {
+            "key": "field_59cad359bb561",
+            "label": "Code Block",
+            "name": "code_block",
+            "type": "textarea",
+            "instructions": "Enter the code snippet here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "snippets"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506468303
+}

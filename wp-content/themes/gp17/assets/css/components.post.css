@@ -1,3 +1,9 @@
+.o-post {
+    margin: 0 auto 1em auto;
+    width: 82%;
+}
+
 .o-post__thumbnail {
-	float: left;
+	display: block;
+	margin: 0 auto 1em auto;
 }

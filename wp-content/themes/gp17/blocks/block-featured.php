@@ -22,12 +22,13 @@
 										</h2>
 
 										<div itemprop="text articleBody">
-											<?php the_excerpt( $p->ID );?>
+											<?php echo $p->post_excerpt;?>
 										</div>
+
+										<a class="o-button" href="<?php echo get_permalink( $p->ID );?>">Continue&hellip;</a>
 
 									</div>
 
-									<a class="button" href="<?php echo get_permalink( $p->ID );?>">Continue&hellip;</a>
 								</li>
 							<?php 
 						} ?>

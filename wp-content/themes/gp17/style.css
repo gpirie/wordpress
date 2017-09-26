@@ -17,7 +17,17 @@ Brand Blue:		#003399;
 Light Blue		#00798c
 Dark Blue		#003d5b
 
+Fonts:
+http://www.modularscale.com/?1.125&em&1.462?1.125&em&1.618
+
 $trumps
 
 
 /* $trumps - Really specific styles that override styles set above. */
+
+/* Google Pretty Print*/
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
+  margin: 0;
+}

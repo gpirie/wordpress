@@ -96,7 +96,7 @@ img {
 img:before {  
   content: "";
   display: block;
-  top: -10px;
+  top: 0;
   left: 0;
   height: calc(100% + 10px);
   width: 100%;

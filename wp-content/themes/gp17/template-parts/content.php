@@ -13,13 +13,13 @@
 
 	<header class="o-post__header u-overflow u-relative">
 
-		<?php
+		<h1 itemprop="title" class="o-post__title u-clear">
+			<a class="o-post__titlelink" title="<?php the_title();?>" href="<?php the_permalink();?>">
+				<?php the_title();?>
+			</a>
+		</h1>
 
-			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );			
-
-			gpwd_post_thumbnail();
-
-		?>
+		<?php gpwd_post_thumbnail(); ?>
 
 	</header><!-- .entry-header -->
 
@@ -34,12 +34,10 @@
 
 	<footer class="o-post__footer u-clear u-hidden@print">
 		
-		<?php
-			gpwd_get_the_categories();
+		<a class="o-button o-button__post" title="<?php the_title();?>" href="<?php the_permalink();?>">
+			Read More
+		</a>
 
-			gpwd_get_the_tags();
-		?>
-		
 	</footer>
 
 </article>
