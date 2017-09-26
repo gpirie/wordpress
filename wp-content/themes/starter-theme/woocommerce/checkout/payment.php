@@ -23,7 +23,7 @@ if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_before_payment' );
 }
 ?>
-<div id="payment" class="woocommerce-checkout-payment">
+<div id="payment" class="woocommerce-checkout-payment o-checkout__payment">
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">
 			<?php
@@ -32,7 +32,7 @@ if ( ! is_ajax() ) {
 						wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
 					}
 				} else {
-					echo '<li class="woocommerce-notice woocommerce-notice--info woocommerce-info">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) : __( 'Please fill in your details above to see available payment methods.', 'woocommerce' ) ) . '</li>';
+					echo '<li class="o-notice o-notice--info woocommerce-notice woocommerce-notice--info woocommerce-info">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? __( 'Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) : __( 'Please fill in your details above to see available payment methods.', 'woocommerce' ) ) . '</li>';
 				}
 			?>
 		</ul>
@@ -47,7 +47,7 @@ if ( ! is_ajax() ) {
 
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
-		<?php echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' ); ?>
+		<?php echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="o-button o-button--checkout button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' ); ?>
 
 		<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 

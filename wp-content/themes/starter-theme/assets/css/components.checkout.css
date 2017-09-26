@@ -1,18 +1,27 @@
-.o-checkout label {
-	float: left;
-	width: 35%;
+@media only screen and (max-width: 45.49em) {
+	.o-form__input--checkout {
+		width: 100%;
+	}
 }
 
-.o-checkout input, .o-checkout select, .o-checkout span, .o-checkout textarea {
-	float: right;
-	width: 60%;
+@media only screen and (min-width: 45.5em) {
+	.o-form__label--checkout {
+		float: left;
+		width: 35%;
+	}
+
+	.o-form__input--checkout, .o-checkout span {
+		float: right;
+		width: 60%;
+	}
+
+	.o-checkout span {
+		width: 77%;
+	}
 }
 
-.o-checkout span {
-	width: 77%;
-}
-
-.form-row {
-	clear: both;
-	overflow: hidden;
+.o-checkout__payment {
+	background-color: #eaeaea;
+	padding: 1em;
+	margin-bottom: 1em;
 }

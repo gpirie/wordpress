@@ -39,16 +39,18 @@
 	add_filter( 'wc_add_to_cart_message', 'starter_add_to_cart_message' );
 
 	//Checkout Fields
-	function starter_override_checkout_fields( $fields ) {
-		print_r($fields);
+	function starter_checkout_fields_classes( $args, $key, $value ) { 
+		$args['class'][] = 'o-form__row o-form__row--checkout u-overflow u-clear';
+		$args['label_class'] = 'o-form__label o-form__label--checkout u-block';
+	    $args['input_class'][] = 'o-form__input o-form__input--checkout u-block';
 
-		return $fields;
-	}
-	add_filter( 'woocommerce_checkout_fields' , 'starter_override_checkout_fields' );
-
+	    return $args;
+	};
+	add_filter( 'woocommerce_form_field_args', 'starter_checkout_fields_classes', 10, 3 );
+	
 	function starter_empty_cart_message() {
 
-		$message = 'dsdfsdf';
+		$message = 'Your basket is currently empty.';
 
 		echo '<div class="o-notice o-notice--error">'. $message .'</div>';
 
@@ -56,10 +58,20 @@
 	add_filter( 'wc_empty_cart_message', 'starter_empty_cart_message' );
 
 	//remove product tabs but keep description
-	function remove_woocommerce_product_tabs( $tabs ) {
+	function starter_remove_product_tabs( $tabs ) {
 		unset( $tabs['description'] );
 		unset( $tabs['reviews'] );
 		unset( $tabs['additional_information'] );
 		return $tabs;
 	}
-	add_filter( 'woocommerce_product_tabs', 'remove_woocommerce_product_tabs', 98 );
+	add_filter( 'woocommerce_product_tabs', 'starter_remove_product_tabs', 98 );
+
+	//Checkout custom thank you page.
+	function starter_checkout_redirect_after_purchase() {
+		global $wp;
+		if ( is_checkout() && !empty( $wp->query_vars['order-received'] ) ) {
+			wp_redirect( home_url( 'thank-you' ) );
+			exit;
+		}
+	}
+	add_action( 'template_redirect', 'starter_checkout_redirect_after_purchase' );
