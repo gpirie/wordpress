@@ -34,7 +34,7 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 ) );
 ?>
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?> o-productgallery" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<figure class="woocommerce-product-gallery__wrapper">
+	<figure class="woocommerce-product-gallery__wrapper u-relative">
 		<?php
 		$attributes = array(
 			'title'                   => get_post_field( 'post_title', $post_thumbnail_id ),
@@ -46,7 +46,9 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 		);
 
 		if ( has_post_thumbnail() ) {
-			$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image o-productgallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
+			$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image o-productgallery__image u-relative">';
+			$html .= apply_filters( 'woocommerce_sale_flash', '<div class="o-product__onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</div>', $post, $product );
+			$html .= '<a href="' . esc_url( $full_size_image[0] ) . '">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
 			$html .= '</a></div>';
 		} else {
