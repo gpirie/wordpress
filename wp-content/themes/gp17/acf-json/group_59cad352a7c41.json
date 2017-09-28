@@ -3,6 +3,32 @@
     "title": "Code",
     "fields": [
         {
+            "key": "field_59cd67d476150",
+            "label": "Language",
+            "name": "language",
+            "type": "select",
+            "instructions": "Declare the language of the snipper",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "css": "CSS",
+                "html": "HTML",
+                "php": "PHP"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_59cad359bb561",
             "label": "Code Block",
             "name": "code_block",
@@ -11,7 +37,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
@@ -32,12 +58,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1506468303
+    "modified": 1506637300
 }

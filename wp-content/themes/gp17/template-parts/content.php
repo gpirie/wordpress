@@ -19,16 +19,11 @@
 			</a>
 		</h1>
 
-		<?php gpwd_post_thumbnail(); ?>
-
 	</header><!-- .entry-header -->
 
 	<div class="o-post__content u-overflow" itemprop="text articleBody">
 
-		<?php
-
-			the_excerpt();
-		?>
+		<?php the_excerpt();?>
 
 	</div>	
 

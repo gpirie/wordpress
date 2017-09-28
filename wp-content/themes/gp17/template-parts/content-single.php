@@ -11,22 +11,13 @@
 
 	<header class="o-post__header u-overflow u-relative">
 
-		<?php
-
-			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );			
-
-			gpwd_post_thumbnail();
-
-		?>
+		<?php the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' ); ?>
 
 	</header><!-- .entry-header -->
 
 	<div class="o-post__content u-overflow" itemprop="text articleBody">
 
-		<?php
-
-			the_content();
-		?>
+		<?php the_content();?>
 
 	</div>	
 

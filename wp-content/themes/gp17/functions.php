@@ -138,6 +138,8 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-block-services', GPWD_DIRECTORY_URI . '/assets/css/block.services.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-featured', GPWD_DIRECTORY_URI . '/assets/css/block.featured.css' ,null, GPWD_VERSION, 'screen' );	
 
+	wp_enqueue_style( 'gpwd-theme-prism', GPWD_DIRECTORY_URI . '/assets/css/prism.css' ,null, GPWD_VERSION, 'screen' );	
+
 	/* WooCommerce */
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 		wp_enqueue_style( 'gpwd-theme-product', GPWD_DIRECTORY_URI . '/assets/css/object.product.css' ,null, GPWD_VERSION, 'screen' );
@@ -146,13 +148,13 @@ function gpwd_theme_scripts()
 	}
 
 	/* Trumps */
-	wp_enqueue_style( 'starter-style', GPWD_DIRECTORY_URI . '/style.css' ,null, GPWD_VERSION, 'screen' );	
+	wp_enqueue_style( 'gpwd-theme-style', GPWD_DIRECTORY_URI . '/style.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* JS */
-	wp_enqueue_script( 'starter-script', GPWD_DIRECTORY_URI . '/assets/js/script.js', array(), GPWD_VERSION, true );
+	wp_enqueue_script( 'gpwd-theme-script', GPWD_DIRECTORY_URI . '/assets/js/script.js', array(), GPWD_VERSION, true );
 	
 	wp_enqueue_script( 'html5shiv', GPWD_DIRECTORY_URI . '/assets/js/html5-shiv.js', array(), '3.7.2', false );
-	wp_enqueue_script( 'google-syntax-highlighter', '//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', array(), false );
+	wp_enqueue_script( 'gpwd-prism', GPWD_DIRECTORY_URI . '/assets/js/prism.js', array(), false );
 
 	add_filter( 'script_loader_tag', function( $tag, $handle ) 
 	{

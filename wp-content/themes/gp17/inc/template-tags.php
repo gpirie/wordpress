@@ -394,8 +394,7 @@
 
 	function gpwd_get_snippets() {
 		$args = array(
-			'post_type' => 'snippets',
-			'posts_per_page' => -1
+			'post_type' => 'snippets'
 		);
 
 		$the_query = new WP_Query( $args );
@@ -414,8 +413,14 @@
 						
 						<h2 class="o-snippets__title"><?php esc_attr_e( get_the_title() );?></h2>
 
-						<pre class="o-snippets__code prettyprint linenums">
-							<?php echo htmlentities( get_field( 'code_block' ) );?>
+						<?php
+							$snippet_language = ( get_field( 'language' ) ) ? get_field( 'language' ) : '';
+						?>
+
+						<pre class="o-snippets__code">
+							<code class="language-<?php esc_attr_e( $snippet_language );?>">
+								<?php echo htmlentities( get_field( 'code_block' ) );?>
+							</code>
 						</pre>
 
 						<section class="o-snippets__description">

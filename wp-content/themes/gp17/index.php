@@ -25,6 +25,8 @@
 
 	endif;
 
+	echo paginate_links();
+
 	echo '</main>';
 
 	get_footer();
