@@ -10,4 +10,8 @@
 		width: 55%;
 		width: calc(60%-1em);
 	}
+
+	.o-featuredposts__excerpt {
+		margin: 1em 0;
+	}
 }

@@ -17,11 +17,11 @@
 									
 									<div class="o-featuredposts__content">
 
-										<h2 itemprop="title">
+										<h2 class="o-featuredposts__title" itemprop="title">
 											<a class="o-featuredposts__link" href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a>
 										</h2>
 
-										<div itemprop="text articleBody">
+										<div class="o-featuredposts__excerpt" itemprop="text articleBody">
 											<?php echo $p->post_excerpt;?>
 										</div>
 

@@ -8,6 +8,10 @@
     padding-bottom: 1em;
 }
 
+.o-portfolio__about {
+	margin: 1.5em 0;
+}
+
 @media only screen and (min-width: 45.5em) {
 	.o-portfolio__item--block {
 		width: 30%;
@@ -19,7 +23,7 @@
 
 	.o-portfolio__thumb {
 		float: left;
-		width: 30%;
+		width: 35%;
 		margin-right: 5%;
 	}
 

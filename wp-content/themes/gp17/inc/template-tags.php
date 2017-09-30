@@ -178,7 +178,7 @@
 
 			$post_type = get_post_type();
 
-			$classes[] = 'o-post--'. $post_type;
+			$classes[] = 'o-post o-post--'. $post_type;
 		}
 		
 		return $classes;
@@ -435,4 +435,14 @@
 			/* Restore original Post Data */
 			wp_reset_postdata();
 		}
+	}
+
+	function gpwd_get_acf_field( $key ) {
+		$value = get_field( $key );
+		return ( false === empty( $value ) ) ? $value : '';
+	}
+
+	function gpwd_get_acf_sub_field( $key ) {
+		$value = get_sub_field( $key );
+		return ( false === empty( $value ) ) ? $value : '';
 	}

@@ -32,6 +32,66 @@ The more the merrier! To get started, check out our <a href="https://github.com/
 
 == Changelog ==
 
+= 1.2.1 =
+
+- Fix issue where invalid block resolution options were not clickable.
+
+= 1.2.0 =
+
+- Resolve block conflicts when editing a block post in the classic editor. Gutenberg's strict content validation has helped identify formatting incompatibilities, and continued improvements are planned for future releases.
+- Add word and block count to table of contents.
+- Add support for meta attributes (custom fields) in block attributes. This allows block authors to specify attributes to live outside of post_content entirely.
+- Allow Gutenberg to be the default editor for posts with blocks and add links to classic editor.
+- Accessibility: add landmark regions.
+- Add metabox placeholder shell.
+- Add crash recovery for blocks which error while saving.
+- Hide Sidebar panels if the user doesn't have the right capabilities.
+- Refactor PostTaxonomies to use 'withApiData'.
+- Create 'withApiData' higher order component for managing API data.
+- Make casing consistent.
+- Allow toolbar wrapper to be clicked through.
+- Support and bootstrap server-registered block attribute schemas.
+- Shift focus into popover when opened.
+- Reuse the tabbable utility to retrieve the tabbables elements in WritingFlow.
+- Change placeholder text on button.
+- Persist the sate of the sidebar across refresh.
+- Use a small multiselect buffer zone, improving multiple block selection.
+- Close popover by escape keypress.
+- Improve dropzone contrast ratio.
+- Improve search message to add context.
+- Improve string extraction for localized strings.
+- Fixed z-index issue of gallery image inline menu.
+- Fixed image block resizing to set the figure wrapper.
+- Fixed column widths in gallery block.
+- Fixed parsing in do_blocks() and rendering of blocks on frontend in the_content.
+- Fixed position of upload svg on mobile.
+
+= 1.1.0 =
+
+* Add blocks "slash" autocomplete—shortcut to continue adding new block without leaving the keyboard.
+* Add ability to remove an image from a gallery from within the block (selecting image).
+* Add option to open a created link in a new window.
+* Support and bootstrap server-registered block attribute schemas.
+* Improve accessibility of add-new-category form.
+* Documentation gets an updated design and content improvements.
+* Adjust column width calculation in gallery block to properly respect column count.
+* Move pending review control together with sticky toggle at the bottom.
+* Add caption styling for video block.
+* Allow removing a "classic text" block with backspaces.
+* Allow Button block to show placeholder text.
+* Drop the deprecated button-secondary class name.
+* Fix link dialog not showing in Safari when caret is in the middle of the word.
+* Fix adding new categories and position newly added term at the top.
+* Fix the resetting of drop-zone states after dropping a file.
+* Fix embed saving "undefined" text when URL is not set.
+* Fix placeholder styling on Text when background color is set.
+* Update Composer + PHPCS.
+* Rename default block handlers.
+* Update code syntax tabs in docutron.
+* Link to plugin download and github repo from docutron.
+* Added block API document.
+* Add "Edit and Save" document.
+
 = 1.0.0 =
 * Restored keyboard navigation with more robust implementation, addressing previous browser issues.
 * Added drag and drop for media with pointer to create new blocks.
