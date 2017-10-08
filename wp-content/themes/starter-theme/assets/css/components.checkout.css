@@ -1,7 +1,21 @@
+.o-checkout__review {
+	margin-bottom: 3em;
+}
+
 @media only screen and (max-width: 45.49em) {
 	.o-form__input--checkout {
 		width: 100%;
 	}
+}
+
+.o-checkout__payment {
+	background-color: #eaeaea;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.woocommerce-additional-fields {
+	margin-top: 2em;
 }
 
 @media only screen and (min-width: 45.5em) {
@@ -10,18 +24,28 @@
 		width: 35%;
 	}
 
-	.o-form__input--checkout, .o-checkout span {
+	.o-form__input--checkout, .o-checkout__details .select2 {
 		float: right;
 		width: 60%;
 	}
 
-	.o-checkout span {
-		width: 77%;
+	.o-checkout__details {
+		float: left;
+		width: 45%;
+		margin-right: 10%;
 	}
-}
 
-.o-checkout__payment {
-	background-color: #eaeaea;
-	padding: 1em;
-	margin-bottom: 1em;
+	.o-checkout__review, .o-checkout__couponform {
+		float: right;
+		width: 45%;
+	}
+
+	.c-customerdetails__address {
+		float: left;
+		width: 45%;
+	}
+
+	.c-customerdetails__address:not(:nth-child(even)) {
+		margin-right: 5%;
+	}
 }

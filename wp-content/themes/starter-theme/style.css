@@ -16,3 +16,10 @@ $trumps
 
 
 /* $trumps - Really specific styles that override styles set above. */
+
+/* WooCommerce */
+
+.o-checkout__details .select2 {
+	display: block;
+	width: 60% !important;
+}

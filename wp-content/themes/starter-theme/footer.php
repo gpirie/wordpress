@@ -8,7 +8,7 @@
 ?>	
 			<footer itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 				
-				<small class="copyright u-block u-clear">&copy; <?php echo date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo() );?></small>
+				<small class="copyright u-block u-clear">&copy; <?php echo date('Y') . ' ' . ( get_theme_mod( 'copyright' ) ? get_theme_mod( 'copyright' ) : get_bloginfo( 'name' ) );?></small>
 				
 			</footer>		
 

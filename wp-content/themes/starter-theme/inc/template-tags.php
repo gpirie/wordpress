@@ -246,11 +246,15 @@
 	}
 
 	function starter_get_acf_field( $key ) {
-		$value = get_option( $key );
+		$value = get_field( $key );
 		return ( false === empty( $value ) ) ? $value : '';
 	}
 
-	
+	function starter_get_acf_sub_field( $key ) {
+		$value = get_sub_field( $key );
+		return ( false === empty( $value ) ) ? $value : '';
+	}
+
 	function my_post_gallery($output, $attr) {
 	    global $post;
 
@@ -323,190 +327,34 @@
 		', $type, $text);
 	}
 
-	function starter_validate_telephone($telephone) {
+	function starter_social_links() {
+		$social_links = array();
 
-		if(!empty($telephone)) {
-			$regex = "/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/";
+		$social_links[] = get_theme_mods();
 
-			$telephone = str_replace(" ", "", $telephone);
-			$telephone = trim($telephone);
+		if( false === empty( $social_links ) ) {
 
-			return (1 == preg_match($regex, $telephone)) ? true : false;
-		}
-		return false;
-	}
+			$html = '<ul class="o-sociallinks u-overflow">';
 
-	function starter_validate_postcode($uk_postcode) {
+			foreach ( $social_links[0] as $key => $value ) {
+				$exp_key = explode( '_', $key );
 
-		if(!empty($uk_postcode)) {
-
-			$regex = "/^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([AZa-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))[0-9][A-Za-z]{2})$/";
-
-			$uk_postcode = str_replace(" ", "", $uk_postcode);
-			$uk_postcode = trim($uk_postcode);
-
-			return (1 == preg_match($regex, $uk_postcode)) ? true : false;
-		}
-
-		return false;
-	}
-
-	function starter_form_posted_back() {
-		return !empty($_POST['form_post_nonce']);
-	}
-
-	function starter_custom_contact_form_display() {
-
-		//Generate form markup
-		$form = '
-			<form class="o-form o-form--contactsupplier" action="'. get_permalink() .'" method="post">
-				<label for="first-name">First Name</label>
-				<input id="first-name" name="first_name" type="text" />
-
-				<label for="last-name">Last Name</label>
-				<input id="last-name" name="last_name" type="text" />
-
-				<label for="email">Email Address</label>
-				<input id="email" name="email" type="email" />
-
-				<label for="wedding-date">Wedding Date</label>
-				<input id="wedding-date" name="wedding_date" type="date" />
-
-				<label for="phone-number">Phone Number</label>
-				<input id="phone-number" name="phone_number" type="tel" />
-
-				<label for="message">Message</label>
-				<textarea id="message" name="message"></textarea>
-
-				<input type="hidden" name="action" value="process_custom_contact_form">
-				<input type="hidden" name="form_post_nonce" value="'. wp_create_nonce( 'starter_custom_contact_form_nonce' ) .'" />
-				<input type="hidden" name="form_url" value="'. get_permalink() .'" />
-
-				<input name="contact_supplier" type="submit" value="Submit" />
-
-			</form>
-		';
-
-		return $form;
-	}
-
-	function starter_custom_contact_form_validate() {
-
-		//response messages
-		$missing_content = "Please supply all information.";
-		$email_invalid   = "Email Address Invalid.";
-		$message_unsent  = "Message was not sent. Try Again.";
-		$message_sent    = "Thanks! Your message has been sent.";
-
-		//user posted variables
-		$first_name = $_POST['first_name'];
-		$last_name = $_POST['last_name'];
-		$email = $_POST['email'];
-		$wedding_date = $_POST['wedding_date'];
-		$phone_number = $_POST['phone_number'];
-		$message = $_POST['message'];
-		$url = $_POST['form_url'];
-		
-		//Validation
-		$validation_errors = array();
-
-		//Email validation
-		if( empty( $_POST['first-name'] ) ) {
-			$validation_errors['first-name'] = 'Please enter your first name.';
-		}
-
-		if( isset( $_POST['email'] ) && !is_email( $_POST['email'] ) ) {
-			$validation_errors['email'] = 'Please enter a valid email address.';
-		}
-
-		if( empty( $_POST['date_of_wedding'] ) ) {
-			$validation_errors['date_of_wedding'] = 'Please enter a valid wedding date (in the format DD/MM/YYYY).';
-		}
-
-		return $validation_errors;
-
-	}
-
-	function starter_log($message, $additional_data = false, $type = 'error') {
-		wpc_log_error($type, $message, $additional_data, 'vow-awards-errors');
-	}
-
-	function starter_custom_contact_form_thank_you() {
-		return '
-			<div class="o-notice o-notice--success">
-				<p class="o-notice__message">Thank you for submitting a nomination to The Scottish VOWS Awards.</p>
-			</div>';
-	}
-
-	function starter_custom_contact_form_process() {
-
-		if( ! starter_form_posted_back() ) {
-			va_log('No $_POST data');
-			return false;
-		}
-
-		//php mailer variables
-		$to = get_option( 'admin_email' );
-		$subject = "Someone sent a message from ".get_bloginfo('name');
-		$headers = 'From: '. $email . "\r\n" .
-		'Reply-To: ' . $email . "\r\n";
-
-		if( ! empty( $_POST ) ) 
-		{
-			$sent = wp_mail( $to, $subject, strip_tags( $message ), $headers );
-
-			if( $sent ) {
-				starter_display_notification( $message_sent, 'success' );
+				$network_name = $exp_key[1];
+				
+				if( $exp_key[0] === 'social' && false === empty( $value ) )
+				{
+					$html .= '<li class="o-sociallinks__item o-sociallinks__item--'. $network_name .'">';
+					$html .= '<a target="_blank" class="o-sociallinks__link u-block" href="'. esc_url( $value ) .'" title="'. ucwords( $network_name ) .'">';
+					$html .= '<img alt="" title="'. ucwords( $network_name ) .'" src="'. get_stylesheet_directory_uri() .'/assets/img/icons/'. $network_name .'.svg" />';
+					$html .= '</a>';
+					$html .= '</li>';
+				}
 			}
-			else {
-				starter_display_notification( $message_unsent, 'error' );
-			}
+
+			$html .= '</ul>';
 		}
-		else
-		{
-			return $form;
-		}
+
+		echo $html;
 	}
+
 	
-	function starter_contact_form() {
-		
-		$html = '';
-		$display_form = true;
-
-		// Form submission? Validate and save?
-		if( starter_form_posted_back() ) 
-		{
-			// Validate form!
-			if( $errors = starter_custom_contact_form_validate() ) 
-			{
-				foreach( $errors as $error ) {
-					$html .= starter_display_notification( $error, 'error' );
-				}
-
-			} 
-			else 
-			{
-				// Save data
-				$save_result = starter_custom_contact_form_process();
-
-				if( $save_result ) 
-				{
-					$html .= va_nomination_form_thank_you();
-					$display_form = false;
-				} 
-				else 
-				{
-					// Display error.
-					$html .= starter_display_notification( 'general-error', 'error' );
-				}
-			}
-		}
-
-		// Do we need to display the form (first time page visit or validation error)?
-		if($display_form) {
-			$html .= starter_custom_contact_form_display();
-		}
-
-		return $html;
-	}
-	add_shortcode( 'contact_form', 'starter_contact_form' );

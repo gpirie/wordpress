@@ -3,111 +3,35 @@
 	
 	function starter_customiser( $wp_customize )
 	{
-		//Advertising Section
-		$wp_customize->add_section( 'starter_theme_advertising' , array(
-			'title'      => __( 'Advertising', 'starter-theme' ),
-			'priority'   => 50,
-		) );
-
-		//DFP Network
-		$wp_customize->add_setting( 'dfp_network', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'dfp_network', array(
-			'label' => 'DFP Network',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'dfp_network',
-			'type' => 'text',
-		) );
-
-		//Show leaderboard?
-		$wp_customize->add_setting( 'leaderboard', array(
-			'default' => true,
-		) );
-
-		$wp_customize->add_control( 'leaderboard', array(
-			'label' => 'Display Leaderboard',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'leaderboard',
-			'type' => 'checkbox',
-		) );
-
-		//In article ads?
-		$wp_customize->add_setting( 'in_article', array(
-			'default' => false,
-		) );
-
-		$wp_customize->add_control( 'in_article', array(
-			'label' => 'Add advert within article?',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'in_article',
-			'type' => 'checkbox',
-		) );
-
-		$wp_customize->add_setting( 'in_article_number_short_form', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'in_article_number_short_form', array(
-			'label' => 'Short form posts: Insert advert after paragraph:',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'in_article_number_short_form',
-			'type' => 'number',
-		) );	
-
-		$wp_customize->add_setting( 'in_article_number_medium_form', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'in_article_number_medium_form', array(
-			'label' => 'Medium form posts: Insert advert after paragraph:',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'in_article_number_medium_form',
-			'type' => 'number',
-		) );	
-
-		$wp_customize->add_setting( 'in_article_number_long_form', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'in_article_number_long_form', array(
-			'label' => 'Long form posts: Insert advert after paragraph:',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'in_article_number_long_form',
-			'type' => 'number',
-		) );		
-
-
-		$wp_customize->add_setting( 'in_article_align', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'in_article_align', array(
-			'label' => 'Alignment of advert',
-			'section' => 'starter_theme_advertising',
-			'settings' => 'in_article_align',
-			'type'     => 'select',
-			'choices'  => array(
-				'alignleft'  => 'Left',
-				'alignright' => 'Right',
-				'aligncenter'=> 'Centre'
-			),
-		) );		
-
 		//Social Media
 		$social_links = array();
 		$social_links[] = array(
-			'slug'	=>	'facebook_account',
+			'slug'	=>	'social_facebook_account',
 			'label'	=>	__('Facebook Page Link')
 		);
 		$social_links[] = array(
-			'slug'	=>	'twitter_account',
+			'slug'	=>	'social_twitter_account',
 			'label'	=>	__('Twitter Page Link')
 		);
 		$social_links[] = array(
-			'slug'	=>	'instagram_account',
+			'slug'	=>	'social_instagram_account',
 			'label'	=>	__('Instagram Page Link')
+		);
+		$social_links[] = array(
+			'slug'	=>	'social_pinterest_account',
+			'label'	=>	__('Pinterest Page Link')
+		);
+		$social_links[] = array(
+			'slug'	=>	'social_linkedin_account',
+			'label'	=>	__('Linked In Page Link')
+		);
+		$social_links[] = array(
+			'slug'	=>	'social_googleplus_account',
+			'label'	=>	__('Google Plus Page Link')
+		);
+		$social_links[] = array(
+			'slug'	=>	'social_youtube_account',
+			'label'	=>	__('YouTube Page Link')
 		);
 
 		$wp_customize->add_section( 'starter_theme_social' , array(
@@ -134,72 +58,6 @@
 				) 
 			);
 		}
-
-		//Gigya
-		$wp_customize->add_section( 'starter_theme_sso' , array(
-			'title'      => __( 'Single Sign On', 'starter-theme' ),
-			'priority'   => 50,
-		) );
-
-		$wp_customize->add_setting( 'enable_sso', array(
-			'default' => true,
-		) );
-
-		$wp_customize->add_control( 'enable_sso', array(
-			'label' => 'Single Sign On',
-			'section' => 'starter_theme_sso',
-			'type' => 'checkbox',
-		) );
-
-		$wp_customize->add_setting( 'sso_default_brand', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'sso_default_brand', array(
-			'label' => 'Default Brand',
-			'section' => 'starter_theme_sso',
-			'settings' => 'sso_default_brand',
-			'type' => 'text',
-		) );
-
-		//Sailthru
-		$wp_customize->add_section( 'starter_theme_sailthru' , array(
-			'title'      => __( 'Sailthru', 'starter-theme' ),
-			'priority'   => 50,
-		) );
-
-		$wp_customize->add_setting( 'sailthru_cookie_domain', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'sailthru_cookie_domain', array(
-			'label' => 'Cookie Domain',
-			'section' => 'starter_theme_sailthru',
-			'settings' => 'sailthru_cookie_domain',
-			'type' => 'text',
-		) );
-
-		$wp_customize->add_setting( 'sailthru_horizon_support', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'sailthru_horizon_support', array(
-			'label' => 'Horizon Domain',
-			'section' => 'starter_theme_sailthru',
-			'settings' => 'sailthru_horizon_support',
-			'type' => 'text',
-		) );
-
-		$wp_customize->add_setting( 'sailthru_newsletter_name', array(
-			'default' => '',
-		) );
-
-		$wp_customize->add_control( 'sailthru_newsletter_name', array(
-			'label' => 'Newsletter Name',
-			'section' => 'starter_theme_sailthru',
-			'settings' => 'sailthru_newsletter_name',
-			'type' => 'text',
-		) );
 
 		//Footer
 		$wp_customize->add_section( 'starter_theme_footer' , array(

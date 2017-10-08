@@ -23,13 +23,13 @@ td, th {
 	padding: .35em;
 }
 
+th {
+	background-color: #ddd;
+}
+
 @media screen and (max-width: 37.5em) {
 	thead {
 		display: none;
-	}
-
-	tr:nth-of-type(2n) {
-		background-color: inherit;
 	}
 
 	tr td:first-child {
@@ -45,13 +45,6 @@ td, th {
 		content: attr(data-th); 
 		display: block;
 		text-align:center;  
-	}
-}
-
-@media screen and (min-width: 37.6em) {
-
-	tr:nth-of-type(2n) {
-		background-color: #ddd;
 	}
 }
 

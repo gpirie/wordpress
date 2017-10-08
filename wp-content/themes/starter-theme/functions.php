@@ -55,15 +55,6 @@ function starter_theme_setup()
     remove_action('wp_head', 'feed_links', 2); 
 	remove_action('wp_head', 'feed_links_extra', 3);
 
-	//DFP
-	if ( get_theme_mod( 'dfp_network' ) ) 
-	{
-		add_theme_support( 'dfp', array(
-		    'network' => get_theme_mod( 'dfp_network' ),
-		    'zepto'	  => get_theme_mod( 'zepto' )
-		) );
-	}
-
 	//Woocommerce
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 		add_theme_support( 'woocommerce' );
@@ -84,18 +75,18 @@ function starter_theme_setup()
 }
 add_action( 'after_setup_theme', 'starter_theme_setup' );
 
-function prefix_remove_css_section( $wp_customize ) {
+function starter_customizer_remove_css_section( $wp_customize ) {
 	$wp_customize->remove_section( 'custom_css' );
 }
-add_action( 'customize_register', 'prefix_remove_css_section', 15 );
+add_action( 'customize_register', 'starter_customizer_remove_css_section', 15 );
 
 function starter_sidebars() {
 	register_sidebar( array( 
 		'name' => 'Site Sidebar',
 		'id' => 'site-sidebar', 
 		'description'   => __( 'Add widgets to the sidebar throughout the site.', 'wyvex' ),
-		'before_widget' => '<div class="o-widget">',
-		'after_widget'  => '</div>',
+		'before_widget' => '<aside class="o-widget">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="o-widget__title">',
 		'after_title'   => '</h2>', 
 	) );	
@@ -139,6 +130,8 @@ function starter_theme_scripts()
 		wp_enqueue_style( 'starter-theme-shop-loop', STARTER_DIRECTORY_URI . '/assets/css/object.shoploop.css' ,null, STARTER_VERSION, 'screen' );
 		wp_enqueue_style( 'starter-theme-shop-gallery', STARTER_DIRECTORY_URI . '/assets/css/object.productgallery.css' ,null, STARTER_VERSION, 'screen' );
 		wp_enqueue_style( 'starter-theme-shop-checkout', STARTER_DIRECTORY_URI . '/assets/css/components.checkout.css' ,null, STARTER_VERSION, 'screen' );
+		wp_enqueue_style( 'starter-theme-shop-cart', STARTER_DIRECTORY_URI . '/assets/css/components.cart.css' ,null, STARTER_VERSION, 'screen' );
+		wp_enqueue_style( 'starter-theme-shop-account', STARTER_DIRECTORY_URI . '/assets/css/components.account.css' ,null, STARTER_VERSION, 'screen' );
 	}
 
 	/* Trumps */
@@ -171,7 +164,7 @@ function starter_remove_image_attributes( $html ) {
 }
 
 function starter_logo() {
-	$custom_logo_id = get_starter_mod( 'custom_logo' );
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	return $image[0];
 }
