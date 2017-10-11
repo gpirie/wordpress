@@ -1,0 +1,10 @@
+.o-button {
+	display: inline-block;
+	background-color: #aaa;
+	border: 1px solid #ccc;
+	padding: .5em;
+}
+
+.input--text {
+	border: 1px solid #aaaaaa;
+}

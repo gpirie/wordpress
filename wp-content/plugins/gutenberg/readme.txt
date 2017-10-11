@@ -1,5 +1,5 @@
 === Gutenberg ===
-Contributors: matveb, joen
+Contributors: matveb, joen, karmatosed
 Requires at least: 4.8
 Tested up to: 4.8
 Stable tag: trunk
@@ -31,6 +31,129 @@ We'd love to hear your bug reports, feature suggestions and any other feedback! 
 The more the merrier! To get started, check out our <a href="https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTING.md">guide for contributors</a>.
 
 == Changelog ==
+
+= 1.0.0 =
+* Restored keyboard navigation with more robust implementation, addressing previous browser issues.
+* Added drag and drop for media with pointer to create new blocks.
+* Merged paragraph and cover text blocks (includes the colors and font size options).
+* Reworked color palette picker with a "clear" and a "custom color" option.
+* Further improvements to inline pasting and fixing errant empty blocks.
+* Added thumbnail size selector to image blocks.
+* Added support for url input and align and edit buttons to audio block.
+* Persist the state of the sidebar across page refresh.
+* Persist state of sidebar panels on page refresh.
+* Persist editor mode on page refresh.
+* New withAPIData higher-order component for making it easier to manage data needs.
+* Preserve unknown block and remove "freeform" comment delimiters (unrecognized HTML is handled without comment delimiters).
+* Show "add new term" in hierarchical taxonomies (including categories).
+* Show tooltip only after mouseover delay.
+* Show post formats only if the post type supports them.
+* Added align and edit buttons to video block.
+* Preload data in withApiData to improve perceived performance.
+* Improve accessibility of sidebar modes.
+* Allow changing cover-image settings before uploading an image.
+* Improve validation leniency around non-meaningful differences.
+* Take into account capabilities for publishing action.
+* Update author selector to show only users capable of authoring posts.
+* Normalize pasted blockquote contents.
+* Refactored featured image, page attributes to use withApiData
+* Added a fix to avoid cloning nodes by passing pasted HTML string.
+* Added a fix to avoid re-encoding on encoded posts.
+* Fixed resetting the focus config when block already selected.
+* Allowing adding of plain text after insert link at the end of a paragraph.
+* Update to latest TinyMCE version.
+* Show only users capable of authoring posts.
+* Add submit for review to publish for contributor.
+* Delete or backspace in an empty "classic text" block now removes it.
+* Check for type in block transformations logic.
+* Fixed drop-down menu issue on classic text.
+* Added filter to allow post types to disable "edit in gutenberg" links.
+* Made UrlInput and UrlInputButton available as reusable components.
+* Use wordpress/a11y package instead of global.
+* Added npm5 package-lock.
+* We welcome all your feedback and contributions on the project repository, or ping us in #core-editor. Follow the "gutenberg" tag for past updates.
+
+= 0.9.0 =
+* Added ability to change font-size in cover text using slider and number input.
+* Added support for custom anchors (ids) on blocks, allowing to link directly to a section of the post.
+* Updated pull-quote design.
+* Created custom color palette component with "clear" option and "custom color" option. (And better markup and accessibility.)
+* Improve pasting: recognizing more elements, adding tests, stripping non-semantic markup, etc.
+* Improve gallery visual design and fix cropping in Safari.
+* Allow selecting a heading block from the table-of-contents panel directly.
+* Make toolbar slide horizontally for mobile.
+* Improve range-input control with a number input.
+* Fix pasting problems (handling of block attributes).
+* More stripping of unhandled elements during paste.
+* Show post format selector only for posts.
+* Display nicer URLs when editing links.
+* More compact save indicator.
+* Disabled arrow key navigation between blocks as we refine implementation.
+* Removed blank target from "view post" in notices.
+* Fix empty links still rendering ont he front-end.
+* Fix shadow on inline toolbars.
+* Fix problem with inserting pull-quotes.
+* Fix drag and drop on image block.
+* Removed warning when publishing.
+* Don't provide version for vendor scripts.
+* Clean category code in block registration.
+* Added history and resources docs.
+
+= 0.8.0 =
+* New Categories Block (based on existing widget).
+* New Text Columns Block (initial exploration of text-only multiple columns).
+* New Video Block.
+* New Shortcode Block.
+* New Audio Block.
+* Added resizing handlers to Image Block.
+* Added direct image upload button to Image Block and Gallery Block.
+* Give option to transform a block to Classic when it encounters problems.
+* Give option to Overwrite changes on a block detected as invalid.
+* Added "link to" option in galleries.
+* Added support for custom taxonomies.
+* Added post formats selector to post settings.
+* Added keywords support (aliases) to various blocks to improve search discovery.
+* Significant improvements to the way attributes are specified in the Block API and its clarity (handles defaults and types).
+* Added Tooltip component displaying aria-labels from buttons.
+* Removed stats tracking code.
+* Updated design document.
+* Capture and recover from block rendering runtime errors.
+* Handle enter when focusing on outer boundary of a block.
+* Reduce galleries json attributes data to a minimum.
+* Added caption styles to the front-end for images and embeds.
+* Added missing front-end alignment classes for table and cover-text blocks.
+* Only reset blocks on initial load to prevent state fluctuations.
+* Improve calculation of dirty state by making a diff against saved post.
+* Improve visual weight of toolbar by reducing its silhouette.
+* Improve rendering of galleries on the front-end.
+* Improve Cover Image placeholder visual presentation.
+* Improve front-end display of quotes.
+* Improve responsive design of galleries on the front-end.
+* Allow previewing new posts that are yet to be saved.
+* Reset scrolling position within inserter when switching tabs.
+* Refactor popover to render at root of document.
+* Refactor withFocusReturn to handle accessibility better in more contexts.
+* Prevent overlap between multi-selection and within-block selection.
+* Clear save notices when triggering a new save.
+* Disable "preview" button if post is not saveable.
+* Renamed blocks.query to blocks.source for clarity and updated documentation.
+* Rearrange block stylesheets to reflect display and editor styles.
+* Use @wordpress dependencies consistently.
+* Added validation checks for specifying a block's category.
+* Fix problems with quote initialization and list transformation.
+* Fix issue where Cover Image was being considered invalid after edits.
+* Fix errors in editable coming from Table block commands.
+* Fix error in latest posts block when date is not set for a post.
+* Fix issue with active color in ColorPalette component.
+* Prevent class=false serialization issue in covert-text.
+* Treat range control value as numeric.
+* Added warning when using Editable and passing non-array values.
+* Show block switcher above link input.
+* Updated rememo dependency.
+* Start consuming from separate @wordpress dependencies.
+* Fix problem with inserting new galleries.
+* Fix issue with embeds and missing captions.
+* Added outreach section to docs.
 
 = 0.7.1 =
 * Address problem with the freeform block and Jetpack's contact form.
