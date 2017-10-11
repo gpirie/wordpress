@@ -44,7 +44,10 @@
 				user_away_score INT NOT NULL,
 				final_home_score INT NOT NULL,
 				final_away_score INT NOT NULL,
+				home_penalties INT NOT NULL,
+				away_penalties INT NOT NULL,
 				user_points INT NOT NULL,
+				prediction_date DATETIME NOT NULL,
 				PRIMARY KEY  (prediction_id)
 			) COLLATE {$wpdb->collate}";
 
@@ -54,6 +57,7 @@
 		$sql = "CREATE TABLE {$wpdb->prefix}predictor_leagues (
 				league_id INT NOT NULL AUTO_INCREMENT,
 				league_name VARCHAR(100) NOT NULL,
+				league_users LONGTEXT NOT NULL,
 				PRIMARY KEY  (league_id)
 			) COLLATE {$wpdb->collate}";
 

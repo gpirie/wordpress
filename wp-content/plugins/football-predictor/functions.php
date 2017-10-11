@@ -45,8 +45,24 @@
     function predictions_form_thank_you() {
         return '
             <div class="o-notice o-notice--success">
-                Thank you for submitting a prediction.
+                Thank you for submitting your prediction(s).
             </div>';
+    }
+
+    function predictor_get_user_prediction( $team, $match ) {
+        global $wpdb;
+
+        if( $team == 'home' ) {
+            $value = $wpdb->get_results( $wpdb->prepare( "select `user_home_score`, `match_id` from {$wpdb->prefix}predictor_user_predictions where `user_id` = %d and `match_id` = %d", get_current_user_id(), $match ) );
+            $value = ( false === empty( $value ) ) ? $value[0]->user_home_score : 0;
+            return $value;
+        }
+
+        if( $team == 'away' ) {
+            $value = $wpdb->get_results( $wpdb->prepare( "select `user_away_score`, `match_id` from {$wpdb->prefix}predictor_user_predictions where `user_id` = %d and `match_id` = %d", get_current_user_id(), $match ) );
+            $value = ( false === empty( $value ) ) ? $value[0]->user_away_score : 0;
+            return $value;
+        }
     }
 
     /**
@@ -127,10 +143,10 @@
                     <input type="hidden" name="current_user" value="'. get_current_user_id() .'" />';
 
             foreach( $fixtures as $fixture ) {
-                $html .= '<label class="o-predictionsform__label o-predictionsform__label--home" for="'. $fixture->home_team .'">'. $fixture->home_team .'</label>';
-                $html .= '<input class="o-predictionsform__input o-predictionsform__label--away" id="'. $fixture->home_team .'" type="number" name="user_home_score" min="0" value="" />';
+                $html .= '<label class="o-predictionsform__label o-predictionsform__label--home u-clear u-inline-block" for="'. $fixture->home_team .'">'. $fixture->home_team .'</label>';
+                $html .= '<input class="o-predictionsform__input o-predictionsform__label--away" id="'. $fixture->home_team .'" type="number" name="user_home_score" min="0" value="'. predictor_get_user_prediction( 'home', $fixture->match_id ) .'" />';
                 $html .= ' v ';                
-                $html .= '<input class="o-predictionsform__input o-predictionsform__input--away" id="'. $fixture->away_team .'" type="number" name="user_away_score" min="0" value="" />';
+                $html .= '<input class="o-predictionsform__input o-predictionsform__input--away" id="'. $fixture->away_team .'" type="number" name="user_away_score" min="0" value="'. predictor_get_user_prediction( 'away', $fixture->match_id ) .'" />';
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--away" for="'. $fixture->away_team .'">'. $fixture->away_team .'</label>';
                 $html .= '<input type="hidden" id="fixture_id" name="fixture_id" value="'. $fixture->match_id .'" />';
             }
@@ -181,9 +197,7 @@
                     'match_id'          => $_POST['fixture_id'],
                     'user_home_score'   => $_POST['user_home_score'],
                     'user_away_score'   => $_POST['user_away_score'],
-                    'final_home_score'  => '',
-                    'final_away_score'  => '',
-                    'user_points'       => '',
+                    'prediction_date'   => current_time( 'mysql', 1 ),
                 ),
                 array( 'prediction_id' => 1 )
             );   
@@ -197,9 +211,7 @@
                     'match_id'          => $_POST['fixture_id'],
                     'user_home_score'   => $_POST['user_home_score'],
                     'user_away_score'   => $_POST['user_away_score'],
-                    'final_home_score'  => '',
-                    'final_away_score'  => '',
-                    'user_points'       => '',
+                    'prediction_date'   => current_time( 'mysql', 1 ),
                 )
             );   
             return true;     
@@ -223,7 +235,7 @@
                 
                 if($save_result) {
                     $html .= predictions_form_thank_you();
-                    $display_form = false;
+                    //$display_form = false;
                 } else {
                     // Display error.
                     $html .= 'errors';
@@ -247,15 +259,15 @@
 
         $errors = array();
 
-        if(empty($_POST['predictor_post_nonce']) || false == wp_verify_nonce($_POST['predictor_post_nonce'], 'predictor-security')) {
+        if( empty($_POST['predictor_post_nonce']) || false == wp_verify_nonce($_POST['predictor_post_nonce'], 'predictor-security')) {
             return ['invalid_nonce' => PREDICTOR_DEFAULT_ERROR];
         }
 
-        if( empty( $_POST['user_home_score'] ) || false == is_numeric( $_POST['user_home_score'] ) ) {
+        if( false == is_numeric( $_POST['user_home_score'] ) || empty( $_POST['user_home_score'] ) ) {
             $errors['home_score'] = 'Please enter a score for the home team.';
         }
 
-        if( empty( $_POST['user_away_score'] ) || false == is_numeric( $_POST['user_away_score'] ) ) {
+        if( false == is_numeric( $_POST['user_away_score'] ) || empty( $_POST['user_away_score'] ) ) {
             $errors['away_score'] = 'Please enter a score for the away team.';
         }
 
