@@ -137,6 +137,8 @@
                     <input type="hidden" id="predictor_post_back" value="%s" />
                     <input type="hidden" name="current_user" value="'. get_current_user_id() .'" />';
 
+            $i = 0;
+
             foreach( $fixtures as $fixture ) {
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--home u-clear u-inline-block" for="'. $fixture->home_team .'">'. $fixture->home_team .'</label>';
                 $html .= '<input class="o-predictionsform__input o-predictionsform__label--away" id="'. $fixture->home_team .'" type="number" name="user_home_score_'. $i .'" min="0" value="'. predictor_get_user_prediction( 'home', $fixture->match_id ) .'" />';
@@ -144,7 +146,10 @@
                 $html .= '<input class="o-predictionsform__input o-predictionsform__input--away" id="'. $fixture->away_team .'" type="number" name="user_away_score_'. $i .'" min="0" value="'. predictor_get_user_prediction( 'away', $fixture->match_id ) .'" />';
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--away" for="'. $fixture->away_team .'">'. $fixture->away_team .'</label>';
                 $html .= '<input type="hidden" id="fixture_id_'. $i .'" name="fixture_id" value="'. $fixture->match_id .'" />';
+            
+                $i++;
             }
+            
             $html .= '<input class="o-button o-predictionsform__button" type="submit" value="Save" />';
             $html .= '</form>';
             
