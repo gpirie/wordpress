@@ -16,7 +16,7 @@
 							?>
 								<li class="o-portfolio__item o-portfolio__item--block">
 									<a class="o-portfolio__link" href="<?php echo get_permalink( $p->ID ); ?>">
-										<?php echo get_the_post_thumbnail( $p->ID, 'large', array( 'class' => 'o-portfolio__image' ) );?>
+										<?php echo get_the_post_thumbnail( $p->ID, 'portfolio_thumb', array( 'class' => 'o-portfolio__image' ) );?>
 									</a>
 								</li>
 							<?php 

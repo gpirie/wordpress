@@ -31,6 +31,8 @@ function gpwd_theme_setup()
 	add_theme_support( 'html5', array('search-form', 'gallery', 'caption', ) );		
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	add_image_size( 'portfolio_thumb', 300, 160 );
+
 	//Remove unwanted WP elements
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -123,7 +125,7 @@ function gpwd_theme_scripts()
 	
 	/* Objects */
 	wp_enqueue_style( 'gpwd-theme-pagination', GPWD_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, GPWD_VERSION, 'screen' );
-	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );
+	wp_enqueue_style( 'gpwd-theme-object-portfolio', GPWD_DIRECTORY_URI . '/assets/css/object.portfolio.css' ,null, GPWD_VERSION, 'screen' );
 	wp_enqueue_style( 'gpwd-theme-object-snippets', GPWD_DIRECTORY_URI . '/assets/css/object.snippets.css' ,null, GPWD_VERSION, 'screen' );		
 
 	/* Components */
@@ -137,7 +139,8 @@ function gpwd_theme_scripts()
 	wp_enqueue_style( 'gpwd-theme-block-text', GPWD_DIRECTORY_URI . '/assets/css/block.text.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-services', GPWD_DIRECTORY_URI . '/assets/css/block.services.css' ,null, GPWD_VERSION, 'screen' );	
 	wp_enqueue_style( 'gpwd-theme-block-featured', GPWD_DIRECTORY_URI . '/assets/css/block.featured.css' ,null, GPWD_VERSION, 'screen' );	
-
+	wp_enqueue_style( 'gpwd-theme-block-portfolio', GPWD_DIRECTORY_URI . '/assets/css/block.portfolio.css' ,null, GPWD_VERSION, 'screen' );	
+	
 	wp_enqueue_style( 'gpwd-theme-prism', GPWD_DIRECTORY_URI . '/assets/css/prism.css' ,null, GPWD_VERSION, 'screen' );	
 
 	/* WooCommerce */
