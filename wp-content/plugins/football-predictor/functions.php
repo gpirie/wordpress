@@ -52,15 +52,10 @@
     function predictor_get_user_prediction( $team, $match ) {
         global $wpdb;
 
-        if( $team == 'home' ) {
-            $value = $wpdb->get_results( $wpdb->prepare( "select `user_home_score`, `match_id` from {$wpdb->prefix}predictor_user_predictions where `user_id` = %d and `match_id` = %d", get_current_user_id(), $match ) );
-            $value = ( false === empty( $value ) ) ? $value[0]->user_home_score : 0;
-            return $value;
-        }
-
-        if( $team == 'away' ) {
-            $value = $wpdb->get_results( $wpdb->prepare( "select `user_away_score`, `match_id` from {$wpdb->prefix}predictor_user_predictions where `user_id` = %d and `match_id` = %d", get_current_user_id(), $match ) );
-            $value = ( false === empty( $value ) ) ? $value[0]->user_away_score : 0;
+        if( false === empty( $team ) && false === empty( $team ) ) {
+            $value = $wpdb->get_results( $wpdb->prepare( "select `user_{$team}_score` from {$wpdb->prefix}predictor_user_predictions where `user_id` = %d and `match_id` = %d", get_current_user_id(), $match ) );
+            $score = 'user_'. $team .'_score';
+            $value = ( false === empty( $value ) ) ? $value[0]->$score : 0;
             return $value;
         }
     }
