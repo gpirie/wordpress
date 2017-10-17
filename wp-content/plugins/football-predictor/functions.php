@@ -151,6 +151,7 @@
                     <input type="hidden" name="current_user" value="'. get_current_user_id() .'" />';
 
             $i = 0;
+
             foreach( $fixtures as $fixture ) {
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--home u-clear u-inline-block" for="'. $fixture->home_team .'">'. $fixture->home_team .'</label>';
                 $html .= '<input class="o-predictionsform__input o-predictionsform__label--away" id="'. $fixture->home_team .'" type="number" name="predictions['.$i.'][user_home_score]" min="0" value="'. predictor_get_user_prediction( 'home', $fixture->match_id ) .'" />';
@@ -161,6 +162,7 @@
                 
                 $i++;
             }
+            
             $html .= '<input class="o-button o-predictionsform__button" type="submit" value="Save" />';
             $html .= '</form>';
             
