@@ -21,6 +21,10 @@
 				away_team VARCHAR(100) NOT NULL,
 				match_time DATETIME NOT NULL,
 				venue VARCHAR(100) NOT NULL,
+				final_home_score INT NOT NULL,
+				final_away_score INT NOT NULL,
+				home_penalties INT NOT NULL,
+				away_penalties INT NOT NULL,
 				PRIMARY KEY  (match_id)
 			) COLLATE {$wpdb->collate}";
 
@@ -42,10 +46,6 @@
 				match_id INT NOT NULL,
 				user_home_score INT NOT NULL,
 				user_away_score INT NOT NULL,
-				final_home_score INT NOT NULL,
-				final_away_score INT NOT NULL,
-				home_penalties INT NOT NULL,
-				away_penalties INT NOT NULL,
 				user_points INT NOT NULL,
 				prediction_date DATETIME NOT NULL,
 				PRIMARY KEY  (prediction_id)

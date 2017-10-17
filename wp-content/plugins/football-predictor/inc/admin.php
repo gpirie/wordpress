@@ -16,33 +16,20 @@
 
 								<div class="inside">
 
-									<h2 class="nav-tab-wrapper">
-										<a class="nav-tab nav-tab-active" id="dashboard" href="#top#dashboard">Dashboard</a>
-										<a class="nav-tab" id="competitions" href="#top#competitions">Competitions</a>
-										<a class="nav-tab" id="fixtures" href="#top#fixtures">Fixtures</a>
-										<a class="nav-tab" id="leagues" href="#top#leagues">Leagues</a>
-										<a class="nav-tab" id="users" href="#top#users">Users</a>
-									</h2>
+									<?php predictor_admin_process_scores();?>
 
-									<div id="dashboard" class="predictor-tab">
-										Dashboard
-									</div>
+									<?php if ( array_key_exists( 'notice', $_GET ) && 'scores-updated' === $_GET['notice'] ) 
+										{
+											?>
+												<div id="message" class="updated notice notice-success is-dismissible">
+													<p>The Scores have been updated.</p>
+													<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
+												</div>
+											<?php
+										}
+									?>
 
-									<div id="competitions" class="predictor-tab">
-										Competitions
-									</div>
-
-									<div id="fixtures" class="predictor-tab">
-										Fixtures
-									</div>
-
-									<div id="leagues" class="predictor-tab">
-										Leagues
-									</div>
-
-									<div id="users" class="predictor-tab">
-										Users
-									</div>
+									<?php echo predictor_admin_manage_final_scores();?>
 									
 								</div>
 

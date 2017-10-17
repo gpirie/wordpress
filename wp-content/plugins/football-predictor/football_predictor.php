@@ -21,7 +21,7 @@ define( 'PREDICTOR_DIR', dirname( __FILE__ ) . '/' );
 require_once( PREDICTOR_DIR . 'globals.php' );
 require_once( PREDICTOR_DIR . 'inc/build.php' );
 require_once( PREDICTOR_DIR . 'functions.php' );
-// require_once( PREDICTOR_DIR . 'inc/api.php' );
+require_once( PREDICTOR_DIR . 'admin/functions.php' );
 // require_once( PREDICTOR_DIR . 'inc/cron.php' );
 require_once( PREDICTOR_DIR . 'inc/admin.php' );
 
