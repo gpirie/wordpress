@@ -30,7 +30,7 @@
 
         if( false === empty( $fixtures ) ) {
 
-            $html = '<form class="o-form o-form--predictions" action="//'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" method="post" name="prediction_form">
+            $html = '<form class="o-form o-predictionsform" action="//'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" method="post" name="prediction_form">
                     <input type="hidden" name="predictor_post_nonce" value="'. wp_create_nonce('predictor-security') .'" />
                     <input type="hidden" id="predictor_post_back" value="%s" />
                     <input type="hidden" name="current_user" value="'. get_current_user_id() .'" />';
@@ -38,13 +38,15 @@
             $i = 0;
 
             foreach( $fixtures as $fixture ) {
+                $html .= '<div class="o-predictionsform__fixture">';
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--home u-clear u-inline-block" for="'. $fixture->home_team .'">'. $fixture->home_team .'</label>';
                 $html .= '<input class="o-predictionsform__input o-predictionsform__label--away" id="'. $fixture->home_team .'" type="number" name="predictions['.$i.'][user_home_score]" min="0" value="'. predictor_get_user_prediction( 'home', $fixture->match_id ) .'" />';
                 $html .= ' v ';                
                 $html .= '<input class="o-predictionsform__input o-predictionsform__input--away" id="'. $fixture->away_team .'" type="number" name="predictions['.$i.'][user_away_score]" min="0" value="'. predictor_get_user_prediction( 'away', $fixture->match_id ) .'" />';
                 $html .= '<label class="o-predictionsform__label o-predictionsform__label--away" for="'. $fixture->away_team .'">'. $fixture->away_team .'</label>';
                 $html .= '<input type="hidden" id="fixture_id" name="predictions['.$i.'][fixture_id]" value="'. $fixture->match_id .'" />';
-                
+                $html .= '</div>';
+
                 $i++;
             }
             
