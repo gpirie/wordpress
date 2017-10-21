@@ -1,0 +1,39 @@
+@media only screen and (max-width: 45.499em) {
+	.c-navmenu--main_menu {
+		width: 150px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: -150px;
+		background: #428bca;
+		padding: 15px;
+	}
+}
+
+@media only screen and (min-width: 45.5em) {
+	.c-navmenu__close {
+		display: none;
+	}
+
+	.c-navmenu__menu--header_menu {
+		float: right;
+	}
+
+	.c-navmenu__menu--main_menu {
+		float: right;
+	}
+
+	.c-navmenu__item--main_menu {
+		float: left;
+		margin-left: 1em;
+	}
+
+}
+
+.o-breadcrumb__crumb {
+	float: left;
+}
+
+.o-breadcrumb__crumb:not(:last-of-type) {
+	margin-right: .5em;
+}
