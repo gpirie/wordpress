@@ -9,6 +9,10 @@
 
 	define( 'PREDICTOR_TABLE_PREDICTIONS', 'predictor_user_predictions' );
 	define( 'PREDICTOR_TABLE_FIXTURES', 'predictor_fixtures' );
+	define( 'PREDICTOR_TABLE_LEAGUES', 'predictor_leagues' );
+
+	define( 'PREDICTOR_CORRECT_SCORE_POINTS', ( get_option( 'predictor_corect_score_points' ) ) ? get_option( 'predictor_corect_score_points' ) : 10 );
+	define( 'PREDICTOR_CORRECT_OUTCOME_POINTS', ( get_option( 'predictor_corect_outcome_points' ) ) ? get_option( 'predictor_corect_outcome_points' ) : 10 );
 
 
 	// ---------------------------------------------

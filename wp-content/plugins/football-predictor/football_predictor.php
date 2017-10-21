@@ -21,11 +21,20 @@ define( 'PREDICTOR_DIR', dirname( __FILE__ ) . '/' );
 require_once( PREDICTOR_DIR . 'globals.php' );
 require_once( PREDICTOR_DIR . 'inc/build.php' );
 require_once( PREDICTOR_DIR . 'functions.php' );
-require_once( PREDICTOR_DIR . 'admin/functions.php' );
-// require_once( PREDICTOR_DIR . 'inc/cron.php' );
 require_once( PREDICTOR_DIR . 'inc/admin.php' );
+require_once( PREDICTOR_DIR . 'inc/fixtures.php' );
+require_once( PREDICTOR_DIR . 'inc/predictions.php' );
+require_once( PREDICTOR_DIR . 'inc/leagues.php' );
+require_once( PREDICTOR_DIR . 'inc/widgets.php' );
 
-// require_once( PREDICTOR_DIR . 'ui/home.php' );
+if( is_admin() ) {
+	require_once( PREDICTOR_DIR . 'admin/build.php' );
+	require_once( PREDICTOR_DIR . 'admin/functions.php' );
+	require_once( PREDICTOR_DIR . 'admin/fixtures.php' );
+	require_once( PREDICTOR_DIR . 'admin/leagues.php' );
+	require_once( PREDICTOR_DIR . 'admin/options.php' );
+	require_once( PREDICTOR_DIR . 'admin/users.php' );
+}
 
 function predictor_activate() {
 	predictor_install();

@@ -17,6 +17,7 @@
 		$sql = "CREATE TABLE {$wpdb->prefix}predictor_fixtures (
 				match_id INT NOT NULL AUTO_INCREMENT,
 				competition_id INT NOT NULL,
+				stage VARCHAR(100) NOT NULL,
 				home_team VARCHAR(100) NOT NULL,
 				away_team VARCHAR(100) NOT NULL,
 				match_time DATETIME NOT NULL,
