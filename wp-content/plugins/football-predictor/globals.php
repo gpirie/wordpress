@@ -5,8 +5,6 @@
 	// Various
 	// ---------------------------------------------
 
-	define( 'PREDICTOR_VERSION', '1.0.0' );
-
 	define( 'PREDICTOR_TABLE_PREDICTIONS', 'predictor_user_predictions' );
 	define( 'PREDICTOR_TABLE_FIXTURES', 'predictor_fixtures' );
 	define( 'PREDICTOR_TABLE_LEAGUES', 'predictor_leagues' );
