@@ -16,7 +16,7 @@
                 <input class="o-button o-createleague__button" type="submit" value="Create League" />
             </form>';
         
-
+ 
         return $html;
     }
     add_shortcode( 'create_league', 'predictor_create_league_form' );
