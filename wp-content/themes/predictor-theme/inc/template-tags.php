@@ -345,15 +345,18 @@
 			foreach ( $social_links[0] as $key => $value ) {
 				$exp_key = explode( '_', $key );
 
-				$network_name = $exp_key[1];
-				
-				if( $exp_key[0] === 'social' && false === empty( $value ) )
-				{
-					$html .= '<li class="o-sociallinks__item o-sociallinks__item--'. $network_name .'">';
-					$html .= '<a target="_blank" class="o-sociallinks__link u-block" href="'. esc_url( $value ) .'" title="'. ucwords( $network_name ) .'">';
-					$html .= '<img alt="" title="'. ucwords( $network_name ) .'" src="'. get_stylesheet_directory_uri() .'/assets/img/icons/'. $network_name .'.svg" />';
-					$html .= '</a>';
-					$html .= '</li>';
+				if( false === empty( $exp_key[1] ) ) {
+
+					$network_name = $exp_key[1];
+					
+					if( $exp_key[0] === 'social' && false === empty( $value ) )
+					{
+						$html .= '<li class="o-sociallinks__item o-sociallinks__item--'. $network_name .'">';
+						$html .= '<a target="_blank" class="o-sociallinks__link u-block" href="'. esc_url( $value ) .'" title="'. ucwords( $network_name ) .'">';
+						$html .= '<img alt="" title="'. ucwords( $network_name ) .'" src="'. get_stylesheet_directory_uri() .'/assets/img/icons/'. $network_name .'.svg" />';
+						$html .= '</a>';
+						$html .= '</li>';
+					}
 				}
 			}
 
