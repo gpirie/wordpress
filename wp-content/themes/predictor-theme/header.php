@@ -26,23 +26,21 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<?php do_action( 'body_open' ); ?>
-		
-		<div class="site-wrap">
 
-			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fp-theme' ); ?></a>
+		<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fp-theme' ); ?></a>
 
-			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
+		<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
 
-				<?php
+			<?php
 
-					fp_navigation( 'header_menu' );
+				fp_navigation( 'header_menu' );
 
-					fp_site_logo();
+				fp_site_logo();
 
-					fp_social_links();
+				fp_social_links();
 
-					fp_navigation( 'main_menu', true );
-					
-				?>	
+				fp_navigation( 'main_menu', true );
+				
+			?>	
 
-			</header>
+		</header>
