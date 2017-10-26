@@ -64,13 +64,7 @@ body {
     .u-wrap {
         margin: 0 15%;
     }
-
-    .content-wrap {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-gap: 10px;
-    }
+    
 }
 
 .wp-block-cover-image {
