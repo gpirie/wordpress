@@ -27,7 +27,7 @@
 
 		<?php do_action( 'body_open' ); ?>
 		
-		<div class="site-wrap">
+		<div class="u-wrap">
 
 			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fp-theme' ); ?></a>
 
