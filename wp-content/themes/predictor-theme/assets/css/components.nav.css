@@ -21,13 +21,13 @@
 
 	.c-navmenu__menu--main_menu {
 		float: right;
+		clear: right;
 	}
 
 	.c-navmenu__item--main_menu {
 		float: left;
 		margin-left: 1em;
 	}
-
 }
 
 .o-breadcrumb__crumb {

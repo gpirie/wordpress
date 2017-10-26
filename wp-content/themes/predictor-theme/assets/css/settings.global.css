@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-    font: 300 16px/1.412 "Droid Sans", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font: 400 16px/1.412 'Roboto Mono', monospace;
     color: #444;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
         display: none;
     }
 
-    .site-wrap {
+    body {
         padding: 0 5%;
     }
 
@@ -63,5 +63,12 @@ body {
 
     body {
         margin: 0 15%;
+    }
+
+    .content-wrap {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 10px;
     }
 }

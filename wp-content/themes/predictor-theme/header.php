@@ -34,15 +34,15 @@
 			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
 
 				<?php
+					fp_site_logo();
 
 					fp_navigation( 'header_menu' );
-
-					fp_site_logo();
 
 					fp_social_links();
 
 					fp_navigation( 'main_menu', true );
-					
 				?>	
 
 			</header>
+
+			<div class="content-wrap">
