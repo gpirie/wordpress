@@ -35,6 +35,11 @@ function fp_theme_setup()
 	add_theme_support( 'html5', array('search-form', 'gallery', 'caption', ) );		
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	//Gutenberg
+	add_theme_support( 'gutenberg', array(
+		'wide-images' => true,
+	) );
+	
 	//Remove unwanted WP elements
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
