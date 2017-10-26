@@ -2,3 +2,18 @@
 	background: #817f80;
 	padding: 1em;
 }
+
+@media only screen and (max-width: 45.49em) {
+	.site-footer {
+		.text-align: center;
+	}
+
+	.c-navmenu__menu--footer_menu {
+		text-align: center;
+		margin-top: 1.5em;
+	}
+}
+
+.copyright {
+	margin: 1em 0;
+}
