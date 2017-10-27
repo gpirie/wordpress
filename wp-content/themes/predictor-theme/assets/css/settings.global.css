@@ -64,7 +64,7 @@ body {
     .u-wrap {
         margin: 0 15%;
     }
-    
+
 }
 
 .wp-block-cover-image {
@@ -74,4 +74,5 @@ body {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    background-position: center;
 }
