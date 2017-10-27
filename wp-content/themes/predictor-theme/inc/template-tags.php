@@ -3,7 +3,7 @@
 	defined( 'ABSPATH' ) or die( 'Nice try' );
 
 	function fp_site_logo( $class='' ) {
-		if ( has_custom_logo() ) 
+		if ( has_custom_logo() )
 		{
 			$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'full' );
 
@@ -13,16 +13,16 @@
         		</a>
         	<?php
 		}
-		else 
+		else
 		{
 			$description = get_bloginfo( 'description', 'display' );
 			$title = get_bloginfo( 'title', 'display' );
 
-			if ( $title ) 
+			if ( $title )
 			{
 				echo '<h1 class="site-title">'. $title .'</h1>';
 			}
-		}			
+		}
 	}
 
 	/* Add editor styles */
@@ -44,7 +44,7 @@
 	                'class'    => 'site-logo',
 	            ) )
 	        );
-	    return $html;   
+	    return $html;
 	}
 	add_filter( 'get_custom_logo', 'fp_logo_class' );
 
@@ -56,14 +56,14 @@
 		$classes[] = 'c-navmenu__item c-navmenu__item--'. $args->theme_location;
 
 		/* Add class to top-level items*/
-		if ( $item->menu_item_parent == 0 ) 
+		if ( $item->menu_item_parent == 0 )
 		{
-			$classes[] = 'c-navmenu__item--parent c-navmenu__item--parent--'. $args->theme_location;	
+			$classes[] = 'c-navmenu__item--parent c-navmenu__item--parent--'. $args->theme_location;
 		}
 		/* Add class to child-items*/
 		else
 		{
-			$classes[] = 'c-navmenu__item--child c-navmenu__item--child--'. $args->theme_location;	
+			$classes[] = 'c-navmenu__item--child c-navmenu__item--child--'. $args->theme_location;
 		}
     	return $classes;
 	}
@@ -76,18 +76,18 @@
 	}
 	add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
 
-	function fp_submenu_class($menu, $args) {  
+	function fp_submenu_class($menu, $args) {
 
 		$menu = preg_replace( '/ class="sub-menu"/','class="c-navmenu__submenu c-navmenu__submenu--'. $args->theme_location .'"', $menu );
 
-		return $menu;  
-	}  
+		return $menu;
+	}
 	add_filter('wp_nav_menu','fp_submenu_class', 10, 2);
 
 	/* In-article adverts*/
-	function fp_insert_post_ads( $content ) 
+	function fp_insert_post_ads( $content )
 	{
-		if ( true === get_theme_mod( 'in_article' ) ) 
+		if ( true === get_theme_mod( 'in_article' ) )
 		{
 			$paragraph_number = get_theme_mod( 'in_article_number' ) ;
 
@@ -99,7 +99,7 @@
 				}
 			}
 		}
-		
+
 		return $content;
 	}
 	add_filter( 'the_content', 'fp_insert_post_ads' );
@@ -108,7 +108,7 @@
 		$closing_p = '</p>';
 		$paragraphs = explode( $closing_p, $content );
 
-		foreach ($paragraphs as $index => $paragraph) 
+		foreach ($paragraphs as $index => $paragraph)
 		{
 			if ( trim( $paragraph ) ) {
 				$paragraphs[$index] .= $closing_p;
@@ -118,16 +118,16 @@
 				$paragraphs[$index] .= $insertion;
 			}
 		}
-		
+
 		return implode( '', $paragraphs );
 	}
 
-	function fp_navigation( $theme_location, $menu_toggle = false ) 
+	function fp_navigation( $theme_location, $menu_toggle = false )
 	{
-		if ( has_nav_menu( $theme_location ) ) 
-		{ 
+		if ( has_nav_menu( $theme_location ) )
+		{
 			if( $menu_toggle === true ) {
-				echo '<a class="c-toggle c-toggle--'. $theme_location .' u-hidden@md u-hidden@lg u-hidden@print" href="#">Menu</a>';	
+				echo '<a class="c-toggle c-toggle--'. $theme_location .' u-hidden@md u-hidden@lg u-hidden@print" href="#">Menu</a>';
 		    }
 
 		    wp_nav_menu( array(
@@ -175,14 +175,14 @@
 		    return $classes;
 		}
 	}
-	add_filter( 'post_class', 'fp_post_length' );
+	//add_filter( 'post_class', 'fp_post_length' );
 
 	function fp_post_thumbnail( $size = 'large' ) {
 
 		if( has_post_thumbnail() )
 		{
 			global $post;
-			
+
 			//Thumbnail ID
 			$thumbnail_id = ( get_post_thumbnail_id( $post->ID ) ) ? get_post_thumbnail_id( $post->ID ) : '';
 
@@ -202,7 +202,7 @@
 			echo '<figure class="o-thumbnail u-relative">';
 
 			the_post_thumbnail( $size , array( 'class' => 'o-thumbnail__image', 'itemprop' => 'image', 'alt' => $alt, 'title' => $title ) );
-			
+
 			if ( $caption )
 			{
 				echo '<figcaption class="o-thumbnail__caption u-relative">'. $caption .'</figcaption>';
@@ -218,11 +218,11 @@
 
 	function fp_get_the_categories() {
 		$categories = get_the_category();
-		if ( ! empty( $categories ) ) 
+		if ( ! empty( $categories ) )
 		{
 			$output = '<ul class="o-categorylist">';
 
-		    foreach( $categories as $category ) 
+		    foreach( $categories as $category )
 		    {
 		        $output .= '<li class="o-categorylist__item"><a class="o-categorylist__link" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_attr( $category->name ) . '</a></li>';
 			}
@@ -235,14 +235,14 @@
 
 	function fp_get_the_tags() {
 		$posttags = get_the_tags();
-		
-		if ( $posttags ) 
+
+		if ( $posttags )
 		{
 			$output = '<ul class="o-taglist">';
 
-			foreach( $posttags as $tag ) 
+			foreach( $posttags as $tag )
 			{
-				$output .= '<li class="o-taglist__item"><a class="o-taglist__link" href="'. esc_url( get_category_link( $tag->term_id ) ) .'">'. esc_attr( $tag->name ) . '</a></li>'; 
+				$output .= '<li class="o-taglist__item"><a class="o-taglist__link" href="'. esc_url( get_category_link( $tag->term_id ) ) .'">'. esc_attr( $tag->name ) . '</a></li>';
 			}
 
 			$output .= '</ul>';
@@ -348,7 +348,7 @@
 				if( false === empty( $exp_key[1] ) ) {
 
 					$network_name = $exp_key[1];
-					
+
 					if( $exp_key[0] === 'social' && false === empty( $value ) )
 					{
 						$html .= '<li class="o-sociallinks__item o-sociallinks__item--'. $network_name .'">';
@@ -365,5 +365,3 @@
 
 		echo $html;
 	}
-
-	
