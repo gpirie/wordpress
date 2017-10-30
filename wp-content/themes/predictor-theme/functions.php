@@ -190,3 +190,7 @@ require_once ( FP_THEME_INC . '/inc/template-tags.php' );
 if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 	require_once ( FP_THEME_INC . '/inc/woocommerce.php' );
 }
+
+if( is_plugin_active( 'buddypress/class-buddypress.php' ) ) {
+	require_once ( FP_THEME_INC . '/inc/buddypress.php' );
+}
