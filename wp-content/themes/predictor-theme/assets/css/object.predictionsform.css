@@ -8,5 +8,21 @@
 
 .o-predictionsform__input {
 	display: block;
-	width: 100%;
+}
+
+@media only screen and (min-width: 45.5em) {
+	.o-predictionsform__label {
+		float: left;
+		width: 20%;
+	}
+
+	.o-predictionsform__input {
+		float: left;
+		width: 20%;
+	}
+
+	.o-predictionsform__versus {
+		float: left;
+		margin: 0 2em;
+	}
 }

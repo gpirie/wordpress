@@ -143,8 +143,7 @@
 	// Posts > Paragraph Count
 	function fp_paragraph_count() {
 
-	    $content = apply_filters('the_content', get_the_content());
-	    $content = explode("</p>", $content);
+	    $content = explode("</p>", get_the_content());
 	    $count = count($content);
 
 	    return $count;
@@ -175,7 +174,7 @@
 		    return $classes;
 		}
 	}
-	//add_filter( 'post_class', 'fp_post_length' );
+	add_filter( 'post_class', 'fp_post_length' );
 
 	function fp_post_thumbnail( $size = 'large' ) {
 

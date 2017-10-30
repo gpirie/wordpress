@@ -186,11 +186,8 @@ function fp_logo() {
 
 require_once ( FP_THEME_INC . '/inc/customiser.php' );
 require_once ( FP_THEME_INC . '/inc/template-tags.php' );
+require_once ( FP_THEME_INC . '/inc/buddypress.php' );
 
 if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 	require_once ( FP_THEME_INC . '/inc/woocommerce.php' );
-}
-
-if( is_plugin_active( 'buddypress/class-buddypress.php' ) ) {
-	require_once ( FP_THEME_INC . '/inc/buddypress.php' );
 }
