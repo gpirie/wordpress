@@ -5,18 +5,18 @@
 
         $league = array();
 
-        $html = 
+        $html =
             '<form class="o-form o-form--createleague" action="//'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] .'" method="post" name="prediction_form">
                 <input type="hidden" name="predictor_league_nonce" value="'. wp_create_nonce('predictor-league-security') .'" />
                 <input type="hidden" name="league[league_owner]" value="<?php echo get_current_user_id();?>" />
 
                 <label class="o-createleague__label o-createleague__label--home u-clear u-inline-block" for="league[league_name]">League Name</label>
                 <input class="o-createleague__input o-createleague__label--away" id="league[league_name]" type="text" name="league[league_name]" value="" />
-                                        
+
                 <input class="o-button o-createleague__button" type="submit" value="Create League" />
             </form>';
-        
- 
+
+
         return $html;
     }
     add_shortcode( 'create_league', 'predictor_create_league_form' );
@@ -32,12 +32,12 @@
                     'league_owner'          => get_current_user_id(),
                 )
             );
-        }    
+        }
     }
 
     function predictor_create_league_form_process() {
 
-        $html = ''; 
+        $html = '';
         $display_form = true;
 
         // Form submission? Validate and save?
@@ -51,7 +51,7 @@ wp_die();
 
                 // Save data
                 $save_result = predictor_create_league_insert();
-                
+
                 if($save_result) {
                     $html .= predictor_display_notification( 'Your league has been created.', 'success' );
                     //$display_form = false;
@@ -70,7 +70,7 @@ wp_die();
         return $html;
 
     }
-    
+
     add_action( 'admin_post_nopriv_predictor_create_league_form_process', 'predictor_create_league_form_process' );
     add_action( 'admin_post_predictor_create_league_form_process', 'predictor_create_league_form_process' );
 
@@ -80,7 +80,7 @@ wp_die();
             $errors = array();
 
             $league = $_POST['league'];
-            
+
             if( empty($_POST['predictor_league_nonce']) || false == wp_verify_nonce($_POST['predictor_league_nonce'], 'predictor-security')) {
                 return ['invalid_nonce' => PREDICTOR_DEFAULT_ERROR];
             }
@@ -88,8 +88,12 @@ wp_die();
             if( empty( $_POST['league']['league_name'] ) ) {
                 $errors['league_name'] = 'Please enter a name for the league.';
             }
-            
+
             return $errors;
         }
 
     }
+
+	function prediction_display_league_standings() {
+		echo 'boom';
+	}

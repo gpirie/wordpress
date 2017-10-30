@@ -29,7 +29,7 @@
 			if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 
-			echo 'boom';
+			prediction_display_league_standings();
 
 			echo $args['after_widget'];
 		}
