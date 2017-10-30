@@ -5,19 +5,19 @@
     function register_foo_widget() {
         register_widget( 'Predictor_League_Table' );
     }
-    add_action( 'widgets_init', 'register_foo_widget' );
+    //add_action( 'widgets_init', 'register_foo_widget' );
 
     function predictor_admin_settings()
     {
         add_settings_section( 'predictor', '', null, 'predictor-options' );
         //Win points
         add_settings_field( 'predictor_corect_score_points', 'Correct Score Points', 'predictor_corect_score_points', 'predictor-options', 'predictor' );
-        
+
         register_setting('predictor', 'predictor_corect_score_points');
-        
+
         //Correct Outcome Points
         add_settings_field( 'predictor_corect_outcome_points', 'Correct Outcome Points', 'predictor_corect_outcome_points', 'predictor-options', 'predictor' );
-        
+
         register_setting('predictor', 'predictor_corect_outcome_points');
 
     }
@@ -53,15 +53,15 @@
                         $i = 0;
 
                         foreach( $stages as $stage ) {
-                            
+
                             ?>
                                 <tr>
                                     <td><h2><?php echo $stage->stage;?></h2></td>
-                                </tr>   
+                                </tr>
 
-                            <?php    
+                            <?php
                             $fixtures = predictor_get_fixtures( $stage->stage );
-                            
+
                             if( false === empty( $fixtures ) ) {
 
                                 foreach( $fixtures as $fixture ) {
@@ -99,15 +99,15 @@
                 <?php
                     do_action( 'predictor_admin_process_scores' );
             }
-            
+
     function predictor_get_users() {
         global $wpdb;
 
         $users = $wpdb->get_results( "select user_id from {$wpdb->prefix}predictor_fixtures group by `user_id`" );
 
         return $users;
-    }    
-	
+    }
+
 
 	function predictor_admin_process_scores() {
 		global $wpdb;
@@ -127,7 +127,7 @@
                         'home_penalties'   => esc_attr( $prediction['home_penalties'] ),
                         'away_penalties'   => esc_attr( $prediction['away_penalties'] ),
                     ),
-                    array( 
+                    array(
                         'match_id' => $prediction['fixture_id']
                     )
                 );
@@ -149,7 +149,7 @@
     function predictor_process_user_points() {
         global $wpdb;
         //Update Scores
-        $scores = $wpdb->get_results( "select f.match_id, p.user_home_score, p.user_away_score, f.final_home_score, f.final_away_score 
+        $scores = $wpdb->get_results( "select f.match_id, p.user_home_score, p.user_away_score, f.final_home_score, f.final_away_score
             FROM {$wpdb->prefix}predictor_user_predictions p
             join wp_predictor_fixtures f
             on p.match_id = f.match_id" );
@@ -176,10 +176,10 @@
                 array(
                     'user_points'   => $points,
                 ),
-                array( 
+                array(
                     'match_id' => $score->match_id
                 )
             );
-        }            
+        }
     }
     add_action( 'predictor_update_points', 'predictor_process_user_points' );

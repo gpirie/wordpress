@@ -45,4 +45,4 @@
 
 			</header>
 
-			<div class="content-wrap">
+			<div class="content-wrap u-overflow">

@@ -19,10 +19,11 @@
 	.o-predictionsform__input {
 		float: left;
 		width: 20%;
+		margin-right: 2em;
 	}
 
 	.o-predictionsform__versus {
 		float: left;
-		margin: 0 2em;
+		margin-right: 2em;
 	}
 }
