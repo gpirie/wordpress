@@ -1,0 +1,10 @@
+.o-member__header {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+
+.o-member__body {
+    float: left;
+    width: 65%;
+}

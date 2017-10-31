@@ -124,6 +124,7 @@ function fp_theme_scripts()
 	wp_enqueue_style( 'fp-theme-pagination', FP_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, FP_VERSION, 'screen' );
 	wp_enqueue_style( 'fp-theme-predictionform', FP_DIRECTORY_URI . '/assets/css/object.predictionsform.css' ,null, FP_VERSION, 'screen' );
 	wp_enqueue_style( 'fp-theme-page', FP_DIRECTORY_URI . '/assets/css/object.page.css' ,null, FP_VERSION, 'screen' );
+	wp_enqueue_style( 'fp-theme-members', FP_DIRECTORY_URI . '/assets/css/object.members.css' ,null, FP_VERSION, 'screen' );
 
 	/* Components */
 	wp_enqueue_style( 'fp-theme-header', FP_DIRECTORY_URI . '/assets/css/components.header.css' ,null, FP_VERSION, 'screen' );

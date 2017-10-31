@@ -73,7 +73,11 @@
             			                <td>v</td>
             			                <td><input class="o-predictionsform__input o-predictionsform__input--away" id="<?php echo $fixture->away_team;?>" type="number" name="predictions[<?php echo $i;?>][final_away_score]" min="0" value="<?php echo predictor_get_final_score( 'away', $fixture->match_id );?>" /></td>
             			                <td><label class="o-predictionsform__label o-predictionsform__label--away" for="<?php echo $fixture->away_team;?>"><?php echo $fixture->away_team;?></label></td>
-            			                <td><input type="hidden" id="fixture_id" name="predictions[<?php echo $i;?>][fixture_id]" value="<?php echo $fixture->match_id;?>" /></td>
+            			                <td>
+											<input type="hidden" id="fixture_id" name="predictions[<?php echo $i;?>][fixture_id]" value="<?php echo $fixture->match_id;?>" />
+											<input type="hidden" id="fixture_id" name="predictions[<?php echo $i;?>][home_penalties]" value="<?php echo $fixture->home_penalties;?>" />
+											<input type="hidden" id="fixture_id" name="predictions[<?php echo $i;?>][away_penalties]" value="<?php echo $fixture->away_penalties;?>" />
+										</td>
             			             </tr>
                                     <?php
         			                $i++;
@@ -117,7 +121,7 @@
 		//Have predictions been made?
         if( isset( $_POST['predictions'] ) ) {
 
-            foreach ( $_POST['predictions'] as $prediction ) {
+			foreach ( $_POST['predictions'] as $prediction ) {
 
                 //Update final scores
                 $wpdb->update( $wpdb->prefix . PREDICTOR_TABLE_FIXTURES,
@@ -135,10 +139,9 @@
             }
 
             //Update Scores
-            do_action( 'predictor_update_points' );
+            predictor_process_user_points();
 
-            return true;
-
+			return true;
         }
         else {
             return;
@@ -151,9 +154,9 @@
         //Update Scores
         $scores = $wpdb->get_results( "select f.match_id, p.user_home_score, p.user_away_score, f.final_home_score, f.final_away_score
             FROM {$wpdb->prefix}predictor_user_predictions p
-            join wp_predictor_fixtures f
+            join {$wpdb->prefix}predictor_fixtures f
             on p.match_id = f.match_id" );
-
+		
         foreach( $scores as $score ) {
             //If prediction is the correct score
             if( $score->user_home_score == $score->final_home_score && $score->user_away_score == $score->final_away_score ) {
@@ -182,4 +185,3 @@
             );
         }
     }
-    add_action( 'predictor_update_points', 'predictor_process_user_points' );

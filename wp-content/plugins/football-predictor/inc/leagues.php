@@ -94,6 +94,42 @@ wp_die();
 
     }
 
+	function prediction_get_user_info( $user_id ) {
+		$user_info = get_userdata( $user_id );
+
+		return $user_info->user_login;
+	}
+
+	function prediction_get_user_points() {
+		global $wpdb;
+
+		$user_points = $wpdb->get_results( "select user_id, sum(user_points) as points
+			FROM {$wpdb->prefix}predictor_user_predictions
+			GROUP by user_id
+			ORDER by points desc" );
+
+		if( false === empty( $user_points ) ) {
+			?>
+				<table>
+					<tr>
+						<th>User</th>
+						<th>Points</th>
+					</tr>
+			<?php
+				foreach( $user_points as $point ) {
+				?>
+					<tr>
+						<td><?php echo prediction_get_user_info($point->user_id);?></td>
+						<td><?php echo $point->points;?></td>
+					</tr>
+				<?php
+			}
+			?>
+				</table>
+			<?php
+		}
+	}
+
 	function prediction_display_league_standings() {
-		echo 'boom';
+		global $wpdb;
 	}

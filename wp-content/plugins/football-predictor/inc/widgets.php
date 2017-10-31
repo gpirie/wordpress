@@ -31,6 +31,8 @@
 
 			prediction_display_league_standings();
 
+			prediction_get_user_points();
+
 			echo $args['after_widget'];
 		}
 
