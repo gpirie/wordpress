@@ -8,17 +8,19 @@
 
 .o-predictionsform__input {
 	display: block;
+	padding: .5em;
+	text-align: center;
 }
 
 @media only screen and (min-width: 45.5em) {
 	.o-predictionsform__label {
 		float: left;
-		width: 20%;
+		width: 30%;
 	}
 
 	.o-predictionsform__input {
 		float: left;
-		width: 20%;
+		width: 10%;
 		margin-right: 2em;
 	}
 
