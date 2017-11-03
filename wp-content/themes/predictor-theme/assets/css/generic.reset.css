@@ -167,19 +167,19 @@ textarea {
 }
 
 ::-webkit-selection {
-	background : #c0b283;
+	background : #8C0E19;
 	color : rgb(250,250,250);
 	text-shadow : none;
 }
 
 ::-moz-selection {
-	background : #c0b283;
+	background : #8C0E19;
 	color : rgb(250,250,250);
 	text-shadow : none;
 }
 
 ::selection {
-	background : #c0b283;
+	background : #8C0E19;
 	color : rgb(250,250,250);
 	text-shadow : none;
 }

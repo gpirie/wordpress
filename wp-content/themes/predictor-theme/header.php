@@ -44,5 +44,3 @@
 				?>
 
 			</header>
-
-			<div class="content-wrap u-overflow">

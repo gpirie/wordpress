@@ -6,9 +6,7 @@
  */
 
 ?>
-			</div> <!--End of content-wrap-->
-
-			<footer class="site-footer u-overflow" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<footer class="site-footer u-overflow u-clear" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
 				<?php fp_site_logo( 'footer' );?>
 
