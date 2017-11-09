@@ -40,7 +40,7 @@
 
         if( isset( $_POST['league'] ) ) {
             $wpdb->update($wpdb->prefix . PREDICTOR_TABLE_LEAGUES,
-                array( 'league_users' => get_current_user_id() ),
+                array( 'league_users' => serialize( get_current_user_id() ) ),
                 array( 'league_id' => $_POST['league']['league_id'] )
             );
 
