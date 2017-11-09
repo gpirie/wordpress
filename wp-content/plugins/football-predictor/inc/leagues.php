@@ -29,12 +29,6 @@
         return $html;
     }
 
-    function predictor_display_create_league_form_shortcode() {
-        $html = predictor_create_league_form();
-
-        return $html;
-    }
-
     function predictor_create_league_form_process() {
         global $wpdb;
 

@@ -1,0 +1,11 @@
+.o-tabs__navitem {
+    float: left;
+    padding: 1em;
+    border: 1px solid;
+    text-align: center;
+    margin: 0;
+}
+
+.o-tabs__tab {
+    display: none;
+}

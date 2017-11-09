@@ -1,4 +1,8 @@
-.o-button {
+input, select {
+	padding: .5em;
+}
+
+.button, .o-button {
 	display: inline-block;
 	background-color: #fff;
 	border: 2px solid #333C60;
@@ -7,6 +11,8 @@
 	padding: .5em 1em;
 }
 
+.button:hover,
+.button:focus,
 .o-button:hover,
 .o-button:focus {
   /*box-shadow: 0 0.5em 0.5em -0.4em #333c60;
