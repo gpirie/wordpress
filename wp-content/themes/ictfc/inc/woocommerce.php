@@ -7,12 +7,12 @@
 
 	add_filter( 'woocommerce_product_single_add_to_cart_text', 'ict_single_add_to_cart_text' );
 	function ict_single_add_to_cart_text() {
-	        return __( ADD_TO_CART_TEXT, 'starter-theme' );
+	        return __( ADD_TO_CART_TEXT, 'ictfc-theme' );
 	}
 
 	add_filter( 'woocommerce_product_add_to_cart_text', 'ict_archive_add_to_cart_text' );
 	function ict_archive_add_to_cart_text() {
-	    return __( ADD_TO_CART_TEXT, 'starter-theme' );
+	    return __( ADD_TO_CART_TEXT, 'ictfc-theme' );
 	}
 
 	//Breadcrumbs

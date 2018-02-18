@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Functions_File_Explained
  *
- * @package Theme Name
+ * @package ICTFC Theme
  */
 
 defined( 'ABSPATH' ) or die( 'Nice try' );
@@ -20,8 +20,8 @@ function ict_theme_setup()
 {
 	//Navigation Menus
 	register_nav_menus( array(
-		'main_menu' => esc_html__( 'Main Menu', 'starter-theme' ),
-		'footer_menu' => esc_html__( 'Footer Menu', 'starter-theme' ),
+		'main_menu' => esc_html__( 'Main Menu', 'ictfc-theme' ),
+		'footer_menu' => esc_html__( 'Footer Menu', 'ictfc-theme' ),
 	) );
 
 	//Theme Support
@@ -55,23 +55,6 @@ function ict_theme_setup()
     remove_action('wp_head', 'feed_links', 2);
 	remove_action('wp_head', 'feed_links_extra', 3);
 
-	//Woocommerce
-	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-		add_theme_support( 'woocommerce' );
-		add_theme_support( 'wc-product-gallery-zoom' );
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
-
-		//remove woocommerce default css
-		add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-		add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
-		add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
-		add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
-
-		//Product page order
-		remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-	}
 }
 add_action( 'after_setup_theme', 'ict_theme_setup' );
 
@@ -105,33 +88,33 @@ function ict_theme_scripts()
 	/* CSS*/
 
 	/* Generic */
-	wp_enqueue_style( 'starter-theme-helper', ICT_DIRECTORY_URI . '/assets/css/generic.helper.css' ,null, ICT_VERSION, 'all' );
-	wp_enqueue_style( 'starter-theme-reset', ICT_DIRECTORY_URI . '/assets/css/generic.reset.css' ,null, ICT_VERSION, 'all' );
-	wp_enqueue_style( 'starter-theme-settings', ICT_DIRECTORY_URI . '/assets/css/settings.global.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-helper', ICT_DIRECTORY_URI . '/assets/css/generic.helper.css' ,null, ICT_VERSION, 'all' );
+	wp_enqueue_style( 'ictfc-theme-reset', ICT_DIRECTORY_URI . '/assets/css/generic.reset.css' ,null, ICT_VERSION, 'all' );
+	wp_enqueue_style( 'ictfc-theme-settings', ICT_DIRECTORY_URI . '/assets/css/settings.global.css' ,null, ICT_VERSION, 'screen' );
 
 	/* Elements */
-	wp_enqueue_style( 'starter-theme-headings', ICT_DIRECTORY_URI . '/assets/css/elements.headings.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-type', ICT_DIRECTORY_URI . '/assets/css/elements.type.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-forms', ICT_DIRECTORY_URI . '/assets/css/elements.forms.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-headings', ICT_DIRECTORY_URI . '/assets/css/elements.headings.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-type', ICT_DIRECTORY_URI . '/assets/css/elements.type.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-forms', ICT_DIRECTORY_URI . '/assets/css/elements.forms.css' ,null, ICT_VERSION, 'screen' );
 
 	/* Objects */
-	wp_enqueue_style( 'starter-theme-pagination', ICT_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-pagination', ICT_DIRECTORY_URI . '/assets/css/object.pagination.css' ,null, ICT_VERSION, 'screen' );
 
 	/* Components */
-	wp_enqueue_style( 'starter-theme-header', ICT_DIRECTORY_URI . '/assets/css/components.header.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-sidebar', ICT_DIRECTORY_URI . '/assets/css/components.sidebar.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-nav', ICT_DIRECTORY_URI . '/assets/css/components.nav.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-post', ICT_DIRECTORY_URI . '/assets/css/components.post.css' ,null, ICT_VERSION, 'screen' );
-	wp_enqueue_style( 'starter-theme-footer', ICT_DIRECTORY_URI . '/assets/css/components.footer.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-header', ICT_DIRECTORY_URI . '/assets/css/components.header.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-sidebar', ICT_DIRECTORY_URI . '/assets/css/components.sidebar.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-nav', ICT_DIRECTORY_URI . '/assets/css/components.nav.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-post', ICT_DIRECTORY_URI . '/assets/css/components.post.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-theme-footer', ICT_DIRECTORY_URI . '/assets/css/components.footer.css' ,null, ICT_VERSION, 'screen' );
 
 	/* WooCommerce */
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-		wp_enqueue_style( 'starter-theme-product', ICT_DIRECTORY_URI . '/assets/css/object.product.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'starter-theme-shop-loop', ICT_DIRECTORY_URI . '/assets/css/object.shoploop.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'starter-theme-shop-gallery', ICT_DIRECTORY_URI . '/assets/css/object.productgallery.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'starter-theme-shop-checkout', ICT_DIRECTORY_URI . '/assets/css/components.checkout.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'starter-theme-shop-cart', ICT_DIRECTORY_URI . '/assets/css/components.cart.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'starter-theme-shop-account', ICT_DIRECTORY_URI . '/assets/css/components.account.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-product', ICT_DIRECTORY_URI . '/assets/css/object.product.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-shop-loop', ICT_DIRECTORY_URI . '/assets/css/object.shoploop.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-shop-gallery', ICT_DIRECTORY_URI . '/assets/css/object.productgallery.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-shop-checkout', ICT_DIRECTORY_URI . '/assets/css/components.checkout.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-shop-cart', ICT_DIRECTORY_URI . '/assets/css/components.cart.css' ,null, ICT_VERSION, 'screen' );
+		wp_enqueue_style( 'ictfc-theme-shop-account', ICT_DIRECTORY_URI . '/assets/css/components.account.css' ,null, ICT_VERSION, 'screen' );
 	}
 
 	/* Trumps */
@@ -161,12 +144,6 @@ add_filter( 'img_caption_shortcode', 'ict_remove_image_attributes' , 10 );
 function ict_remove_image_attributes( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
-}
-
-function ict_logo() {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-	return $image[0];
 }
 
 require_once ( ICT_THEME_INC . '/inc/customiser.php' );

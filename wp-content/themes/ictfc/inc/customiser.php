@@ -35,7 +35,7 @@
 		);
 
 		$wp_customize->add_section( 'ict_theme_social' , array(
-			'title'      => __( 'Social Media Accounts', 'starter-theme' ),
+			'title'      => __( 'Social Media Accounts', 'ictfc-theme' ),
 			'priority'   => 50,
 		) );
 
@@ -61,7 +61,7 @@
 
 		//Footer
 		$wp_customize->add_section( 'ict_theme_footer' , array(
-			'title'      => __( 'Footer', 'starter-theme' ),
+			'title'      => __( 'Footer', 'ictfc-theme' ),
 			'priority'   => 50,
 		) );
 
@@ -78,7 +78,7 @@
 
 		//Socialize Networks
 		$wp_customize->add_section( 'ict_theme_sharing' , array(
-			'title'      => __( 'Social Sharing', 'starter-theme' ),
+			'title'      => __( 'Social Sharing', 'ictfc-theme' ),
 			'priority'   => 50,
 		) );
 

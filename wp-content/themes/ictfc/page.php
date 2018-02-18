@@ -4,7 +4,7 @@
 	 *
 	 * @link https://codex.wordpress.org/Template_Hierarchy
 	 *
-	 * @package Theme Name
+	 * @package ICTFC Theme
 	 */
 
 	get_header(); 

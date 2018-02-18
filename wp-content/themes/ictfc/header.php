@@ -3,7 +3,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Theme Name
+ * @package ICTFC Theme
  */
 ?><!DOCTYPE html>
 
@@ -26,12 +26,12 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<?php do_action( 'body_open' ); ?>
-		
+
 		<div class="site-wrap">
 
-			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
+			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ictfc-theme' ); ?></a>
 
-			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
+			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 
 				<?php
 
@@ -40,7 +40,7 @@
 					ict_social_links();
 
 					ict_navigation( 'main_menu', true );
-					
-				?>	
+
+				?>
 
 			</header>

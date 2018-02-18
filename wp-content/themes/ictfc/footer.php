@@ -2,7 +2,7 @@
 /**
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Theme Name
+ * @package ICTFC Theme
  */
 
 ?>	
