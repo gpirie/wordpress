@@ -31,16 +31,12 @@
 
 			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ictfc-theme' ); ?></a>
 
-			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+			<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">
 
-				<?php
+				<?php ict_site_logo(); ?>
 
-					ict_site_logo();
+				<h2 class="c-sitetitle u-centre-text"><?php echo get_bloginfo( 'name' );?></h2>
 
-					ict_social_links();
-
-					ict_navigation( 'main_menu', true );
-
-				?>
+				<?php ict_navigation( 'main_menu', true );?>
 
 			</header>

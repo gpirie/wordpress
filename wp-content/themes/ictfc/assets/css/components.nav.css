@@ -1,3 +1,15 @@
+.c-toggle {
+	text-indent: -9999em;
+	content: "";
+	width: 1em;
+	height: 0.25em;
+	background: black;
+	box-shadow:
+	0 0.35em 0 0 black,
+	0 .7em 0 0 black;
+	float: right;
+}
+
 @media only screen and (max-width: 45.499em) {
 	.c-navmenu--main_menu {
 		width: 150px;

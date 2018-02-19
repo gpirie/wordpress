@@ -1,7 +1,20 @@
 .site-header {
-	padding-top: 2em;
+	background: #005daa;
+	margin-bottom: 1em;
+	color: #fff;
+	padding: .5em 1em;
 }
 
+.sitelogo {
+	float: left;
+	width: 15%;
+}
+
+.c-sitetitle {
+	float: left;
+	width: 70%;
+	line-height: 48px;
+}
 .o-sociallinks__item {
 	width: 32px;
 }

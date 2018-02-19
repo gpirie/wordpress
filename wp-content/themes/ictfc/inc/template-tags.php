@@ -8,8 +8,8 @@
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 			?>
-				<a class="site-logo u-block" href="<?php echo esc_attr( get_home_url() );?>">
-					<img src="<?php echo esc_attr( $image[0] );?>" title="<?php echo esc_attr( get_bloginfo('name') );?>" alt="<?php echo esc_attr( get_bloginfo('name') );?> logo" />
+				<a class="sitelogo u-block" href="<?php echo esc_attr( get_home_url() );?>">
+					<img class="sitelogo__img" src="<?php echo esc_attr( $image[0] );?>" title="<?php echo esc_attr( get_bloginfo('name') );?>" alt="<?php echo esc_attr( get_bloginfo('name') );?> logo" />
 				</a>
 			<?php
 		}
