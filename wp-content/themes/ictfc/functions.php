@@ -91,6 +91,7 @@ function ict_theme_scripts()
 	wp_enqueue_style( 'ictfc-theme-helper', ICT_DIRECTORY_URI . '/assets/css/generic.helper.css' ,null, ICT_VERSION, 'all' );
 	wp_enqueue_style( 'ictfc-theme-reset', ICT_DIRECTORY_URI . '/assets/css/generic.reset.css' ,null, ICT_VERSION, 'all' );
 	wp_enqueue_style( 'ictfc-theme-settings', ICT_DIRECTORY_URI . '/assets/css/settings.global.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-fonts', '//fonts.googleapis.com/css?family=Lato:700|Merriweather:400,400i,700', null, 'screen' );
 
 	/* Elements */
 	wp_enqueue_style( 'ictfc-theme-headings', ICT_DIRECTORY_URI . '/assets/css/elements.headings.css' ,null, ICT_VERSION, 'screen' );
@@ -107,21 +108,11 @@ function ict_theme_scripts()
 	wp_enqueue_style( 'ictfc-theme-post', ICT_DIRECTORY_URI . '/assets/css/components.post.css' ,null, ICT_VERSION, 'screen' );
 	wp_enqueue_style( 'ictfc-theme-footer', ICT_DIRECTORY_URI . '/assets/css/components.footer.css' ,null, ICT_VERSION, 'screen' );
 
-	/* WooCommerce */
-	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-		wp_enqueue_style( 'ictfc-theme-product', ICT_DIRECTORY_URI . '/assets/css/object.product.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'ictfc-theme-shop-loop', ICT_DIRECTORY_URI . '/assets/css/object.shoploop.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'ictfc-theme-shop-gallery', ICT_DIRECTORY_URI . '/assets/css/object.productgallery.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'ictfc-theme-shop-checkout', ICT_DIRECTORY_URI . '/assets/css/components.checkout.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'ictfc-theme-shop-cart', ICT_DIRECTORY_URI . '/assets/css/components.cart.css' ,null, ICT_VERSION, 'screen' );
-		wp_enqueue_style( 'ictfc-theme-shop-account', ICT_DIRECTORY_URI . '/assets/css/components.account.css' ,null, ICT_VERSION, 'screen' );
-	}
-
 	/* Trumps */
-	wp_enqueue_style( 'starter-style', ICT_DIRECTORY_URI . '/style.css' ,null, ICT_VERSION, 'screen' );
+	wp_enqueue_style( 'ictfc-style', ICT_DIRECTORY_URI . '/style.css' ,null, ICT_VERSION, 'screen' );
 
 	/* JS */
-	wp_enqueue_script( 'starter-script', ICT_DIRECTORY_URI . '/assets/js/script.js', array(), ICT_VERSION, true );
+	wp_enqueue_script( 'ictfc-script', ICT_DIRECTORY_URI . '/assets/js/script.js', array(), ICT_VERSION, true );
 
 	wp_enqueue_script( 'html5shiv', ICT_DIRECTORY_URI . '/assets/js/html5-shiv.js', array(), '3.7.2', false );
 	add_filter( 'script_loader_tag', function( $tag, $handle )

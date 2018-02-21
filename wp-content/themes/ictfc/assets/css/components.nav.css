@@ -1,13 +1,12 @@
 .c-toggle {
 	text-indent: -9999em;
 	content: "";
-	width: 1em;
-	height: 0.25em;
-	background: black;
-	box-shadow:
-	0 0.35em 0 0 black,
-	0 .7em 0 0 black;
+	width: 2em;
+	height: 0.5em;
+	background: #fff;
+	box-shadow: 0 0.7em 0 0 #fff, 0 1.4em 0 0 #fff;
 	float: right;
+	margin-top: 1em;
 }
 
 @media only screen and (max-width: 45.499em) {
