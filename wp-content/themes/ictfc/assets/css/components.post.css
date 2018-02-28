@@ -1,0 +1,12 @@
+.o-thumbnail {
+    margin-bottom: 1em;
+}
+
+.o-thumbnail__caption {
+    font-size: .8em;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 1px;
+    padding: .25em .5em
+}

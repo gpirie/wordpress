@@ -203,17 +203,25 @@
 
 			the_post_thumbnail( $size , array( 'class' => 'o-thumbnail__image', 'itemprop' => 'image', 'alt' => $alt, 'title' => $title ) );
 
-			if ( $caption )
-			{
-				echo '<figcaption class="o-thumbnail__caption u-relative">'. $caption .'</figcaption>';
-			}
-
-			if ( $copyright ) {
-				echo '<small class="o-thumbnail__copyright">'. $copyright .'</small>';
+			if ( $caption  || $copyright ) { ?>
+				<figcaption class="o-thumbnail__caption u-relative">
+					<?php echo $caption . $copyright;?>
+				</figcaption><?php
 			}
 
 			echo '</figure>';
 		}
+	}
+
+	function ict_post_meta() {
+		?>
+			<div class="post-meta">
+				<p>
+					Written <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+					by <?php echo get_the_author();?>
+				</p>
+			</div>
+		<?php
 	}
 
 	function ict_get_the_categories() {

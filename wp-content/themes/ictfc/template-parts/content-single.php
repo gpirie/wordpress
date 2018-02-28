@@ -13,7 +13,11 @@
 
 		<?php
 
-			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );			
+			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );
+
+			ict_post_meta();
+
+			ict_social_links();
 
 			ict_post_thumbnail();
 
@@ -28,16 +32,16 @@
 			the_content();
 		?>
 
-	</div>	
+	</div>
 
 	<footer class="o-post__footer u-clear u-hidden@print">
-		
+
 		<?php
 			ict_get_the_categories();
 
 			ict_get_the_tags();
 		?>
-		
+
 	</footer>
 
 </article>
