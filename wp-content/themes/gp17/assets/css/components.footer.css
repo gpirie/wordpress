@@ -15,13 +15,13 @@
 }
 
 .o-contact {
-	float: right;
-	text-align: right;
+	float: left;
+	width: 25%;
 }
 
 .c-navmenu--footer_menu {
-	clear: both;
-	margin-bottom: 0;
+	float: left;
+	width: 45%;
 }
 
 .c-navmenu__menu--footer_menu {
@@ -31,8 +31,10 @@
 
 .c-navmenu__item--footer_menu {
 	float: left;
+	width: 50%;
+	width: calc(50% - .35em);
 	margin-right: .35em;
-	margin-bottom: 0;
+	margin-bottom: .5em;
 }
 
 .copyright {
