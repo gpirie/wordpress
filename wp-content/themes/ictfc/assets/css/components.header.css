@@ -1,20 +1,37 @@
 .site-header {
-	background: #005daa;
 	margin-bottom: 1em;
 	color: #fff;
 	padding: .5em 1em;
+	border-bottom: 1px solid #005daa;
+	display: grid;
 }
 
-.sitelogo {
-	float: left;
-	width: 15%;
+/* Mobile size */
+@media only screen and (max-width: 32.749em) {
+	.site-header {
+		background: #005daa;
+		grid-template-columns: 30% auto 15%;
+	}
+
+	.c-sitetitle {
+		align-self: center;
+  		justify-self: center;
+	}
+
+	.c-toggle {
+		align-self: center;
+  		justify-self: center;
+	}
 }
 
-.c-sitetitle {
-	float: left;
-	width: 70%;
-	line-height: 48px;
+/* Above mobile size */
+@media only screen and (min-width: 32.750em) {
+	.site-header {
+		grid-template-columns: 15% auto;
+	}
 }
+
+
 .o-sociallinks__item {
 	width: 32px;
 }

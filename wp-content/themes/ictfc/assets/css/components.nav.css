@@ -9,7 +9,7 @@
 	margin-top: 1em;
 }
 
-@media only screen and (max-width: 45.499em) {
+@media only screen and (max-width: 32.749em) {
 	.c-navmenu--main_menu {
 		width: 150px;
 		height: 100%;
@@ -21,10 +21,31 @@
 	}
 }
 
-@media only screen and (min-width: 45.5em) {
+@media only screen and (min-width: 32.750em) {
 	.c-navmenu__close {
 		display: none;
 	}
+
+	.c-sitetitle {
+		display: none;
+	}
+
+	.c-navmenu--main_menu {
+		grid-column-start: 2;
+		grid-row-start: 1;
+		align-self: center;
+	}
+
+	.c-navmenu__menu--main_menu {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(71px, 1fr));
+	}
+
+	.c-navmenu__item--main_menu {
+		align-self: center;
+  		justify-self: center;
+	}
+}
 
 .o-breadcrumb__crumb {
 	float: left;
