@@ -404,12 +404,13 @@
 		if ( $the_query->have_posts() )
 		{
 			echo '<ul class="o-snippets">';
+
 			while ( $the_query->have_posts() )
 			{
 				$the_query->the_post();
 
 				?>
-					<li class="o-snippets__item o-snippets__item--page u-overflow">
+					<li class="o-snippets__item u-overflow">
 
 						<h2 class="o-snippets__title"><?php esc_attr_e( get_the_title() );?></h2>
 
