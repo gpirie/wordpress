@@ -1,9 +1,9 @@
 <?php
-	get_header(); 
+	get_header();
 
     echo '<main itemprop="mainContentOfPage">';
 
-    while ( have_posts() ) : the_post(); 
+    while ( have_posts() ) : the_post();
     	?>
 		<article <?php post_class( 'u-overflow' ); ?> itemscope itemtype="http://schema.org/WebPage">
 
@@ -32,13 +32,13 @@
 			</div>
 
 			<ul class="o-portfolio__details">
-				<li><a href="<?php echo esc_url( gpwd_get_acf_field( 'project_link' ) );?>">View Project</a></li>
+				<li><a class="o-button" href="<?php echo esc_url( gpwd_get_acf_field( 'project_link' ) );?>">View Project</a></li>
 				<li><?php echo gpwd_get_acf_field( 'project_type' );?></li>
 				<li>
 					<?php
 						if( have_rows( 'my_role' ) ) :
 
-							while ( have_rows('my_role') ) : the_row(); 
+							while ( have_rows('my_role') ) : the_row();
 								echo gpwd_get_acf_sub_field( 'project_task' );
 							endwhile;
 
@@ -46,7 +46,7 @@
 					?>
 				</li>
 			</ul>
-			
+
 		</article>
 		<?php
 	endwhile;
