@@ -1,4 +1,4 @@
-input, textarea, select {   
+input, textarea, select {
    width: 100%;
    margin: 0 0 1em 0;
    padding: .75em;
@@ -20,4 +20,9 @@ input, textarea, select {
 
 .input--text {
 	border: 1px solid #aaaaaa;
+}
+
+.o-form--contact {
+    margin: 0 auto;
+    width: 85%;
 }

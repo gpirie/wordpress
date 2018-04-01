@@ -25,7 +25,7 @@ register_deactivation_hook( __FILE__, 'gpwd_custom_post_type_deactivation' );
 
 // Register Custom Post Type
 function gpwd_custom_post_type_init() {
-  
+
    $labels = array(
       'name'                => _x( 'Portfolio', 'Post Type General Name', 'text_domain' ),
       'singular_name'       => _x( 'Portfolio', 'Post Type Singular Name', 'text_domain' ),
@@ -57,13 +57,13 @@ function gpwd_custom_post_type_init() {
       'show_in_admin_bar'   => true,
       'show_in_nav_menus'   => true,
       'can_export'          => true,
-      'has_archive'         => true,    
+      'has_archive'         => false,    
       'exclude_from_search' => false,
       'publicly_queryable'  => true,
       'capability_type'     => 'page',
     );
     register_post_type( 'portfolio', $args );
-    
+
     register_taxonomy(
       'portfolio_type',
       'web_portfolio',
@@ -105,13 +105,13 @@ function gpwd_custom_post_type_init() {
       'show_in_admin_bar'   => true,
       'show_in_nav_menus'   => true,
       'can_export'          => true,
-      'has_archive'         => true,    
+      'has_archive'         => true,
       'exclude_from_search' => false,
       'publicly_queryable'  => true,
       'capability_type'     => 'page',
     );
     register_post_type( 'snippets', $args );
-  
+
 }
 
 // Hook into the 'init' action
