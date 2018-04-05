@@ -193,11 +193,6 @@
 
 			the_post_thumbnail( $size , array( 'class' => 'o-thumbnail__image', 'itemprop' => 'image' ) );
 
-			if ( $caption )
-			{
-				echo '<figcaption class="o-thumbnail__caption u-relative">'. $caption .'</figcaption>';
-			}
-
 			echo '</figure>';
 		}
 	}
