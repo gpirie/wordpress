@@ -1,53 +1,53 @@
 <?php
-	/**
-	 * The template for displaying archive pages
-	 *
-	 * Used to display archive-type pages if nothing more specific matches a query.
-	 * For example, puts together date-based pages if no date.php file exists.
-	 *
-	 * If you'd like to further customize these archive views, you may create a
-	 * new template file for each one. For example, tag.php (Tag archives),
-	 * category.php (Category archives), author.php (Author archives), etc.
-	 *
-	 * @link https://codex.wordpress.org/Template_Hierarchy
-	 *
-	 * @package WordPress
-	 * @subpackage Theme Name
-	 */
+/**
+ * The template for displaying archive pages
+ *
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (Category archives), author.php (Author archives), etc.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Theme Name
+ */
 
-	get_header(); 
+get_header();
 
-	echo '<main itemprop="mainContentOfPage">';
+echo '<main itemprop="mainContentOfPage">';
 
-	if ( have_posts() ) : ?>
+if ( have_posts() ) : ?>
 
-		<header>
-			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			?>
-		</header><!-- .page-header -->
-
+	<header>
 		<?php
-		while ( have_posts() ) : the_post();
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
 
-			get_template_part( 'template-parts/content', get_post_format() );
+	<?php
+	while ( have_posts() ) : the_post();
 
-		endwhile;
+		get_template_part( 'template-parts/content', get_post_format() );
 
-		the_posts_pagination( array(
-			'prev_text'          => __( 'Previous page', 'starter-theme' ),
-			'next_text'          => __( 'Next page', 'starter-theme' ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'starter-theme' ) . ' </span>',
-		) );
+	endwhile;
 
-	else :
-		get_template_part( 'template-parts/content', 'none' );
+	the_posts_pagination( array(
+		'prev_text'          => __( 'Previous page', 'starter-theme' ),
+		'next_text'          => __( 'Next page', 'starter-theme' ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'starter-theme' ) . ' </span>',
+	) );
 
-	endif;
+else :
+	get_template_part( 'template-parts/content', 'none' );
 
-	echo '</main>';
+endif;
 
-	get_sidebar();
+echo '</main>';
 
-	get_footer();
+get_sidebar();
+
+get_footer();

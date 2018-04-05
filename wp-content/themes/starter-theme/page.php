@@ -1,24 +1,24 @@
 <?php
-	/**
-	 * The main template file. 
-	 *
-	 * @link https://codex.wordpress.org/Template_Hierarchy
-	 *
-	 * @package Theme Name
-	 */
+/**
+ * The main template file.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Theme Name
+ */
 
-	get_header(); 
+get_header();
 
-	echo '<main itemprop="mainContentOfPage">';
+echo '<main itemprop="mainContentOfPage">';
 
-	while ( have_posts() ) : the_post(); 
+while ( have_posts() ) : the_post();
 
-		get_template_part( 'template-parts/content', 'page' ); 
+	get_template_part( 'template-parts/content', 'page' );
 
-	endwhile;
+endwhile;
 
-	echo '</main>';
+echo '</main>';
 
-	get_sidebar();
-	
-	get_footer();
+get_sidebar();
+
+get_footer();

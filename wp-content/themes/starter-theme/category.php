@@ -1,39 +1,39 @@
 <?php
-	/**
-	 * The main template file. 
-	 *
-	 * @link https://codex.wordpress.org/Template_Hierarchy
-	 *
-	 * @package Theme Name
-	 */
+/**
+ * The main template file.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Theme Name
+ */
 
-	get_header();
+get_header();
 
-	echo '<main itemprop="mainContentOfPage">';
+echo '<main itemprop="mainContentOfPage">';
 
-	if ( have_posts() ) : 
+if ( have_posts() ) :
 
-		while ( have_posts() ) : the_post(); 
+	while ( have_posts() ) : the_post();
 
-			get_template_part( 'content', get_post_format() );
+		get_template_part( 'content', get_post_format() );
 
-		endwhile;	
+	endwhile;
 
-		the_posts_pagination( array(
-			'screen_reader_text' => ' ',
-			) 
-		);
+	the_posts_pagination( array(
+		'screen_reader_text' => ' ',
+		)
+	);
 
-	else : 
+else :
 
-		get_template_part( 'template-parts/content', 'none' );
+	get_template_part( 'template-parts/content', 'none' );
 
-		echo '</main>';
+	echo '</main>';
 
-		get_sidebar();
+	get_sidebar();
 
-	endif;
+endif;
 
-	wp_reset_postdata();
+wp_reset_postdata();
 
-	get_footer();
+get_footer();

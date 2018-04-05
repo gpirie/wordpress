@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content for template if no content.
+ *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Theme Name
@@ -12,9 +14,7 @@
 	<header class="o-page__header u-overflow u-relative">
 
 		<?php
-
-			the_title( '<h1 itemprop="title" class="o-post__title">', '</h1>' );			
-			
+			the_title( '<h1 itemprop="title" class="o-post__title">', '</h1>' );
 			starter_post_thumbnail();
 		?>
 
@@ -27,7 +27,7 @@
 	</div>
 
 	<footer class="o-page__footer u-clear u-hidden@print">
-		
+
 	</footer>
 
 </article>
