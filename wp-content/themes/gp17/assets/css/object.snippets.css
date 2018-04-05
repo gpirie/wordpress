@@ -1,16 +1,3 @@
 .prettyprint {
 	margin: 1em 0;
 }
-
-@media only screen and (min-width: 45.5em) {
-	.o-snippets__code {
-		float: left;
-		width: 60%;
-		margin-right: 5%;
-	}
-
-	.o-snippets__description {
-		float: right;
-		width: 35%;
-	}
-}
