@@ -12,29 +12,13 @@
  *
  * @return string Returns the post content with latest posts added.
  */
-function gutenberg_render_block_core_latest_posts( $attributes ) {
-	$posts_to_show = 5;
-
-	if ( array_key_exists( 'postsToShow', $attributes ) ) {
-
-		// Basic attribute validation.
-		if (
-			is_numeric( $attributes['postsToShow'] ) &&
-			$attributes['postsToShow'] > 0 &&
-			$attributes['postsToShow'] < 100
-		) {
-			$posts_to_show = intval( $attributes['postsToShow'] );
-		}
-	}
-
-	$align = 'center';
-	if ( isset( $attributes['align'] ) && in_array( $attributes['align'], array( 'left', 'right', 'wide', 'full' ), true ) ) {
-		$align = $attributes['align'];
-	}
-
+function render_block_core_latest_posts( $attributes ) {
 	$recent_posts = wp_get_recent_posts( array(
-		'numberposts' => $posts_to_show,
+		'numberposts' => $attributes['postsToShow'],
 		'post_status' => 'publish',
+		'order'       => $attributes['order'],
+		'orderby'     => $attributes['orderBy'],
+		'category'    => $attributes['categories'],
 	) );
 
 	$list_items_markup = '';
@@ -63,12 +47,12 @@ function gutenberg_render_block_core_latest_posts( $attributes ) {
 		$list_items_markup .= "</li>\n";
 	}
 
-	$class = "wp-block-latest-posts align{$align}";
-	if ( isset( $attributes['layout'] ) && 'grid' === $attributes['layout'] ) {
+	$class = "wp-block-latest-posts align{$attributes['align']}";
+	if ( isset( $attributes['postLayout'] ) && 'grid' === $attributes['postLayout'] ) {
 		$class .= ' is-grid';
 	}
 
-	if ( isset( $attributes['columns'] ) ) {
+	if ( isset( $attributes['columns'] ) && 'grid' === $attributes['postLayout'] ) {
 		$class .= ' columns-' . $attributes['columns'];
 	}
 
@@ -81,6 +65,46 @@ function gutenberg_render_block_core_latest_posts( $attributes ) {
 	return $block_content;
 }
 
-register_block_type( 'core/latest-posts', array(
-	'render_callback' => 'gutenberg_render_block_core_latest_posts',
-) );
+/**
+ * Registers the `core/latest-posts` block on server.
+ */
+function register_block_core_latest_posts() {
+	register_block_type( 'core/latest-posts', array(
+		'attributes'      => array(
+			'categories'      => array(
+				'type' => 'string',
+			),
+			'postsToShow'     => array(
+				'type'    => 'number',
+				'default' => 5,
+			),
+			'displayPostDate' => array(
+				'type'    => 'boolean',
+				'default' => false,
+			),
+			'postLayout'      => array(
+				'type'    => 'string',
+				'default' => 'list',
+			),
+			'columns'         => array(
+				'type'    => 'number',
+				'default' => 3,
+			),
+			'align'           => array(
+				'type'    => 'string',
+				'default' => 'center',
+			),
+			'order'           => array(
+				'type'    => 'string',
+				'default' => 'desc',
+			),
+			'orderBy'         => array(
+				'type'    => 'string',
+				'default' => 'date',
+			),
+		),
+		'render_callback' => 'render_block_core_latest_posts',
+	) );
+}
+
+add_action( 'init', 'register_block_core_latest_posts' );
