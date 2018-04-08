@@ -23,10 +23,21 @@
 			  $('.site-wrap').addClass('has-visible-menu');
 			}
 		}
+
+		//Tabs
+		$('.o-tabs__link').on( 'click', function (e) {
+
+			e.preventDefault();
+
+			var content_show = $( this ).attr('href');
+
+			$( '.is-visible' ).removeClass( 'is-visible' );
+			$( '.o-tabs__navitem--visible' ).removeClass( 'o-tabs__navitem--visible' );
+
+
+			$(this).parent().addClass( 'o-tabs__navitem--visible' );
+			$(content_show).addClass( 'is-visible' );
+		} );
 	});
 
 } )( window.jQuery || window.Zepto );
-
-
-
-    

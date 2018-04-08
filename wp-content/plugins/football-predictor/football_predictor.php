@@ -25,6 +25,7 @@ require_once( PREDICTOR_DIR . 'inc/admin.php' );
 require_once( PREDICTOR_DIR . 'inc/fixtures.php' );
 require_once( PREDICTOR_DIR . 'inc/predictions.php' );
 require_once( PREDICTOR_DIR . 'inc/leagues.php' );
+require_once( PREDICTOR_DIR . 'inc/leagues.join.php' );
 require_once( PREDICTOR_DIR . 'inc/widgets.php' );
 
 if( is_admin() ) {

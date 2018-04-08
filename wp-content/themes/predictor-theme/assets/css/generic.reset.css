@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 
 html{
 	overflow-y: scroll;
-	-webkit-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
@@ -87,7 +87,7 @@ abbr[title], dfn[title] {
 }
 
 img {
-    border: 0; 
+    border: 0;
     -ms-interpolation-mode: bicubic;
 	vertical-align: middle;
 	max-width: 100%;
@@ -166,26 +166,26 @@ textarea {
 	vertical-align: top;
 }
 
-::-webkit-selection { 
-	background : #c0b283; 
-	color : rgb(250,250,250); 
+::-webkit-selection {
+	background : #8C0E19;
+	color : rgb(250,250,250);
 	text-shadow : none;
 }
 
-::-moz-selection { 
-	background : #c0b283; 
-	color : rgb(250,250,250); 
+::-moz-selection {
+	background : #8C0E19;
+	color : rgb(250,250,250);
 	text-shadow : none;
 }
 
-::selection { 
-	background : #c0b283;  
-	color : rgb(250,250,250); 
+::selection {
+	background : #8C0E19;
+	color : rgb(250,250,250);
 	text-shadow : none;
 }
 
 /* User Alerts */
-.o-notice {
+.o-notice, .error {
 	border: 1px solid;
 	padding: .75em;
 	background-repeat: no-repeat;
@@ -210,7 +210,7 @@ textarea {
 	color: #9F6000;
 	background-color: #FEEFB3;
 }
-.o-notice--error {
+.o-notice--error, .error {
 	color: #D8000C;
 	background-color: #FFBABA;
 }

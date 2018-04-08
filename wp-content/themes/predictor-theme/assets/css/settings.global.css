@@ -12,7 +12,7 @@ html, body {
 }
 
 body {
-    font: 300 16px/1.412 "Droid Sans", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font: 400 16px/1.412 'Roboto Mono', monospace;
     color: #444;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
         display: none;
     }
 
-    .site-wrap {
+    .u-wrap {
         padding: 0 5%;
     }
 
@@ -50,7 +50,7 @@ body {
         display: none;
     }
 
-    body {
+    .u-wrap {
         margin: 0 10%;
     }
 
@@ -61,7 +61,18 @@ body {
         display: none;
     }
 
-    body {
+    .u-wrap {
         margin: 0 15%;
     }
+
+}
+
+.wp-block-cover-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-position: center;
 }

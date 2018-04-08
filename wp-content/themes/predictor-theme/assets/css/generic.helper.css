@@ -127,6 +127,10 @@
     position: fixed;
 }
 
+.is-visible {
+    display: block !important;
+}
+
 /* Basic WP Styles */
 
 .alignnone {

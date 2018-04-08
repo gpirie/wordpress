@@ -1,8 +1,31 @@
 .o-predictionsform__fixture {
 	margin-bottom: 1em;
-	text-align: center;
+}
+
+.o-predictionsform__label {
+	display: block;
 }
 
 .o-predictionsform__input {
-	margin: 0 .5em;
+	display: block;
+	padding: .5em;
+	text-align: center;
+}
+
+@media only screen and (min-width: 45.5em) {
+	.o-predictionsform__label {
+		float: left;
+		width: 30%;
+	}
+
+	.o-predictionsform__input {
+		float: left;
+		width: 10%;
+		margin-right: 2em;
+	}
+
+	.o-predictionsform__versus {
+		float: left;
+		margin-right: 2em;
+	}
 }

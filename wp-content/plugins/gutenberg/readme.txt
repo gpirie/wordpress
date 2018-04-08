@@ -6,13 +6,13 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Block editor for WordPress. This is the development plugin for the new block editor in core. Warning: This is beta software, do not run on real sites!
+A new editing experience for WordPress is in the works, with the goal of making it easier than ever to make your words, pictures, and layout look just right. This is the beta plugin for the project.
 
 == Description ==
 
 The goal of the block editor is to make adding rich content to WordPress simple and enjoyable.
 
-<strong>Warning: This is beta software, do not run on production sites!</strong>
+<strong>This is beta software.</strong>
 
 The new post and page building experience will make writing rich posts effortless, making it easy to do what today might take shortcodes, custom HTML, or "mystery meat" embed discovery.
 
@@ -31,6 +31,133 @@ We'd love to hear your bug reports, feature suggestions and any other feedback! 
 The more the merrier! To get started, check out our <a href="https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTING.md">guide for contributors</a>.
 
 == Changelog ==
+
+= 1.6.0 =
+
+* Move the block toolbar to the editor's top header. This experiment seeks to reduce the presence of UI obscuring content.
+* Alternate style for block boundaries and multi-selection. Also engages "edit" mode when using arrow keys (hides UI).
+* Complete rework of arrow keys navigation between blocks—faster, clearer, and respects caret position while traversing text blocks.
+* Added keyboard shortcuts to navigate regions.
+* Implement multi-selection mode using just arrow with shift keys and support horizontal arrows.
+* Suggest a post format for additional blocks (embeds, gallery, audio, video) and expand on the heuristics to include case of one format-block at the top plus a paragraph of text below as valid.
+* Allow converting a classic block (post) into several Gutenblocks.
+* Several performance improvements 🎉
+* * Avoid re-rendering all blocks on selection changes.
+* * Add memoization for multi-select selectors.
+* * Rework implementation of blockRef to avoid render cascade from block list.
+* * Use flatMap when allocating the block list for rendering.
+* * Reorganize logic to determine when a post can be saved to be less expensive.
+* Refactor handling of revisions to avoid loading them up-front, significantly reducing load time on long posts with many revisions.
+* Further memoization on selectors based on specific state keys.
+* Render meta-boxes as part of the main column, not as a collapsible box.
+* Improve handling of undo action stack by resetting only on setup. This makes undo a lot more usable in general.
+* Changes to block inserter design positioning tabs at the top. (1.5.1)
+* Remove multi-select buffer zone and throttle delay for a faster response.
+* API for handling custom formats/tokens in Editable.
+* Improve withApiData component to be able to serve cached data (if available) during an initial render.
+* Show block toolbar in HTML mode for mobile.
+* Update Shortcode block to use a textarea instead of single line input.
+* Increase width of invalid block message.
+* Avoid redirecting to Gutenberg when saving on classic editor. (1.5.2)
+* Don't show "edit as HTML" for the Code and Shortcode blocks.
+* Refactor notices state reducer as array optimizing performance.
+* Disable front-end styles for basic quote block.
+* Reorganize the meta-boxes components for code clarity.
+* Extract reusable PostSticky, PostFormat, PostPendingStatus, PostAuthor, PostTrash, PostExcerpt components.
+* Resolve issue with having to tab twice on the toolbar due to focusReturn utility interfering with button tooltips.
+* Reset min-width of Tooltip component.
+* Avoid function instantiation in render of WritingFlow component.
+* Add the gutenberg_can_edit_post_type filter for plugins to add or remove support for custom post types.
+* Update header toolbar keyboard navigation to include undo and redo buttons.
+* Don't show the classic editor dropdown on unsupported post types.
+* Drop resizable-box in favor of re-resizable to use in the image block resize handlers.
+* Correct placement of link-dialog after moving toolbar to the top.
+* Adjust revisions logic to link to latest entry.
+* Allow editable to accept aria attributes.
+* Add generic focus effect to popovers.
+* Remove unused focus prop from Button component.
+* Remove core namespace from demo content.
+* Enable iOS smooth scrolling within scroll containers.
+* Make sure link menu appears above sibling inserter.
+* Improve layout paneling for short-height viewports.
+* Fix problem with multi-select not working again after a group of blocks has been moved.
+* Fix problem with deleting a block in HTML mode.
+* Fix issue with keyboard navigation entering textareas (non contentEditable) and losing caret position.
+* Fix issue where clicking on an item within autocomplete would dismiss the popover and not select anything.
+* Fix visual issue with the document info popover. (1.5.2)
+* Fix bug with deleting featured image on a post.
+* Fix error with removing a block placeholder.
+* Fix problem with FF and meta-boxes.
+* Fix issue with Classic Text description showing all the time.
+* Fix issue with the color picker width.
+* Fix quick inserter display of custom block icons.
+* Fix missing node check when blurring a paragraph block.
+* Warn about misuses of z-index mappings.
+* Make use of the "build stages" feature in the travis config file.
+* Upgrade ESLint dependencies.
+* Move test configuration files to test/unit.
+* Add easy local environment setup and Cypress e2e tests.
+
+= 1.5.2 =
+
+* Add the `gutenberg_can_edit_post_type` filter for plugins to add or remove support for custom post types.
+* Fix Classic Editor redirecting to Gutenberg when saving a post.
+* Fix Classic Editor dropdown showing on post types that don't support Gutenberg.
+* Fix Classic Editor dropdown hiding behind notices.
+* Fix an issue with collapsing popover content.
+
+= 1.5.1 =
+
+* New design for the inserter with tabs at the top and more space for text.
+* Fix problem with Firefox and the meta-boxes resize script.
+* Fix issue with Classic Text description showing without focus.
+
+= 1.5.0 =
+
+* Set Gutenberg as the default editor (still allow creating new posts in Classic Editor).
+* Add metabox support—this is an initial pass at supporting existing meta-boxes without intervention.
+* Display inserter button between blocks.
+* Improve block navigation performance.
+* Hide core namespace in comment serialization. wp:core/gallery becomes wp:gallery.
+* Implement a dropdown for Publish flow.
+* Allow multiselect to work on shift-click.
+* Insert new block from title on enter.
+* Use a dropdown for the block menu (settings, delete, edit as HTML).
+* Add expandable panel for post visibility.
+* Add expandable panel for post scheduling.
+* Implement more inline formatting boundaries.
+* Better clearing of block selection.
+* Show placeholder hint for slash autocomplete on new text blocks.
+* Remove multi-selection header in favor of default block controls (mover and menu).
+* Allow blocks to disable HTML edit mode.
+* Adjust transition and delay of inserter between blocks.
+* Added text color option for button block.
+* Hide extended settings if sidebar is closed.
+* New embed icons.
+* Move the store initialization to a dedicated component.
+* Improve scroll position of scrollable elements.
+* Drop undefined blocks from recent blocks.
+* Update HTML block description.
+* Update embed block description.
+* Add description for classic block.
+* PHPCS-specific improvements.
+* Add a default block icon.
+* Adjust line height of classic text to match paragraph blocks.
+* Adjust filter order in classic block so plugins that extend it can work properly.
+* Set textarea value as prop and not children.
+* Fix mobile issues with block setting menu.
+* Fix undefined colors warning.
+* Fix broken upload button on image placeholder.
+* Fix post edit URL when saving a post/page/CPT.
+* Fix conflict with new TinyMCE version and heading blocks.
+* Tweak block sibling element for better target surface.
+* Avoid loading Gutenberg assets on non-Gutenberg pages.
+* Adjust Jest configuration.
+* Document supportAnchor in block API.
+* Updated TinyMCE to latest.
+* Document block name usage in serialization and add example of serialized block.
+* Updated FAQ section.
+* Upgrade React and Enzyme dependencies.
 
 = 1.4.0 =
 
