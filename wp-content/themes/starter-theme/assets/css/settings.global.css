@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+<<<<<<< HEAD:wp-content/themes/gp17/assets/css/settings.global.css
+    font: 400 16px/1.412 "Lora", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+=======
+    font: 300 16px/1.412 "Droid Sans", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+>>>>>>> 8224c2803ae2e271a935eee33153c050f10105e2:wp-content/themes/starter-theme/assets/css/settings.global.css
+    color: #444;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.has-visible-menu {
+    -webkit-transform: translateX(150px);
+    transform: translateX(150px);
+}
+
+@media only screen and (max-width: 59.999em) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 45.499em) {
+
+    .u-hidden\@sm {
+        display: none;
+    }
+
+    .site-wrap {
+        padding: 0 5%;
+    }
+
+}
+
+@media only screen and (min-width: 45.5em) and (max-width: 60.624em) {
+
+    .u-hidden\@md {
+        display: none;
+    }
+
+    body {
+        margin: 0 10%;
+    }
+
+}
+
+@media only screen and (min-width: 60.625em) {
+    .u-hidden\@lg {
+        display: none;
+    }
+
+    body {
+        margin: 0 15%;
+    }
+}

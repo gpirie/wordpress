@@ -1,0 +1,133 @@
+<<<<<<< HEAD:wp-content/themes/gp17/assets/css/elements.type.css
+h1, h2, h3 {
+	font-family: Nunito;
+	color: #003399;
+	margin-bottom: .25em;
+}
+
+h1 {
+	font-size: 2.405em;
+}
+
+h2 {
+	font-size: 1.82em;
+}
+
+h3 {
+	font-size: 1.645em;
+}
+
+a {
+	text-decoration: none;
+	color: #003399;
+}
+
+=======
+>>>>>>> 8224c2803ae2e271a935eee33153c050f10105e2:wp-content/themes/starter-theme/assets/css/elements.type.css
+p {
+	margin-bottom: 1em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-bottom: 1em;
+}
+
+figcaption {
+	padding: .5em 0;
+}
+
+table {
+	margin-bottom: 1em;
+}
+
+td, th {
+	border: 1px solid #ddd;
+	padding: .35em;
+}
+
+th {
+	background-color: #ddd;
+}
+
+@media screen and (max-width: 37.5em) {
+	thead {
+		display: none;
+	}
+
+	tr td:first-child {
+		background: #f0f0f0; 
+	}
+
+	td {
+		display: block;  
+		text-align:center;
+	}
+
+	tbody td:before { 
+		content: attr(data-th); 
+		display: block;
+		text-align:center;  
+	}
+}
+
+ul, ol {
+	margin-bottom: .75em;
+}
+
+ul ul, ol, ol {
+	margin-top: .75em;
+}
+
+ol {
+	list-style: numeric;
+}
+
+ol li {
+	margin-left: 1em;
+}
+
+li {
+	margin-bottom: .75em;
+}
+
+li li {
+	margin-left: 1em;
+}
+
+cite, em {
+	font-style: italic;
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
