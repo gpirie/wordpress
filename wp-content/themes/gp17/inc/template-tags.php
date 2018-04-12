@@ -226,9 +226,9 @@
 			}
 
 			$output .= '</ul>';
-		}
 
-		echo $output;
+			echo $output;
+		}
 	}
 
 	function gpwd_gallery($html, $attr) {
