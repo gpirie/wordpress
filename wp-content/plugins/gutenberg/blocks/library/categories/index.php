@@ -12,7 +12,7 @@
  *
  * @return string Returns the categories list/dropdown markup.
  */
-function gutenberg_render_block_core_categories( $attributes ) {
+function render_block_core_categories( $attributes ) {
 	static $block_id = 0;
 	$block_id++;
 
@@ -30,20 +30,20 @@ function gutenberg_render_block_core_categories( $attributes ) {
 	);
 
 	if ( ! empty( $attributes['displayAsDropdown'] ) ) {
-		$id = 'wp-block-categories-' . $block_id;
-		$args['id'] = $id;
+		$id                       = 'wp-block-categories-' . $block_id;
+		$args['id']               = $id;
 		$args['show_option_none'] = __( 'Select Category', 'gutenberg' );
-		$wrapper_markup = '<div class="%1$s">%2$s</div>';
-		$items_markup = wp_dropdown_categories( $args );
-		$type = 'dropdown';
+		$wrapper_markup           = '<div class="%1$s">%2$s</div>';
+		$items_markup             = wp_dropdown_categories( $args );
+		$type                     = 'dropdown';
 
 		if ( ! is_admin() ) {
-			$wrapper_markup .= gutenberg_build_dropdown_script_block_core_categories( $id );
+			$wrapper_markup .= build_dropdown_script_block_core_categories( $id );
 		}
 	} else {
 		$wrapper_markup = '<div class="%1$s"><ul>%2$s</ul></div>';
-		$items_markup = wp_list_categories( $args );
-		$type = 'list';
+		$items_markup   = wp_list_categories( $args );
+		$type           = 'list';
 	}
 
 	$class = "wp-block-categories wp-block-categories-{$type} align{$align}";
@@ -64,7 +64,7 @@ function gutenberg_render_block_core_categories( $attributes ) {
  *
  * @return string Returns the dropdown onChange redirection script.
  */
-function gutenberg_build_dropdown_script_block_core_categories( $dropdown_id ) {
+function build_dropdown_script_block_core_categories( $dropdown_id ) {
 	ob_start();
 	?>
 	<script type='text/javascript'>
@@ -84,6 +84,13 @@ function gutenberg_build_dropdown_script_block_core_categories( $dropdown_id ) {
 	return ob_get_clean();
 }
 
-register_block_type( 'core/categories', array(
-	'render_callback' => 'gutenberg_render_block_core_categories',
-) );
+/**
+ * Registers the `core/categories` block on server.
+ */
+function register_block_core_categories() {
+	register_block_type( 'core/categories', array(
+		'render_callback' => 'render_block_core_categories',
+	) );
+}
+
+add_action( 'init', 'register_block_core_categories' );

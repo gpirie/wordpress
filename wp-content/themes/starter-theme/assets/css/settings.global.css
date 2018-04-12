@@ -12,7 +12,11 @@ html, body {
 }
 
 body {
+<<<<<<< HEAD:wp-content/themes/starter-theme/assets/css/settings.global.css
     font: 300 16px/1.412 "Droid Sans", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+=======
+    font: 400 16px/1.412 "Lora", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+>>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/assets/css/settings.global.css
     color: #444;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

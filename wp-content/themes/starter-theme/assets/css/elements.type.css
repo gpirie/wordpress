@@ -1,3 +1,29 @@
+<<<<<<< HEAD:wp-content/themes/starter-theme/assets/css/elements.type.css
+=======
+h1, h2, h3 {
+	font-family: Nunito;
+	color: #003399;
+	margin-bottom: .25em;
+}
+
+h1 {
+	font-size: 2.405em;
+}
+
+h2 {
+	font-size: 1.82em;
+}
+
+h3 {
+	font-size: 1.645em;
+}
+
+a {
+	text-decoration: none;
+	color: #003399;
+}
+
+>>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/assets/css/elements.type.css
 p {
 	margin-bottom: 1em;
 }

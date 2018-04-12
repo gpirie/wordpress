@@ -12,14 +12,25 @@ Tags:
 
 Contents:
 
+Fonts:
+http://www.modularscale.com/?1.125&em&1.462?1.125&em&1.618
+
 $trumps
 
 
 /* $trumps - Really specific styles that override styles set above. */
 
+<<<<<<< HEAD:wp-content/themes/starter-theme/style.css
 /* WooCommerce */
 
 .o-checkout__details .select2 {
 	display: block;
 	width: 60% !important;
+=======
+/* Google Pretty Print*/
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
+  margin: 0;
+>>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/style.css
 }

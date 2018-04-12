@@ -45,6 +45,10 @@
     display: block;
 }
 
+.u-inline {
+    display: inline;
+}
+
 .u-inline-block {
     display: inline-block;
 }
