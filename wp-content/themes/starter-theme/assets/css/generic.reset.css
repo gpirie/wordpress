@@ -93,7 +93,12 @@ img {
 	max-width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:wp-content/themes/gp17/assets/css/generic.reset.css
+=======
+<<<<<<< HEAD:wp-content/themes/starter-theme/assets/css/generic.reset.css
+=======
+>>>>>>> master
 img:before {  
   content: "";
   display: block;
@@ -107,8 +112,12 @@ img:before {
 min-height: 50px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8224c2803ae2e271a935eee33153c050f10105e2:wp-content/themes/starter-theme/assets/css/generic.reset.css
+=======
+>>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/assets/css/generic.reset.css
+>>>>>>> master
 video {
 	max-width: 100%;
 }

@@ -1,0 +1,17 @@
+@media only screen and (min-width: 45.5em) {
+	.o-featuredposts__image {
+		float: left;
+		margin-right: 1em;
+		width: 40%;
+	}
+
+	.o-featuredposts__content {
+		float: left;
+		width: 55%;
+		width: calc(60%-1em);
+	}
+
+	.o-featuredposts__excerpt {
+		margin: 1em 0;
+	}
+}

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:wp-content/themes/gp17/assets/css/elements.type.css
+=======
+<<<<<<< HEAD:wp-content/themes/starter-theme/assets/css/elements.type.css
+=======
+>>>>>>> master
 h1, h2, h3 {
 	font-family: Nunito;
 	color: #003399;
@@ -22,8 +27,12 @@ a {
 	color: #003399;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 8224c2803ae2e271a935eee33153c050f10105e2:wp-content/themes/starter-theme/assets/css/elements.type.css
+=======
+>>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/assets/css/elements.type.css
+>>>>>>> master
 p {
 	margin-bottom: 1em;
 }
