@@ -1,6 +1,14 @@
-.o-portfolio__item {
-	float: left;
-	margin-bottom: 1em;
+@media only screen and (min-width: 36.375em) {
+	.o-portfolio {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	    grid-column-gap : 2vw;
+	}
+
+	.o-portfolio__item {
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 .o-portfolio__item--page {
@@ -22,13 +30,6 @@
 }
 
 @media only screen and (min-width: 45.5em) {
-	.o-portfolio__item--block {
-		width: 30%;
-	}
-
-	.o-portfolio__item--block:not(:nth-child(3n)) {
-		margin-right: 5%;
-	}
 
 	.o-portfolio__thumb {
 		float: left;

@@ -11,6 +11,11 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Setup variables */
+body {
+    --brand-color: #003399;
+}
+
 body {
     font: 400 16px/1.412 "Lora", "Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
     color: #444;
@@ -19,11 +24,13 @@ body {
     -o-box-sizing: border-box;
     box-sizing: border-box;
     overflow: hidden;
+    padding: 0 5%;
+    display: grid;
+    grid-column-gap : 2vw;
 }
 
-.has-visible-menu {
-    -webkit-transform: translateX(150px);
-    transform: translateX(150px);
+main {
+    grid-column: 1 / -1;
 }
 
 @media only screen and (max-width: 59.999em) {
@@ -33,6 +40,10 @@ body {
 }
 
 @media only screen and (max-width: 45.499em) {
+
+    body {
+        grid-template-columns: repeat(6, 1fr);
+    }
 
     .u-hidden\@sm {
         display: none;
@@ -45,6 +56,9 @@ body {
 }
 
 @media only screen and (min-width: 45.5em) and (max-width: 60.624em) {
+    body {
+        grid-template-columns: repeat(9, 1fr);
+    }
 
     .u-hidden\@md {
         display: none;
@@ -57,6 +71,10 @@ body {
 }
 
 @media only screen and (min-width: 60.625em) {
+    body {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
     .u-hidden\@lg {
         display: none;
     }

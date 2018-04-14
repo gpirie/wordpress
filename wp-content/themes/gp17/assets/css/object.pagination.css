@@ -18,7 +18,7 @@
 }
 
 .o-pagination__item--active {
-	background: #003399;
+	background: var(--brand-color);
 }
 
 .o-pagination__item--active a {

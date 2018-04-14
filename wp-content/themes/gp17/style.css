@@ -13,7 +13,7 @@ Tags:
 Colors:	
 Orange			#edae49
 Red				#d1495b
-Brand Blue:		#003399;
+Brand Blue:		var(--brand-color);
 Light Blue		#00798c
 Dark Blue		#003d5b
 

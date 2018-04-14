@@ -1,14 +1,16 @@
-.c-services__service {
-	margin-bottom: 1em;
-}
-
-@media only screen and (min-width: 45.5em) {
-	.c-services__service {
-		float: left;
-		width: 30%;
+@media only screen and (min-width: 36.375em) {
+	.c-services {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		grid-column-gap : 2vw;
 	}
 
-	.c-services__service:not(:nth-child(3n)) {
-		margin-right: 5%;
+	.c-services__service {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.c-services__service {
+		margin-bottom: 1em;
 	}
 }

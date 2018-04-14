@@ -2,6 +2,7 @@
 	background: #dcdcdc;
 	padding: 1em;
 	margin-bottom: 1em;
+	grid-column: 1 / -1;
 }
 
 .o-logo--site-footer {

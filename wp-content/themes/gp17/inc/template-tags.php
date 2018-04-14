@@ -118,8 +118,14 @@
 		if ( has_nav_menu( $theme_location ) ) {
 
 			if( $menu_toggle === true ) {
-				echo '<a class="c-toggle c-toggle--'. $theme_location .' u-hidden@md u-hidden@lg u-hidden@print" href="#">Menu</a>';
-		    }
+				?>
+				<button class="c-toggle c-toggle-spin c-toggle c-toggle--<?php esc_attr_e( $theme_location, 'gpwd-theme' ); ?>' u-hidden@md u-hidden@lg u-hidden@print" type="button">
+					<span class="c-toggle-box">
+						<span class="c-toggle-inner"></span>
+					</span>
+				</button>
+				<?php
+			}
 
 		    wp_nav_menu( array(
 		        'theme_location' 	=> $theme_location,

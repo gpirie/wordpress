@@ -3,10 +3,25 @@
 	margin-bottom: 1.5em;
 	border-bottom: 1px solid #e7e7e7;
 	padding-bottom: 1.5em;
+	grid-column: 1 / -1;
+    display: grid;
+    grid-column-gap : 2vw;
+    grid-template-columns: repeat(6, 1fr);
+	align-items: center;
+}
+
+.custom-logo-link {
+	justify-self: start;
+}
+
+@media only screen and (max-width: 45.499em) {
+	.custom-logo-link {
+		grid-column: 1 / 6;
+	}
 }
 
 @media only screen and (min-width: 45.5em) {
 	.custom-logo-link {
-		float: left;
+		grid-column: 1 / 3;
 	}
 }
