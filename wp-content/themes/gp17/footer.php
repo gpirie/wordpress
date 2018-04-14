@@ -23,8 +23,6 @@
 
 			<?php wp_footer();?>
 
-		</div> <!--End site-wrap-->
-
 	</body>
 
 </html>

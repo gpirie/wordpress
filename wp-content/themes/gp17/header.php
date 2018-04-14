@@ -27,31 +27,29 @@
 
 		<?php do_action( 'body_open' ); ?>
 		
-		<div class="site-wrap">
+		<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
 
-			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gpwd-theme' ); ?></a>
+		<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">
 
-			<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">				
+			<?php
 
-				<?php
+				if ( has_custom_logo() )
+				{
+					the_custom_logo();
+				}
+				else
+				{
+					$description = get_bloginfo( 'description', 'display' );
+					$title = get_bloginfo( 'title', 'display' );
 
-					if ( has_custom_logo() ) 
+					if ( $title )
 					{
-						the_custom_logo();
+						echo '<h1 class="site-title">'. $title .'</h1>';
 					}
-					else 
-					{
-						$description = get_bloginfo( 'description', 'display' );
-						$title = get_bloginfo( 'title', 'display' );
+				}
 
-						if ( $title ) 
-						{
-							echo '<h1 class="site-title">'. $title .'</h1>';
-						}
-					}			
+				gpwd_navigation( 'main_menu', true );
 
-					gpwd_navigation( 'main_menu', true );
-					
-				?>	
+			?>
 
-			</header>
+		</header>
