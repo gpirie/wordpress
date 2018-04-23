@@ -154,7 +154,7 @@ function fp_theme_scripts()
 	wp_dequeue_style( 'bp-legacy-css' );
 
 	/* JS */
-	wp_enqueue_script( 'fp-script', FP_DIRECTORY_URI . '/assets/js/script.js', array(), FP_VERSION, true );
+	wp_enqueue_script( 'fp-script', FP_DIRECTORY_URI . '/assets/js/script.js', array('jquery'), FP_VERSION, true );
 
 	wp_enqueue_script( 'html5shiv', FP_DIRECTORY_URI . '/assets/js/html5-shiv.js', array(), '3.7.2', false );
 	add_filter( 'script_loader_tag', function( $tag, $handle )
