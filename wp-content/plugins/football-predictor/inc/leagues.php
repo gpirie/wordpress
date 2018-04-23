@@ -36,11 +36,11 @@
             return false;
         }
 
-        if( isset( $_POST['league'] ) ) {
+        if( isset( $_POST['league']['league_name'] ) ) {
+
             $wpdb->insert($wpdb->prefix . PREDICTOR_TABLE_LEAGUES,
                 array(
-                    'league_name'           => esc_attr( $_POST['league']['league_name'] ),
-                    'league_owner'          => get_current_user_id(),
+                    'league_name'           => esc_attr( $_POST['league']['league_name'] )
                 )
             );
 
