@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
@@ -9,15 +11,17 @@
 class WPSEO_Social_Admin extends WPSEO_Metabox {
 
 	/**
+<<<<<<< HEAD
 	 * @var array
 	 */
 	private $options;
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Class constructor.
 	 */
 	public function __construct() {
-		$this->options = WPSEO_Options::get_option( 'wpseo_social' );
 		self::translate_meta_boxes();
 		add_filter( 'wpseo_save_metaboxes', array( $this, 'save_meta_boxes' ), 10, 1 );
 		add_action( 'wpseo_save_compare_data', array( $this, 'og_data_compare' ), 10, 1 );
@@ -35,6 +39,15 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 
 		/* translators: %s expands to the social network's name. */
 		$description_text = __( 'If you don\'t want to use the meta description for sharing the post on %s but want another description there, write it here.', 'wordpress-seo' );
+<<<<<<< HEAD
+
+		/* translators: %s expands to the social network's name. */
+		$image_text = __( 'If you want to override the image used on %s for this post, upload / choose an image or add the URL here.', 'wordpress-seo' );
+
+		/* translators: %1$s expands to the social network, %2$s to the recommended image size. */
+		$image_size_text = __( 'The recommended image size for %1$s is %2$s pixels.', 'wordpress-seo' );
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 
 		/* translators: %s expands to the social network's name. */
 		$image_text = __( 'If you want to override the image used on %s for this post, upload / choose an image or add the URL here.', 'wordpress-seo' );
@@ -42,23 +55,22 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 		/* translators: %1$s expands to the social network, %2$s to the recommended image size. */
 		$image_size_text = __( 'The recommended image size for %1$s is %2$s pixels.', 'wordpress-seo' );
 
-		$options = WPSEO_Options::get_option( 'wpseo_social' );
-
 		$social_networks = array(
-			'opengraph'  => __( 'Facebook', 'wordpress-seo' ),
-			'twitter'    => __( 'Twitter', 'wordpress-seo' ),
+			'opengraph' => __( 'Facebook', 'wordpress-seo' ),
+			'twitter'   => __( 'Twitter', 'wordpress-seo' ),
 		);
 
 		// Source: https://blog.bufferapp.com/ideal-image-sizes-social-media-posts.
 		$recommended_image_sizes = array(
 			/* translators: %1$s expands to the image recommended width, %2$s to its height. */
-			'opengraph'   => sprintf( __( '%1$s by %2$s', 'wordpress-seo' ), '1200', '630' ), // Source: https://developers.facebook.com/docs/sharing/best-practices#images.
+			'opengraph' => sprintf( __( '%1$s by %2$s', 'wordpress-seo' ), '1200', '630' ),
+			// Source: https://developers.facebook.com/docs/sharing/best-practices#images.
 			/* translators: %1$s expands to the image recommended width, %2$s to its height. */
-			'twitter'     => sprintf( __( '%1$s by %2$s', 'wordpress-seo' ), '1024', '512' ),
+			'twitter'   => sprintf( __( '%1$s by %2$s', 'wordpress-seo' ), '1024', '512' ),
 		);
 
 		foreach ( $social_networks as $network => $label ) {
-			if ( true === $options[ $network ] ) {
+			if ( true === WPSEO_Options::get( $network, false ) ) {
 				/* translators: %s expands to the name of a social network. */
 				self::$meta_fields['social'][ $network . '-title' ]['title']       = sprintf( __( '%s Title', 'wordpress-seo' ), $label );
 				self::$meta_fields['social'][ $network . '-title' ]['description'] = sprintf( $title_text, $label );
@@ -83,12 +95,18 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 		$tabs               = array();
 		$social_meta_fields = $this->get_meta_field_defs( 'social' );
 		$single             = true;
+<<<<<<< HEAD
+=======
 
-		if ( $this->options['opengraph'] === true && $this->options['twitter'] === true ) {
+		$opengraph = WPSEO_Options::get( 'opengraph' );
+		$twitter   = WPSEO_Options::get( 'twitter' );
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
+
+		if ( $opengraph === true && $twitter === true ) {
 			$single = null;
 		}
 
-		if ( $this->options['opengraph'] === true ) {
+		if ( $opengraph === true ) {
 			$tabs[] = new WPSEO_Metabox_Form_Tab(
 				'facebook',
 				$this->get_social_tab_content( 'opengraph', $social_meta_fields ),
@@ -101,7 +119,7 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 			);
 		}
 
-		if ( $this->options['twitter'] === true ) {
+		if ( $twitter === true ) {
 			$tabs[] = new WPSEO_Metabox_Form_Tab(
 				'twitter',
 				$this->get_social_tab_content( 'twitter', $social_meta_fields ),
@@ -153,6 +171,7 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 	 * Returns the Upgrade to Premium notice.
 	 *
 	 * @param string $network The social network.
+	 *
 	 * @return string The notice HTML on the free version, empty string on premium.
 	 */
 	public function get_premium_notice( $network ) {
@@ -241,6 +260,7 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 			}
 		}
 	}
+<<<<<<< HEAD
 
 
 	/********************** DEPRECATED METHODS **********************/
@@ -285,4 +305,6 @@ class WPSEO_Social_Admin extends WPSEO_Metabox {
 		return '';
 	}
 	// @codeCoverageIgnoreEnd
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 } /* End of class */

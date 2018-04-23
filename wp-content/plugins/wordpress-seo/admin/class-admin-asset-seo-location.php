@@ -1,6 +1,12 @@
 <?php
 /**
+<<<<<<< HEAD
  * @package WPSEO|Admin
+=======
+ * WPSEO plugin file.
+ *
+ * @package WPSEO\Admin
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  */
 
 /**
@@ -44,7 +50,11 @@ final class WPSEO_Admin_Asset_SEO_Location implements WPSEO_Admin_Asset_Location
 				WPSEO_Utils::javascript_console_notification(
 					'Development Files',
 					sprintf(
+<<<<<<< HEAD
 					/* translators: %1$s resolves to https://github.com/Yoast/wordpress-seo */
+=======
+						/* translators: %1$s resolves to https://github.com/Yoast/wordpress-seo */
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 						__( 'You are trying to load non-minified files. These are only available in our development package. Check out %1$s to see all the source files.', 'wordpress-seo' ),
 						'https://github.com/Yoast/wordpress-seo'
 					),

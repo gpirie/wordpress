@@ -26,9 +26,14 @@
  * @return array $post      Post object.
  */
 function gutenberg_remove_wpcom_markdown_support( $post ) {
+<<<<<<< HEAD
 	if ( gutenberg_content_has_blocks( $post->post_content ) ) {
 		remove_post_type_support( 'post', 'wpcom-markdown' );
+=======
+	if ( class_exists( 'WPCom_Markdown' ) && gutenberg_content_has_blocks( $post['post_content'] ) ) {
+		WPCom_Markdown::get_instance()->unload_markdown_for_posts();
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	}
 	return $post;
 }
-add_filter( 'rest_pre_insert_post', 'gutenberg_remove_wpcom_markdown_support' );
+add_filter( 'wp_insert_post_data', 'gutenberg_remove_wpcom_markdown_support', 9 );

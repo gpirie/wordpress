@@ -1,5 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
+=======
+ * WPSEO plugin file.
+ *
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  * @package WPSEO\Admin\Listeners
  */
 

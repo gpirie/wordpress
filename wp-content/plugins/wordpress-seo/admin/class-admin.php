@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
@@ -12,11 +14,14 @@ class WPSEO_Admin {
 	const PAGE_IDENTIFIER = 'wpseo_dashboard';
 
 	/**
+<<<<<<< HEAD
 	 * @var array
 	 */
 	private $options;
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Array of classes that add admin functionality.
 	 *
 	 * @var array
@@ -34,13 +39,11 @@ class WPSEO_Admin {
 		$wpseo_menu = new WPSEO_Menu();
 		$wpseo_menu->register_hooks();
 
-		$this->options = WPSEO_Options::get_options( array( 'wpseo', 'wpseo_permalinks' ) );
-
 		if ( is_multisite() ) {
 			WPSEO_Options::maybe_set_multisite_defaults( false );
 		}
 
-		if ( $this->options['stripcategorybase'] === true ) {
+		if ( WPSEO_Options::get( 'stripcategorybase' ) === true ) {
 			add_action( 'created_category', array( $this, 'schedule_rewrite_flush' ) );
 			add_action( 'edited_category', array( $this, 'schedule_rewrite_flush' ) );
 			add_action( 'delete_category', array( $this, 'schedule_rewrite_flush' ) );
@@ -65,10 +68,6 @@ class WPSEO_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'config_page_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_global_style' ) );
 
-		if ( $this->options['cleanslugs'] === true ) {
-			add_filter( 'name_save_pre', array( $this, 'remove_stopwords_from_slug' ), 0 );
-		}
-
 		add_filter( 'user_contactmethods', array( $this, 'update_contactmethods' ), 10, 1 );
 
 		add_action( 'after_switch_theme', array( $this, 'switch_theme' ) );
@@ -77,7 +76,6 @@ class WPSEO_Admin {
 		add_filter( 'set-screen-option', array( $this, 'save_bulk_edit_options' ), 10, 3 );
 
 		add_action( 'admin_init', array( 'WPSEO_Plugin_Conflict', 'hook_check_for_plugin_conflicts' ), 10, 1 );
-		add_action( 'admin_init', array( $this, 'import_plugin_hooks' ) );
 
 		add_action( 'admin_init', array( $this, 'map_manage_options_cap' ) );
 
@@ -114,6 +112,7 @@ class WPSEO_Admin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Setting the hooks for importing data from other plugins.
 	 */
 	public function import_plugin_hooks() {
@@ -126,6 +125,8 @@ class WPSEO_Admin {
 	}
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Schedules a rewrite flush to happen at shutdown.
 	 */
 	public function schedule_rewrite_flush() {
@@ -282,6 +283,7 @@ class WPSEO_Admin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Cleans stopwords out of the slug, if the slug hasn't been set yet.
 	 *
 	 * @since 1.1.7
@@ -333,6 +335,8 @@ class WPSEO_Admin {
 	}
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Log the updated timestamp for user profiles when theme is changed.
 	 */
 	public function switch_theme() {
@@ -413,7 +417,7 @@ class WPSEO_Admin {
 	 * Loads the cornerstone filter.
 	 */
 	protected function initialize_cornerstone_content() {
-		if ( ! $this->options['enable_cornerstone_content'] ) {
+		if ( ! WPSEO_Options::get( 'enable_cornerstone_content' ) ) {
 			return;
 		}
 
@@ -435,7 +439,7 @@ class WPSEO_Admin {
 		$link_table_compatibility_notifier = new WPSEO_Link_Compatibility_Notifier();
 		$link_table_accessible_notifier    = new WPSEO_Link_Table_Accessible_Notifier();
 
-		if ( ! $this->options['enable_text_link_counter'] ) {
+		if ( ! WPSEO_Options::get( 'enable_text_link_counter' ) ) {
 			$link_table_compatibility_notifier->remove_notification();
 
 			return $integrations;
@@ -483,6 +487,7 @@ class WPSEO_Admin {
 
 	// @codeCoverageIgnoreStart
 	/**
+<<<<<<< HEAD
 	 * Check whether the current user is allowed to access the configuration.
 	 *
 	 * @deprecated 1.5.0
@@ -545,6 +550,8 @@ class WPSEO_Admin {
 	}
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Register the menu item and its sub menu's.
 	 *
 	 * @deprecated 5.5
@@ -591,40 +598,47 @@ class WPSEO_Admin {
 	}
 
 	/**
-	 * Display an error message when the blog is set to private.
+	 * Cleans stopwords out of the slug, if the slug hasn't been set yet.
 	 *
-	 * @deprecated 3.3
+	 * @deprecated 7.0
+	 *
+	 * @return void
 	 */
-	public function blog_public_warning() {
-		_deprecated_function( __METHOD__, 'WPSEO 3.3.0' );
+	public function remove_stopwords_from_slug() {
+		_deprecated_function( __METHOD__, 'WPSEO 7.0' );
 	}
 
 	/**
-	 * Display an error message when the theme contains a meta description tag.
+	 * Filter the stopwords from the slug.
 	 *
-	 * @since 1.4.14
+	 * @deprecated 7.0
 	 *
-	 * @deprecated 3.3
+	 * @return void
 	 */
-	public function meta_description_warning() {
-		_deprecated_function( __METHOD__, 'WPSEO 3.3.0' );
+	public function filter_stopwords_from_slug() {
+		_deprecated_function( __METHOD__, 'WPSEO 7.0' );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the stopwords for the current language.
 	 *
 	 * @since 1.1.7
 	 * @deprecated 3.1 Use WPSEO_Admin_Stop_Words::list_stop_words() instead.
 	 *
 	 * @return array $stopwords Array of stop words to check and / or remove from slug.
+=======
+	 * Adds contextual help to the titles & metas page.
+	 *
+	 * @deprecated 5.6.0
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 */
-	public function stopwords() {
-		_deprecated_function( __METHOD__, 'WPSEO 3.1', 'WPSEO_Admin_Stop_Words::list_stop_words' );
+	public function title_metas_help_tab() {
+		_deprecated_function( __METHOD__, '5.6.0' );
 
-		$stop_words = new WPSEO_Admin_Stop_Words();
-		return $stop_words->list_stop_words();
-	}
+		$screen = get_current_screen();
 
+<<<<<<< HEAD
 	/**
 	 * Check whether the stopword appears in the string.
 	 *
@@ -655,8 +669,43 @@ class WPSEO_Admin {
 				}
 			}
 		}
+=======
+		$screen->set_help_sidebar( '
+			<p><strong>' . __( 'For more information:', 'wordpress-seo' ) . '</strong></p>
+			<p><a target="_blank" href="https://yoast.com/wordpress-seo/#titles">' . __( 'Title optimization', 'wordpress-seo' ) . '</a></p>
+			<p><a target="_blank" href="https://yoast.com/google-page-title/">' . __( 'Why Google won\'t display the right page title', 'wordpress-seo' ) . '</a></p>'
+		);
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 
-		return false;
+		$screen->add_help_tab(
+			array(
+				'id'      => 'basic-help',
+				'title'   => __( 'Template explanation', 'wordpress-seo' ),
+				'content' => "\n\t\t<h2>" . __( 'Template explanation', 'wordpress-seo' ) . "</h2>\n\t\t" . '<p>' .
+					sprintf(
+						/* translators: %1$s expands to Yoast SEO. */
+						__( 'The title &amp; metas settings for %1$s are made up of variables that are replaced by specific values from the page when the page is displayed. The tabs on the left explain the available variables.', 'wordpress-seo' ),
+						'Yoast SEO'
+					) .
+					'</p><p>' . __( 'Note that not all variables can be used in every template.', 'wordpress-seo' ) . '</p>',
+			)
+		);
+
+		$screen->add_help_tab(
+			array(
+				'id'      => 'title-vars',
+				'title'   => __( 'Basic Variables', 'wordpress-seo' ),
+				'content' => "\n\t\t<h2>" . __( 'Basic Variables', 'wordpress-seo' ) . "</h2>\n\t\t" . WPSEO_Replace_Vars::get_basic_help_texts(),
+			)
+		);
+
+		$screen->add_help_tab(
+			array(
+				'id'      => 'title-vars-advanced',
+				'title'   => __( 'Advanced Variables', 'wordpress-seo' ),
+				'content' => "\n\t\t<h2>" . __( 'Advanced Variables', 'wordpress-seo' ) . "</h2>\n\t\t" . WPSEO_Replace_Vars::get_advanced_help_texts(),
+			)
+		);
 	}
 
 	/**

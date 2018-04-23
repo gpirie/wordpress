@@ -130,7 +130,15 @@ function wp_default_scripts( &$scripts ) {
 	$scripts->add( 'wp-ajax-response', "/wp-includes/js/wp-ajax-response$suffix.js", array('jquery'), false, 1 );
 	did_action( 'init' ) && $scripts->localize( 'wp-ajax-response', 'wpAjax', array(
 		'noPerm' => __('Sorry, you are not allowed to do that.'),
-		'broken' => __('An unidentified error has occurred.')
+		'broken' => __('Something went wrong.')
+	) );
+
+	$scripts->add( 'wp-api-request', "/wp-includes/js/api-request$suffix.js", array( 'jquery' ), false, 1 );
+	// `wpApiSettings` is also used by `wp-api`, which depends on this script.
+	did_action( 'init' ) && $scripts->localize( 'wp-api-request', 'wpApiSettings', array(
+		'root'          => esc_url_raw( get_rest_url() ),
+		'nonce'         => ( wp_installing() && ! is_multisite() ) ? '' : wp_create_nonce( 'wp_rest' ),
+		'versionString' => 'wp/v2/',
 	) );
 
 	$scripts->add( 'wp-api-request', "/wp-includes/js/api-request$suffix.js", array( 'jquery' ), false, 1 );
@@ -562,7 +570,12 @@ function wp_default_scripts( &$scripts ) {
 		'close'              => __( 'Close' ),
 		'action'             => __( 'Action' ),
 		'discardChanges'     => __( 'Discard changes' ),
+<<<<<<< HEAD
 		'cheatin'            => __( 'Cheatin&#8217; uh?' ),
+=======
+		'cheatin'            => __( 'Something went wrong.' ),
+		'notAllowedHeading'  => __( 'You need a higher level of permission.' ),
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		'notAllowed'         => __( 'Sorry, you are not allowed to customize this site.' ),
 		'previewIframeTitle' => __( 'Site Preview' ),
 		'loginIframeTitle'   => __( 'Session expired' ),
@@ -641,7 +654,7 @@ function wp_default_scripts( &$scripts ) {
 		$scripts->add( 'admin-tags', "/wp-admin/js/tags$suffix.js", array( 'jquery', 'wp-ajax-response' ), false, 1 );
 		did_action( 'init' ) && $scripts->localize( 'admin-tags', 'tagsl10n', array(
 			'noPerm' => __('Sorry, you are not allowed to do that.'),
-			'broken' => __('An unidentified error has occurred.')
+			'broken' => __('Something went wrong.')
 		));
 
 		$scripts->add( 'admin-comments', "/wp-admin/js/edit-comments$suffix.js", array('wp-lists', 'quicktags', 'jquery-query'), false, 1 );
@@ -835,7 +848,11 @@ function wp_default_scripts( &$scripts ) {
 				'activateImporter'           => __( 'Run Importer' ),
 				/* translators: %s: Importer name */
 				'activateImporterLabel'      => __( 'Run %s' ),
+<<<<<<< HEAD
 				'unknownError'               => __( 'An unidentified error has occurred.' ),
+=======
+				'unknownError'               => __( 'Something went wrong.' ),
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 				'connectionError'            => __( 'Connection lost or the server is busy. Please try again later.' ),
 				'nonceError'                 => __( 'An error has occurred. Please reload the page and try again.' ),
 				'pluginsFound'               => __( 'Number of plugins found: %d' ),

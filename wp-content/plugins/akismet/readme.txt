@@ -1,9 +1,17 @@
 === Akismet Anti-Spam ===
+<<<<<<< HEAD
 Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs, procifer
 Tags: akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments
 Requires at least: 4.0
 Tested up to: 4.9.1
 Stable tag: 4.0.2
+=======
+Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs, procifer, stephdau
+Tags: akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments
+Requires at least: 4.0
+Tested up to: 4.9.1
+Stable tag: 4.0.3
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 License: GPLv2 or later
 
 Akismet checks your comments and contact form submissions against our global database of spam to protect you and your site from malicious content.
@@ -30,6 +38,15 @@ Upload the Akismet plugin to your blog, Activate it, then enter your [Akismet.co
 
 == Changelog ==
 
+<<<<<<< HEAD
+=======
+= 4.0.3 =
+*Release Date - 19 February 2018*
+
+* Added a scheduled task to remove entries in wp_commentmeta that no longer have corresponding comments in wp_comments.
+* Added a new `akismet_batch_delete_count` action to the batch delete methods for people who'd like to keep track of the numbers of records being processed by those methods.
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 = 4.0.2 =
 *Release Date - 18 December 2017*
 

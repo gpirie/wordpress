@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Internals\Options
  */
 
@@ -18,11 +20,14 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 *        Shouldn't be requested directly, use $this->get_defaults();
 	 */
 	protected $defaults = array(
+<<<<<<< HEAD
 		// Non-form fields, set via procedural code in admin/pages/social.php.
 		'fb_admins'          => array(), // Array of user id's => array( name => '', link => '' ).
 
 		// Non-form field, set via translate_defaults() and validate_option() methods.
 		'fbconnectkey'       => '',
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		// Form fields.
 		'facebook_site'      => '', // Text field.
 		'instagram_url'      => '',
@@ -50,10 +55,14 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 */
 	public $ms_exclude = array(
 		/* Privacy. */
+<<<<<<< HEAD
 		'fb_admins',
 		'fbconnectkey',
 		'fbadminapp',
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		'pinterestverify',
+		'fbadminapp',
 	);
 
 
@@ -89,22 +98,24 @@ class WPSEO_Option_Social extends WPSEO_Option {
 		return self::$instance;
 	}
 
-
 	/**
 	 * Translate/set strings used in the option defaults.
 	 *
 	 * @return void
 	 */
 	public function translate_defaults() {
+<<<<<<< HEAD
 		/* Auto-magically set the fb connect key. */
 		$this->defaults['fbconnectkey'] = self::get_fbconnectkey();
 
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		self::$twitter_card_types['summary']             = __( 'Summary', 'wordpress-seo' );
 		self::$twitter_card_types['summary_large_image'] = __( 'Summary with large image', 'wordpress-seo' );
 	}
 
-
 	/**
+<<<<<<< HEAD
 	 * Get a Facebook connect key for the blog.
 	 *
 	 * @static
@@ -116,6 +127,8 @@ class WPSEO_Option_Social extends WPSEO_Option {
 
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Validate the option.
 	 *
 	 * @param  array $dirty New value for the option.
@@ -128,6 +141,7 @@ class WPSEO_Option_Social extends WPSEO_Option {
 
 		foreach ( $clean as $key => $value ) {
 			switch ( $key ) {
+<<<<<<< HEAD
 				/* Automagic Facebook connect key. */
 				case 'fbconnectkey':
 					if ( ( isset( $old[ $key ] ) && $old[ $key ] !== '' ) && preg_match( '`^[a-f0-9]{32}$`', $old[ $key ] ) > 0 ) {
@@ -179,6 +193,8 @@ class WPSEO_Option_Social extends WPSEO_Option {
 					}
 					break;
 
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 				/* text fields */
 				case 'og_frontpage_desc':
 				case 'og_frontpage_title':
@@ -261,16 +277,14 @@ class WPSEO_Option_Social extends WPSEO_Option {
 				case 'twitter':
 					$clean[ $key ] = ( isset( $dirty[ $key ] ) ? WPSEO_Utils::validate_bool( $dirty[ $key ] ) : false );
 					break;
+
+				case 'fbadminapp' :
+					if ( isset( $dirty[ $key ] ) && ! empty( $dirty[ $key ] ) ) {
+						$clean[ $key ] = $dirty[ $key ];
+					}
+					break;
 			}
 		}
-
-		/**
-		 * Only validate 'fbadminapp', so leave the clean default.
-		 */
-		if ( isset( $dirty['fbadminapp'] ) && ! empty( $dirty['fbadminapp'] ) ) {
-			$clean['fbadminapp'] = $dirty['fbadminapp'];
-		}
-
 
 		return $clean;
 	}
@@ -305,8 +319,6 @@ class WPSEO_Option_Social extends WPSEO_Option {
 		if ( is_array( $old_option ) && $old_option !== array() ) {
 			$move = array(
 				'opengraph',
-				'fb_adminid',
-				'fb_appid',
 			);
 			foreach ( $move as $key ) {
 				if ( isset( $old_option[ $key ] ) && ! isset( $option_value[ $key ] ) ) {

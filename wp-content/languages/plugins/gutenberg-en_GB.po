@@ -11,6 +11,7 @@ msgstr ""
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - Gutenberg - Stable (latest release)\n"
 
+<<<<<<< HEAD
 #. Author of the plugin/theme
 msgid "Gutenberg Team"
 msgstr "Gutenberg Team"
@@ -106,15 +107,137 @@ msgid "F j, Y"
 msgstr "F j, Y"
 
 #: lib/client-assets.php:114
+=======
+#. Description of the plugin/theme
+msgid "Printing since 1440. This is the development plugin for the new block editor in core."
+msgstr "Printing since 1440. This is the development plugin for the new block editor in core."
+
+#: lib/compat.php:226
+msgid "Post Type capabilities for the user."
+msgstr "Post Type capabilities for the user."
+
+#: lib/client-assets.php:881
+msgid "Add title"
+msgstr "Add title"
+
+#: lib/client-assets.php:862
+msgid "Adding theme support using the `gutenberg` array is deprecated. See https://wordpress.org/gutenberg/handbook/extensibility/theme-support/ for details."
+msgstr "Adding theme support using the `gutenberg` array is deprecated. See https://wordpress.org/gutenberg/handbook/extensibility/theme-support/ for details."
+
+#: lib/class-wp-rest-blocks-controller.php:104
+msgid "The block's title."
+msgstr "The block's title."
+
+#: lib/class-wp-rest-blocks-controller.php:99
+msgid "Unique identifier for the block."
+msgstr "Unique identifier for the block."
+
+#: gutenberg.php:103
+msgid "Gutenberg development mode requires files to be built. Run <code>npm install</code> to install dependencies, <code>npm run build</code> to build the files or <code>npm run dev</code> to build the files and watch for changes. Read the <a href=\"https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTING.md\">contributing</a> file for more information."
+msgstr "Gutenberg development mode requires files to be built. Run <code>npm install</code> to install dependencies, <code>npm run build</code> to build the files or <code>npm run dev</code> to build the files and watch for changes. Read the <a href=\"https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTING.md\">contributing</a> file for more information."
+
+#. Author of the plugin/theme
+msgid "Gutenberg Team"
+msgstr "Gutenberg Team"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/WordPress/gutenberg"
+msgstr "https://github.com/WordPress/gutenberg"
+
+#. Plugin Name of the plugin/theme
+msgid "Gutenberg"
+msgstr "Gutenberg"
+
+#: lib/register.php:189
+msgid "Author"
+msgstr "Author"
+
+#: lib/register.php:185
+msgid "Slug"
+msgstr "Slug"
+
+#: lib/register.php:180
+msgid "Comments"
+msgstr "Comments"
+
+#: lib/register.php:167
+msgid "Discussion"
+msgstr "Discussion"
+
+#: lib/register.php:151
+msgid "Custom Fields"
+msgstr "Custom Fields"
+
+#: lib/register.php:147
+msgid "Send Trackbacks"
+msgstr "Send Trackbacks"
+
+#: lib/register.php:143
+msgid "Excerpt"
+msgstr "Excerpt"
+
+#: lib/register.php:113
+msgctxt "post format"
+msgid "Format"
+msgstr "Format"
+
+#: lib/register.php:109
+msgid "Publish"
+msgstr "Publish"
+
+#: lib/register.php:106
+msgid "Metadata"
+msgstr "Metadata"
+
+#: lib/register.php:102
+msgid "Save"
+msgstr "Save"
+
+#: lib/register.php:95
+msgid "Revisions"
+msgstr "Revisions"
+
+#. translators: %s is the name of the plugin that generated this meta box.
+#: lib/meta-box-partial-page.php:274
+msgid "Gutenberg incompatible meta box, from the \"%s\" plugin."
+msgstr "Gutenberg incompatible meta box, from the \"%s\" plugin."
+
+#: lib/client-assets.php:636
+msgid "Unauthorized post type."
+msgstr "Unauthorised post type."
+
+#: lib/client-assets.php:632
+msgid "Unrecognized post type."
+msgstr "Unrecognised post type."
+
+#: lib/client-assets.php:627
+msgid "Post not found."
+msgstr "Post not found."
+
+#: lib/client-assets.php:122
+msgid "F j, Y g:i a"
+msgstr "F j, Y g:i a"
+
+#: lib/client-assets.php:121
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: lib/client-assets.php:120
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 msgid "g:i a"
 msgstr "g:i a"
 
 #. translators: %s: duration
+<<<<<<< HEAD
 #: lib/client-assets.php:110
+=======
+#: lib/client-assets.php:116
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 msgid "%s ago"
 msgstr "%s ago"
 
 #. translators: %s: duration
+<<<<<<< HEAD
 #: lib/client-assets.php:108
 msgid "%s from now"
 msgstr "%s from now"
@@ -152,6 +275,16 @@ msgstr "No reusable block with that ID found."
 msgid "Sorry, you are not allowed to read reusable blocks as this user."
 msgstr "Sorry, you are not allowed to read reusable blocks as this user."
 
+=======
+#: lib/client-assets.php:114
+msgid "%s from now"
+msgstr "%s from now"
+
+#: lib/class-wp-rest-blocks-controller.php:109
+msgid "The block's HTML content."
+msgstr "The block's HTML content."
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 #. translators: 1: block name
 #: lib/class-wp-block-type-registry.php:111
 msgid "Block type \"%s\" is not registered."
@@ -174,15 +307,24 @@ msgstr "Block type names must not contain uppercase characters."
 msgid "Block type names must be strings."
 msgstr "Block type names must be strings."
 
+<<<<<<< HEAD
 #: gutenberg.php:514
 msgid "Toggle editor selection menu"
 msgstr "Toggle editor selection menu"
 
 #: gutenberg.php:363 gutenberg.php:516
+=======
+#: gutenberg.php:492
+msgid "Toggle editor selection menu"
+msgstr "Toggle editor selection menu"
+
+#: gutenberg.php:375 gutenberg.php:494
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 msgid "Classic Editor"
 msgstr "Classic Editor"
 
 #. translators: %s: post title
+<<<<<<< HEAD
 #: gutenberg.php:360
 msgid "Edit &#8220;%s&#8221; in the classic editor"
 msgstr "Edit &#8220;%s&#8221; in the classic editor"
@@ -204,6 +346,29 @@ msgid "Demo"
 msgstr "Demo"
 
 #: blocks/library/latest-posts/index.php:28
+=======
+#: gutenberg.php:372
+msgid "Edit &#8220;%s&#8221; in the classic editor"
+msgstr "Edit &#8220;%s&#8221; in the classic editor"
+
+#: gutenberg.php:90
+msgid "Gutenberg requires WordPress 4.9 or later to function properly. Please upgrade WordPress before activating Gutenberg."
+msgstr "Gutenberg requires WordPress 4.9 or later to function properly. Please upgrade WordPress before activating Gutenberg."
+
+#: gutenberg.php:75
+msgid "Documentation"
+msgstr "Documentation"
+
+#: gutenberg.php:69
+msgid "Feedback"
+msgstr "Feedback"
+
+#: gutenberg.php:61 gutenberg.php:62
+msgid "Demo"
+msgstr "Demo"
+
+#: blocks/library/latest-posts/index.php:31
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 msgid "(Untitled)"
 msgstr "(Untitled)"
 

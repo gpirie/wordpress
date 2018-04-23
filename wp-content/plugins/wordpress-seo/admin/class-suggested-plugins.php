@@ -1,5 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
+=======
+ * WPSEO plugin file.
+ *
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  * @package WPSEO\Suggested_Plugins
  */
 
@@ -58,7 +63,11 @@ class WPSEO_Suggested_Plugins implements WPSEO_WordPress_Integration {
 			$dependency_names = $checker->get_dependency_names( $plugin );
 			$notification     = $this->get_yoast_seo_suggested_plugins_notification( $plugin_name, $plugin, $dependency_names[0] );
 
+<<<<<<< HEAD
 			if ( ! $checker->is_installed( $plugin ) || ! $checker->is_active( $plugin['slug'] ) ) {
+=======
+			if ( ! WPSEO_Utils::is_yoast_seo_premium() && ( ! $checker->is_installed( $plugin ) || ! $checker->is_active( $plugin['slug'] ) ) ) {
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 				$this->notification_center->add_notification( $notification );
 
 				continue;

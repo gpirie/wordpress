@@ -3,8 +3,13 @@ Contributors: takayukister
 Donate link: https://contactform7.com/donate/
 Tags: contact, form, contact form, feedback, email, ajax, captcha, akismet, multilingual
 Requires at least: 4.8
+<<<<<<< HEAD
 Tested up to: 4.9.2
 Stable tag: 5.0
+=======
+Tested up to: 4.9
+Stable tag: 5.0.1
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +65,19 @@ Do you have questions or issues with Contact Form 7? Use these support channels 
 
 For more information, see [Releases](https://contactform7.com/category/releases/).
 
+<<<<<<< HEAD
+=======
+= 5.0.1 =
+
+* Fixed incorrect uses of _n().
+* Config validation: Fixed incorrect count of alerts in the Additional Settings tab panel.
+* Config validation: Fixed improper treatment for the [_site_admin_email] special mail-tag in the From mail header field.
+* Acceptance checkbox: The class and id attributes specified were applied to the wrong HTML element.
+* Config validation: When there is an additional mail header for mailboxes like Cc or Reply-To, but it has a possible empty value, “Invalid mailbox syntax is used” error will be returned.
+* Explicitly specify the fourth parameter of add_action() to avoid passing unintended parameter values.
+* Check if the target directory is empty before removing the directory.
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 = 5.0 =
 
 * Additional settings: on_sent_ok and on_submit have been removed.

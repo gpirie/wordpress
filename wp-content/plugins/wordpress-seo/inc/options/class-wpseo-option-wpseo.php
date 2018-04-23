@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Internals\Options
  */
 
@@ -19,31 +21,24 @@ class WPSEO_Option_Wpseo extends WPSEO_Option {
 	 */
 	protected $defaults = array(
 		// Non-form fields, set via (ajax) function.
-		'blocking_files'                  => array(),
 		'ms_defaults_set'                 => false,
 		// Non-form field, should only be set via validation routine.
 		'version'                         => '', // Leave default as empty to ensure activation/upgrade works.
 
 		// Form fields.
-		'company_logo'                    => '',
-		'company_name'                    => '',
-		'company_or_person'               => '',
 		'disableadvanced_meta'            => true,
 		'onpage_indexability'             => true,
 		'googleverify'                    => '', // Text field.
 		'msverify'                        => '', // Text field.
-		'person_name'                     => '',
-		'website_name'                    => '',
-		'alternate_website_name'          => '',
 		'yandexverify'                    => '',
 		'site_type'                       => '', // List of options.
 		'has_multiple_authors'            => '',
 		'environment_type'                => '',
 		'content_analysis_active'         => true,
 		'keyword_analysis_active'         => true,
-		'enable_setting_pages'            => true,
 		'enable_admin_bar_menu'           => true,
 		'enable_cornerstone_content'      => true,
+		'enable_xml_sitemap'              => true,
 		'enable_text_link_counter'        => true,
 		'show_onboarding_notice'          => false,
 		'first_activated_on'              => false,
@@ -54,7 +49,10 @@ class WPSEO_Option_Wpseo extends WPSEO_Option {
 	 */
 	public $ms_exclude = array(
 		/* Privacy. */
+<<<<<<< HEAD
 		'alexaverify',
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		'googleverify',
 		'msverify',
 		'yandexverify',
@@ -142,6 +140,7 @@ class WPSEO_Option_Wpseo extends WPSEO_Option {
 					$clean[ $key ] = WPSEO_VERSION;
 					break;
 
+<<<<<<< HEAD
 
 				case 'blocking_files':
 					/*
@@ -178,6 +177,8 @@ class WPSEO_Option_Wpseo extends WPSEO_Option {
 					$this->validate_url( $key, $dirty, $old, $clean );
 					break;
 
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 				/* Verification strings. */
 				case 'googleverify':
 				case 'msverify':

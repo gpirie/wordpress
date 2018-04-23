@@ -285,7 +285,14 @@ class WPCF7_ConfigValidator {
 			// for back-compat
 			$field_name = preg_replace( '/^wpcf7\./', '_', $field_name );
 
+<<<<<<< HEAD
 			if ( '_user_agent' == $field_name ) {
+=======
+			if ( '_site_admin_email' == $field_name ) {
+				return get_bloginfo( 'admin_email', 'raw' );
+
+			} elseif ( '_user_agent' == $field_name ) {
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 				return $example_text;
 
 			} elseif ( '_user_email' == $field_name ) {
@@ -384,11 +391,17 @@ class WPCF7_ConfigValidator {
 			return $this->add_error( $section,
 				self::error_unavailable_names,
 				array(
+<<<<<<< HEAD
 					/* translators: %names%: a list of form control names */
 					'message' => _n(
 						"An unavailable name (%names%) is used for form controls.",
 						"Unavailable names (%names%) are used for form controls.",
 						count( $ng_names ), 'contact-form-7' ),
+=======
+					'message' =>
+						/* translators: %names%: a list of form control names */
+						__( "Unavailable names (%names%) are used for form controls.", 'contact-form-7' ),
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 					'params' => array( 'names' => implode( ', ', $ng_names ) ),
 					'link' => self::get_doc_link( 'unavailable_names' ),
 				)
@@ -466,11 +479,11 @@ class WPCF7_ConfigValidator {
 				continue;
 			}
 
-			if ( ! preg_match( '/^([0-9A-Za-z-]+):(.+)$/', $header, $matches ) ) {
+			if ( ! preg_match( '/^([0-9A-Za-z-]+):(.*)$/', $header, $matches ) ) {
 				$invalid_mail_header_exists = true;
 			} else {
 				$header_name = $matches[1];
-				$header_value = $matches[2];
+				$header_value = trim( $matches[2] );
 
 				if ( in_array( strtolower( $header_name ), $mailbox_header_types ) ) {
 					$this->detect_invalid_mailbox_syntax(
@@ -479,6 +492,8 @@ class WPCF7_ConfigValidator {
 							'message' =>
 								__( "Invalid mailbox syntax is used in the %name% field.", 'contact-form-7' ),
 							'params' => array( 'name' => $header_name ) ) );
+				} elseif ( empty( $header_value ) ) {
+					$invalid_mail_header_exists = true;
 				}
 			}
 		}

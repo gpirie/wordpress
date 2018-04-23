@@ -56,7 +56,11 @@ $generated_i18n_strings = array(
 	// Reference: yoast-components/composites/SearchResultForm/SearchResultForm.js:41
 	__( 'Search Result Form', 'wordpress-seo' ),
 
+<<<<<<< HEAD
 	// Reference: yoast-components/composites/SearchResultPreview/SearchResultPreview.js:72
+=======
+	// Reference: yoast-components/composites/SearchResultPreview/SearchResultPreview.js:79
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	__( 'Edit snippet', 'wordpress-seo' ),
 
 	// Reference: yoast-components/composites/SearchResultPreview/SearchResultPreview.js:45

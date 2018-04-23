@@ -18,7 +18,11 @@ function wp_load_press_this() {
 	if ( ! current_user_can( 'edit_posts' ) || ! current_user_can( get_post_type_object( 'post' )->cap->create_posts ) ) {
 		wp_die(
 			__( 'Sorry, you are not allowed to create posts as this user.' ),
+<<<<<<< HEAD
 			__( 'Cheatin&#8217; uh?' ),
+=======
+			__( 'You need a higher level of permission.' ),
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 			403
 		);
 	} elseif ( is_plugin_active( $plugin_file ) ) {

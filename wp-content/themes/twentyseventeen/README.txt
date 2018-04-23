@@ -2,7 +2,11 @@
 Contributors: the WordPress team
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
+<<<<<<< HEAD
 Version: 1.4
+=======
+Version: 1.5
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -60,6 +64,14 @@ Source: https://unsplash.com/@englr?photo=bIhpiQA009k
 
 == Changelog ==
 
+<<<<<<< HEAD
+=======
+= 1.5 =
+* Released: April 4, 2018
+
+https://codex.wordpress.org/Twenty_Seventeen_Theme_Changelog#Version_1.5
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 = 1.4 =
 * Released: November 14, 2017
 

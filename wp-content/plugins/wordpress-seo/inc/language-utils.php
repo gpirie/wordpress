@@ -1,7 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
  * @package    WPSEO\Internals
  * @since      5.9.0
+=======
+ * WPSEO plugin file.
+ *
+ * @package WPSEO\Internals
+ * @since   5.9.0
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  */
 
 /**

@@ -1,5 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
+=======
+ * WPSEO plugin file.
+ *
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  * @package WPSEO\Frontend
  */
 
@@ -9,11 +14,14 @@
 class WPSEO_OpenGraph_Image {
 
 	/**
+<<<<<<< HEAD
 	 * @var array $options Holds options passed to the constructor.
 	 */
 	private $options;
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * @var array $images Holds the images that have been put out as OG image.
 	 */
 	private $images = array();
@@ -27,12 +35,18 @@ class WPSEO_OpenGraph_Image {
 	/**
 	 * Constructor.
 	 *
+<<<<<<< HEAD
 	 * @param array          $options Options set.
 	 * @param string|boolean $image   Optional image URL.
 	 */
 	public function __construct( $options, $image = false ) {
 		$this->options = $options;
 
+=======
+	 * @param string|boolean $image   Optional image URL.
+	 */
+	public function __construct( $image = false ) {
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		// If an image was not supplied or could not be added.
 		if ( empty( $image ) || ! $this->add_image( $image ) ) {
 			$this->set_images();
@@ -133,8 +147,13 @@ class WPSEO_OpenGraph_Image {
 	 * If the frontpage image exists, call add_image.
 	 */
 	private function get_front_page_image() {
+<<<<<<< HEAD
 		if ( $this->options['og_frontpage_image'] !== '' ) {
 			$this->add_image( $this->options['og_frontpage_image'] );
+=======
+		if ( WPSEO_Options::get( 'og_frontpage_image', '' ) !== '' ) {
+			$this->add_image( WPSEO_Options::get( 'og_frontpage_image' ) );
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		}
 	}
 
@@ -183,8 +202,13 @@ class WPSEO_OpenGraph_Image {
 	 * Get default image and call add_image.
 	 */
 	private function get_default_image() {
+<<<<<<< HEAD
 		if ( count( $this->images ) === 0 && isset( $this->options['og_default_image'] ) && $this->options['og_default_image'] !== '' ) {
 			$this->add_image( $this->options['og_default_image'] );
+=======
+		if ( count( $this->images ) === 0 && WPSEO_Options::get( 'og_default_image', '' ) !== '' ) {
+			$this->add_image( WPSEO_Options::get( 'og_default_image' ) );
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		}
 	}
 

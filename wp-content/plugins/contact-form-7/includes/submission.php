@@ -383,7 +383,17 @@ class WPCF7_Submission {
 	public function remove_uploaded_files() {
 		foreach ( (array) $this->uploaded_files as $name => $path ) {
 			wpcf7_rmdir_p( $path );
+<<<<<<< HEAD
 			rmdir( dirname( $path ) ); // remove parent dir if it's removable (empty).
+=======
+
+			if ( ( $dir = dirname( $path ) )
+			&& false !== ( $files = scandir( $dir ) )
+			&& ! array_diff( $files, array( '.', '..' ) ) ) {
+				// remove parent dir if it's empty.
+				rmdir( $dir );
+			}
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		}
 	}
 

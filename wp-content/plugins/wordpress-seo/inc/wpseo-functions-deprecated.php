@@ -1,5 +1,6 @@
 <?php
 /**
+<<<<<<< HEAD
  * @package WPSEO\Deprecated
  */
 
@@ -406,12 +407,12 @@ function wpseo_ping_search_engines( $sitemapurl = null ) {
  * @param string $page Page to append to the base URL.
  *
  * @return string Base URL (incl page) for the sitemaps.
+=======
+ * WPSEO plugin file.
+ *
+ * @package WPSEO\Deprecated
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
  */
-function wpseo_xml_sitemaps_base_url( $page ) {
-	_deprecated_function( __FUNCTION__, 'WPSEO 3.2.0', 'WPSEO_Sitemaps_Router::get_base_url()' );
-
-	return WPSEO_Sitemaps_Router::get_base_url( $page );
-}
 
 /**
  * Remove the bulk edit capability from the proper default roles.

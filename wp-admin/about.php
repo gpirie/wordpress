@@ -37,6 +37,27 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				printf(
 					/* translators: 1: WordPress version number, 2: plural number of bugs. */
 					_n(
+<<<<<<< HEAD
+=======
+						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
+						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.',
+						28
+					),
+					'4.9.5',
+					number_format_i18n( 28 )
+				);
+				?>
+				<?php
+				/* translators: %s: Codex URL */
+				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.5' );
+				?>
+			</p>
+			<p>
+				<?php
+				printf(
+					/* translators: 1: WordPress version number, 2: plural number of bugs. */
+					_n(
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 						'<strong>Version %1$s</strong> addressed %2$s bug.',
 						'<strong>Version %1$s</strong> addressed %2$s bugs.',
 						1
@@ -49,6 +70,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				/* translators: %s: Codex URL */
 				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.4' );
 				?>
+<<<<<<< HEAD
+=======
 			</p>
 			<p>
 				<?php
@@ -67,6 +90,38 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				/* translators: %s: Codex URL */
 				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.3' );
 				?>
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
+			</p>
+			<p>
+				<?php
+				printf(
+					/* translators: 1: WordPress version number, 2: plural number of bugs. */
+					_n(
+<<<<<<< HEAD
+						'<strong>Version %1$s</strong> addressed %2$s bug.',
+						'<strong>Version %1$s</strong> addressed %2$s bugs.',
+						34
+					),
+					'4.9.3',
+					number_format_i18n( 34 )
+=======
+						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
+						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.',
+						22
+					),
+					'4.9.2',
+					number_format_i18n( 22 )
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
+				);
+				?>
+				<?php
+				/* translators: %s: Codex URL */
+<<<<<<< HEAD
+				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.3' );
+=======
+				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.2' );
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
+				?>
 			</p>
 			<p>
 				<?php
@@ -75,6 +130,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 					_n(
 						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
 						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.',
+<<<<<<< HEAD
 						22
 					),
 					'4.9.2',
@@ -93,6 +149,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 					_n(
 						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
 						'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.',
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 						11
 					),
 					'4.9.1',
@@ -276,6 +334,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 			?></h2>
 
 			<div class="under-the-hood two-col">
+<<<<<<< HEAD
 				<div class="col">
 					<h3><a href="https://make.wordpress.org/core/2017/11/01/improvements-to-the-customize-js-api-in-4-9/"><?php _e( 'Customizer JS API Improvements' ); ?></a></h3>
 					<p><?php
@@ -295,6 +354,27 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 					<p><?php _e( 'WordPress 4.9 includes an upgraded version of MediaElement.js, which removes dependencies on jQuery, improves accessibility, modernizes the UI, and fixes many bugs.' ); ?></p>
 				</div>
 				<div class="col">
+=======
+				<div class="col">
+					<h3><a href="https://make.wordpress.org/core/2017/11/01/improvements-to-the-customize-js-api-in-4-9/"><?php _e( 'Customizer JS API Improvements' ); ?></a></h3>
+					<p><?php
+						printf(
+							/* translators: %s: https://make.wordpress.org/core/2017/11/01/improvements-to-the-customize-js-api-in-4-9/  */
+							__( 'We&#8217;ve made numerous improvements to the Customizer JS API in WordPress 4.9, eliminating many pain points and making it just as easy to work with as the PHP API. There are also new base control templates, a date/time control, and section/panel/global notifications to name a few. <a href="%s">Check out the full list.</a>' ),
+							'https://make.wordpress.org/core/2017/11/01/improvements-to-the-customize-js-api-in-4-9/'
+						);
+					?></p>
+				</div>
+				<div class="col">
+					<h3><a href="https://make.wordpress.org/core/2017/10/22/code-editing-improvements-in-wordpress-4-9/"><?php _e( 'CodeMirror available for use in your themes and plugins' ); ?></a></h3>
+					<p><?php _e( 'We&#8217;ve introduced a new code editing library, CodeMirror, for use within core. Use it to improve any code writing or editing experiences within your plugins, like CSS or JavaScript include fields.' ); ?></p>
+				</div>
+				<div class="col">
+					<h3><a href="https://make.wordpress.org/core/2017/10/30/mediaelement-upgrades-in-wordpress-4-9/"><?php _e( 'MediaElement.js upgraded to 4.2.6' ); ?></a></h3>
+					<p><?php _e( 'WordPress 4.9 includes an upgraded version of MediaElement.js, which removes dependencies on jQuery, improves accessibility, modernizes the UI, and fixes many bugs.' ); ?></p>
+				</div>
+				<div class="col">
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 					<h3><a href="https://make.wordpress.org/core/2017/10/15/improvements-for-roles-and-capabilities-in-4-9/"><?php _e( 'Improvements to Roles and Capabilities' ); ?></a></h3>
 					<p><?php _e( 'New capabilities have been introduced that allow granular management of plugins and translation files. In addition, the site switching process in multisite has been fine-tuned to update the available roles and capabilities in a more reliable and coherent way.' ); ?></p>
 				</div>

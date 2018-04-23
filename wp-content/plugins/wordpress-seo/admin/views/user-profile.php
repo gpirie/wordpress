@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
@@ -14,6 +16,7 @@ $wpseo_up_settings_header = sprintf( __( '%1$s settings', 'wordpress-seo' ), 'Yo
 
 	<label for="wpseo_author_title"><?php esc_html_e( 'Title to use for Author page', 'wordpress-seo' ); ?></label>
 	<input class="yoast-settings__text regular-text" type="text" id="wpseo_author_title" name="wpseo_author_title"
+<<<<<<< HEAD
 		value="<?php echo esc_attr( get_the_author_meta( 'wpseo_title', $user->ID ) ); ?>"/><br>
 
 	<label for="wpseo_author_metadesc"><?php esc_html_e( 'Meta description to use for Author page', 'wordpress-seo' ); ?></label>
@@ -30,18 +33,46 @@ $wpseo_up_settings_header = sprintf( __( '%1$s settings', 'wordpress-seo' ), 'Yo
 			name="wpseo_keyword_analysis_disable" aria-describedby="wpseo_keyword_analysis_disable_desc"
 			value="on" <?php echo ( get_the_author_meta( 'wpseo_keyword_analysis_disable', $user->ID ) === 'on' ) ? 'checked' : ''; ?> />
 		<label class="yoast-label-strong" for="wpseo_keyword_analysis_disable"><?php esc_html_e( 'Disable SEO analysis', 'wordpress-seo' ); ?></label><br>
+=======
+		   value="<?php echo esc_attr( get_the_author_meta( 'wpseo_title', $user->ID ) ); ?>"/><br>
+
+	<label for="wpseo_author_metadesc"><?php esc_html_e( 'Meta description to use for Author page', 'wordpress-seo' ); ?></label>
+	<textarea rows="5" cols="30" id="wpseo_author_metadesc"
+			  class="yoast-settings__textarea yoast-settings__textarea--medium"
+			  name="wpseo_author_metadesc"><?php echo esc_textarea( get_the_author_meta( 'wpseo_metadesc', $user->ID ) ); ?></textarea><br>
+
+	<input class="yoast-settings__checkbox double" type="checkbox" id="wpseo_noindex_author"
+		   name="wpseo_noindex_author"
+		   value="on" <?php echo ( get_the_author_meta( 'wpseo_noindex_author', $user->ID ) === 'on' ) ? 'checked' : ''; ?> />
+	<label class="yoast-label-strong"
+		   for="wpseo_noindex_author"><?php printf( esc_html__( 'Do not allow search engines to show %s in search results.', 'wordpress-seo' ), __( 'this author\'s archives', 'wordpress-seo' ) ); ?></label><br>
+
+	<?php if ( WPSEO_Options::get( 'keyword_analysis_active', false ) ) : ?>
+		<input class="yoast-settings__checkbox double" type="checkbox" id="wpseo_keyword_analysis_disable"
+			name="wpseo_keyword_analysis_disable" aria-describedby="wpseo_keyword_analysis_disable_desc"
+			value="on" <?php echo ( get_the_author_meta( 'wpseo_keyword_analysis_disable', $user->ID ) === 'on' ) ? 'checked' : ''; ?> />
+		<label class="yoast-label-strong"
+			for="wpseo_keyword_analysis_disable"><?php esc_html_e( 'Disable SEO analysis', 'wordpress-seo' ); ?></label>
+		<br>
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		<p class="description" id="wpseo_keyword_analysis_disable_desc">
 			<?php esc_html_e( 'Removes the keyword tab from the metabox and disables all SEO-related suggestions.', 'wordpress-seo' ); ?>
 		</p>
-	<?php } ?>
+	<?php endif; ?>
 
-	<?php if ( $options['content_analysis_active'] === true ) { ?>
+	<?php if ( WPSEO_Options::get( 'content_analysis_active', false ) ) : ?>
 		<input class="yoast-settings__checkbox double" type="checkbox" id="wpseo_content_analysis_disable"
 			name="wpseo_content_analysis_disable" aria-describedby="wpseo_content_analysis_disable_desc"
 			value="on" <?php echo ( get_the_author_meta( 'wpseo_content_analysis_disable', $user->ID ) === 'on' ) ? 'checked' : ''; ?> />
+<<<<<<< HEAD
 		<label class="yoast-label-strong" for="wpseo_content_analysis_disable"><?php esc_html_e( 'Disable readability analysis', 'wordpress-seo' ); ?></label><br>
+=======
+		<label class="yoast-label-strong"
+			for="wpseo_content_analysis_disable"><?php esc_html_e( 'Disable readability analysis', 'wordpress-seo' ); ?></label>
+		<br>
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 		<p class="description" id="wpseo_content_analysis_disable_desc">
 			<?php esc_html_e( 'Removes the readability tab from the metabox and disables all readability-related suggestions.', 'wordpress-seo' ); ?>
 		</p>
-	<?php } ?>
+	<?php endif; ?>
 </div>

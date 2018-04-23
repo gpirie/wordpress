@@ -1099,6 +1099,7 @@ function wp_admin_canonical_url() {
  * @since 4.9.0
  */
 function wp_admin_headers() {
+<<<<<<< HEAD
 	$policy = 'same-origin';
 
 	/**
@@ -1108,6 +1109,19 @@ function wp_admin_headers() {
 	 * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
 	 *
 	 * @param string $policy The referrer policy header value.
+=======
+	$policy = 'strict-origin-when-cross-origin';
+
+	/**
+	 * Filters the admin referrer policy header value.
+	 *
+	 * @since 4.9.0
+	 * @since 4.9.5 The default value was changed to 'strict-origin-when-cross-origin'.
+	 *
+	 * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+	 *
+	 * @param string $policy The admin referrer policy header value. Default 'strict-origin-when-cross-origin'.
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 */
 	$policy = apply_filters( 'admin_referrer_policy', $policy );
 

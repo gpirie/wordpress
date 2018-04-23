@@ -37,8 +37,17 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 	if ( $tag->has_option( 'optional' ) ) {
 		$class .= ' optional';
 	}
+<<<<<<< HEAD
 
 	$atts = $item_atts = array();
+=======
+
+	$atts = array(
+		'class' => trim( $class ),
+	);
+
+	$item_atts = array();
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 
 	$item_atts['type'] = 'checkbox';
 	$item_atts['name'] = $tag->name;
@@ -50,6 +59,7 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 		$item_atts['checked'] = 'checked';
 	}
 
+<<<<<<< HEAD
 	$item_atts = wpcf7_format_atts( $item_atts );
 
 	$content = empty( $tag->content )
@@ -57,6 +67,28 @@ function wpcf7_acceptance_form_tag_handler( $tag ) {
 		: $tag->content;
 
 	$content = trim( $content );
+=======
+	$item_atts['class'] = $tag->get_class_option();
+	$item_atts['id'] = $tag->get_id_option();
+
+	$item_atts = wpcf7_format_atts( $item_atts );
+
+	$content = empty( $tag->content )
+		? (string) reset( $tag->values )
+		: $tag->content;
+
+	$content = trim( $content );
+
+	if ( $content ) {
+		$html = sprintf(
+			'<span class="wpcf7-list-item"><label><input %1$s /><span class="wpcf7-list-item-label">%2$s</span></label></span>',
+			$item_atts, $content );
+	} else {
+		$html = sprintf(
+			'<span class="wpcf7-list-item"><input %1$s /></span>',
+			$item_atts );
+	}
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 
 	if ( $content ) {
 		$html = sprintf(
@@ -110,10 +142,17 @@ function wpcf7_acceptance_validation_filter( $result, $tag ) {
 /* Acceptance filter */
 
 add_filter( 'wpcf7_acceptance', 'wpcf7_acceptance_filter', 10, 2 );
+<<<<<<< HEAD
 
 function wpcf7_acceptance_filter( $accepted, $submission ) {
 	$tags = wpcf7_scan_form_tags( array( 'type' => 'acceptance' ) );
 
+=======
+
+function wpcf7_acceptance_filter( $accepted, $submission ) {
+	$tags = wpcf7_scan_form_tags( array( 'type' => 'acceptance' ) );
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	foreach ( $tags as $tag ) {
 		$name = $tag->name;
 

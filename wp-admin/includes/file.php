@@ -589,7 +589,11 @@ function wp_edit_theme_plugin_file( $args ) {
 			}
 
 			if ( ! isset( $result['message'] ) ) {
+<<<<<<< HEAD
 				$message = __( 'An unidentified error has occurred.' );
+=======
+				$message = __( 'Something went wrong.' );
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 			} else {
 				$message = $result['message'];
 				unset( $result['message'] );

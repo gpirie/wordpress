@@ -1,7 +1,9 @@
 <?php
 /**
- * @package    WPSEO\Internals
- * @since      1.8.0
+ * WPSEO plugin file.
+ *
+ * @package WPSEO\Internals
+ * @since   1.8.0
  */
 
 /**
@@ -780,13 +782,13 @@ class WPSEO_Utils {
 		$replacement = WPSEO_Options::get_default( 'wpseo_titles', 'separator' );
 
 		// Get the titles option and the separator options.
-		$titles_options    = WPSEO_Options::get_option( 'wpseo_titles' );
+		$separator         = WPSEO_Options::get( 'separator' );
 		$seperator_options = WPSEO_Option_Titles::get_instance()->get_separator_options();
 
 		// This should always be set, but just to be sure.
-		if ( isset( $seperator_options[ $titles_options['separator'] ] ) ) {
+		if ( isset( $seperator_options[ $separator ] ) ) {
 			// Set the new replacement.
-			$replacement = $seperator_options[ $titles_options['separator'] ];
+			$replacement = $seperator_options[ $separator ];
 		}
 
 		/**
@@ -829,7 +831,6 @@ class WPSEO_Utils {
 			'wpseo_dashboard',
 			'wpseo_titles',
 			'wpseo_social',
-			'wpseo_xml',
 			'wpseo_advanced',
 			'wpseo_tools',
 			'wpseo_search_console',
@@ -933,6 +934,7 @@ class WPSEO_Utils {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if the WP-REST-API is available.
 	 *
 	 * @since 3.6
@@ -984,91 +986,175 @@ class WPSEO_Utils {
 	}
 
 	// @codeCoverageIgnoreStart
-	/**
-	 * Wrapper for the PHP filter input function.
+=======
+	 * Returns the SVG for the traffic light in the metabox.
 	 *
-	 * This is used because stupidly enough, the `filter_input` function is not available on all hosts...
-	 *
-	 * @since      1.8.0
-	 *
-	 * @deprecated 3.0
-	 * @deprecated Passes through to PHP call, no longer used in code.
-	 *
-	 * @param int    $type          Input type constant.
-	 * @param string $variable_name Variable name to get.
-	 * @param int    $filter        Filter to apply.
-	 *
-	 * @return mixed
+	 * @return string
 	 */
-	public static function filter_input( $type, $variable_name, $filter = FILTER_DEFAULT ) {
-		_deprecated_function( __METHOD__, 'WPSEO 3.0', 'PHP native filter_input()' );
-
-		return filter_input( $type, $variable_name, $filter );
+	public static function traffic_light_svg() {
+		return <<<SVG
+<svg class="yst-traffic-light init" version="1.1" xmlns="http://www.w3.org/2000/svg"
+	 role="img" aria-hidden="true" focusable="false"
+	 x="0px" y="0px" viewBox="0 0 30 47" enable-background="new 0 0 30 47" xml:space="preserve">
+<g id="BG_1_">
+</g>
+<g id="traffic_light">
+	<g>
+		<g>
+			<g>
+				<path fill="#5B2942" d="M22,0H8C3.6,0,0,3.6,0,7.9v31.1C0,43.4,3.6,47,8,47h14c4.4,0,8-3.6,8-7.9V7.9C30,3.6,26.4,0,22,0z
+					 M27.5,38.8c0,3.1-2.6,5.7-5.8,5.7H8.3c-3.2,0-5.8-2.5-5.8-5.7V8.3c0-1.5,0.6-2.9,1.7-4c1.1-1,2.5-1.6,4.1-1.6h13.4
+					c1.5,0,3,0.6,4.1,1.6c1.1,1.1,1.7,2.5,1.7,4V38.8z"/>
+			</g>
+			<g class="traffic-light-color traffic-light-red">
+				<ellipse fill="#C8C8C8" cx="15" cy="23.5" rx="5.7" ry="5.6"/>
+				<ellipse fill="#DC3232" cx="15" cy="10.9" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="36.1" rx="5.7" ry="5.6"/>
+			</g>
+			<g class="traffic-light-color traffic-light-orange">
+				<ellipse fill="#F49A00" cx="15" cy="23.5" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="10.9" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="36.1" rx="5.7" ry="5.6"/>
+			</g>
+			<g class="traffic-light-color traffic-light-green">
+				<ellipse fill="#C8C8C8" cx="15" cy="23.5" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="10.9" rx="5.7" ry="5.6"/>
+				<ellipse fill="#63B22B" cx="15" cy="36.1" rx="5.7" ry="5.6"/>
+			</g>
+			<g class="traffic-light-color traffic-light-empty">
+				<ellipse fill="#C8C8C8" cx="15" cy="23.5" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="10.9" rx="5.7" ry="5.6"/>
+				<ellipse fill="#C8C8C8" cx="15" cy="36.1" rx="5.7" ry="5.6"/>
+			</g>
+			<g class="traffic-light-color traffic-light-init">
+				<ellipse fill="#5B2942" cx="15" cy="23.5" rx="5.7" ry="5.6"/>
+				<ellipse fill="#5B2942" cx="15" cy="10.9" rx="5.7" ry="5.6"/>
+				<ellipse fill="#5B2942" cx="15" cy="36.1" rx="5.7" ry="5.6"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+SVG;
 	}
 
 	/**
+	 * Checks if the WP-REST-API is available.
+	 *
+	 * @since 3.6
+	 * @since 3.7 Introduced the $minimum_version parameter.
+	 *
+	 * @param string $minimum_version The minimum version the API should be.
+	 *
+	 * @return bool Returns true if the API is available.
+	 */
+	public static function is_api_available( $minimum_version = '2.0' ) {
+		return ( defined( 'REST_API_VERSION' )
+			&& version_compare( REST_API_VERSION, $minimum_version, '>=' ) );
+	}
+
+	/********************** DEPRECATED METHODS **********************/
+
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
+	/**
+	 * Returns the language part of a given locale, defaults to english when the $locale is empty.
+	 *
+	 * @see        WPSEO_Language_Utils::get_language()
+	 *
+	 * @since      3.4
+	 *
+	 * @param string $locale The locale to get the language of.
+	 *
+	 * @returns string The language part of the locale.
+	 */
+	public static function get_language( $locale ) {
+		return WPSEO_Language_Utils::get_language( $locale );
+	}
+
+	/**
+<<<<<<< HEAD
 	 * Adds a hook that when given option is updated, the XML sitemap transient cache is cleared.
+=======
+	 * Returns the user locale for the language to be used in the admin.
 	 *
-	 * @since      2.2.0
+	 * WordPress 4.7 introduced the ability for users to specify an Admin language
+	 * different from the language used on the front end. This checks if the feature
+	 * is available and returns the user's language, with a fallback to the site's language.
+	 * Can be removed when support for WordPress 4.6 will be dropped, in favor
+	 * of WordPress get_user_locale() that already fallbacks to the site's locale.
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 *
-	 * @deprecated 3.2
-	 * @see        WPSEO_Sitemaps_Cache::register_clear_on_option_update()
+	 * @see        WPSEO_Language_Utils::get_user_locale()
 	 *
-	 * @param string $option Option name.
-	 * @param string $type   Sitemap type.
+	 * @since      4.1
+	 *
+	 * @returns string The locale.
 	 */
-	public static function register_cache_clear_option( $option, $type = '' ) {
-		_deprecated_function( __METHOD__, 'WPSEO 3.2', 'WPSEO_Sitemaps_Cache::register_clear_on_option_update()' );
-		WPSEO_Sitemaps_Cache::register_clear_on_option_update( $option, $type );
+	public static function get_user_locale() {
+		return WPSEO_Language_Utils::get_user_locale();
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Clears the transient cache when a given option is updated, if that option has been registered before.
+=======
+	 * Determine whether or not the metabox should be displayed for a post type.
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 *
-	 * @since      2.2.0
+	 * @param string|null $post_type Optional. The post type to check the visibility of the metabox for.
 	 *
-	 * @deprecated 3.2
-	 * @see        WPSEO_Sitemaps_Cache::clear_on_option_update()
-	 *
-	 * @param string $option The option that's being updated.
+	 * @return bool Whether or not the metabox should be displayed.
 	 */
-	public static function clear_transient_cache( $option ) {
-		_deprecated_function( __METHOD__, 'WPSEO 3.2', 'WPSEO_Sitemaps_Cache::clear_on_option_update()' );
-		WPSEO_Sitemaps_Cache::clear_on_option_update( $option );
+	protected static function display_post_type_metabox( $post_type = null ) {
+		if ( ! isset( $post_type ) ) {
+			$post_type = get_post_type();
+		}
+
+		if ( ! isset( $post_type ) || ! WPSEO_Post_Type::is_post_type_accessible( $post_type ) ) {
+			return false;
+		}
+
+		return WPSEO_Options::get( 'display-metabox-pt-' . $post_type );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Clear entire XML sitemap cache.
 	 *
 	 * @since      1.8.0
+=======
+	 * Determine whether or not the metabox should be displayed for a taxonomy.
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 *
-	 * @deprecated 3.2
-	 * @see        WPSEO_Sitemaps_Cache::clear()
+	 * @param string|null $taxonomy Optional. The post type to check the visibility of the metabox for.
 	 *
-	 * @param array $types Set of sitemap types to invalidate cache for.
+	 * @return bool Whether or not the metabox should be displayed.
 	 */
-	public static function clear_sitemap_cache( $types = array() ) {
-		_deprecated_function( __METHOD__, 'WPSEO 3.2', 'WPSEO_Sitemaps_Cache::clear()' );
-		WPSEO_Sitemaps_Cache::clear( $types );
+	protected static function display_taxonomy_metabox( $taxonomy = null ) {
+		if ( ! isset( $taxonomy ) || ! in_array( $taxonomy, get_taxonomies( array( 'public' => true ), 'names' ), true ) ) {
+			return false;
+		}
+
+		return WPSEO_Options::get( 'display-metabox-tax-' . $taxonomy );
 	}
 
 	/**
-	 * Wrapper for encoding the array as a json string. Includes a fallback if wp_json_encode doesn't exist.
+	 * Determines whether the metabox is active for the given identifier and type.
 	 *
-	 * @since      3.0.0
+	 * @param string $identifier The identifier to check for.
+	 * @param string $type       The type to check for.
 	 *
-	 * @deprecated 3.3 Core versions without wp_json_encode() no longer supported, fallback unnecessary.
-	 *
-	 * @param array $array_to_encode The array which will be encoded.
-	 * @param int   $options         Optional. Array with options which will be passed in to the encoding methods.
-	 * @param int   $depth           Optional. Maximum depth to walk through $data. Must be greater than 0. Default 512.
-	 *
-	 * @return false|string
+	 * @return bool Whether or not the metabox is active.
 	 */
-	public static function json_encode( array $array_to_encode, $options = 0, $depth = 512 ) {
-		_deprecated_function( __METHOD__, 'WPSEO 3.3', 'wp_json_encode()' );
+	public static function is_metabox_active( $identifier, $type ) {
+		if ( $type === 'post_type' ) {
+			return self::display_post_type_metabox( $identifier );
+		}
 
-		return wp_json_encode( $array_to_encode, $options, $depth );
+		if ( $type === 'taxonomy' ) {
+			return self::display_taxonomy_metabox( $identifier );
+		}
+
+		return false;
 	}
-	// @codeCoverageIgnoreEnd
 }

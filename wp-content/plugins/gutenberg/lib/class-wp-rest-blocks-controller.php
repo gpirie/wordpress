@@ -17,6 +17,42 @@
  */
 class WP_REST_Blocks_Controller extends WP_REST_Posts_Controller {
 	/**
+<<<<<<< HEAD
+=======
+	 * Checks if a block can be read.
+	 *
+	 * @since 2.1.0
+	 *
+	 * @param object $post Post object that backs the block.
+	 * @return bool Whether the block can be read.
+	 */
+	public function check_read_permission( $post ) {
+		// Ensure that the user is logged in and has the read_blocks capability.
+		$post_type = get_post_type_object( $post->post_type );
+		if ( ! current_user_can( $post_type->cap->read_post, $post->ID ) ) {
+			return false;
+		}
+
+		return parent::check_read_permission( $post );
+	}
+
+	/**
+	 * Handle a DELETE request.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param WP_REST_Request $request Full details about the request.
+	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
+	 */
+	public function delete_item( $request ) {
+		// Always hard-delete a block.
+		$request->set_param( 'force', true );
+
+		return parent::delete_item( $request );
+	}
+
+	/**
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Given an update or create request, build the post object that is saved to
 	 * the database.
 	 *
@@ -25,6 +61,7 @@ class WP_REST_Blocks_Controller extends WP_REST_Posts_Controller {
 	 * @param WP_REST_Request $request Request object.
 	 * @return stdClass|WP_Error Post object or WP_Error.
 	 */
+<<<<<<< HEAD
 	protected function prepare_item_for_database( $request ) {
 		$prepared_post = new stdClass;
 
@@ -47,11 +84,28 @@ class WP_REST_Blocks_Controller extends WP_REST_Posts_Controller {
 
 	/**
 	 * Given a post from the database, build the array that is returned from an
+=======
+	public function prepare_item_for_database( $request ) {
+		$prepared_post = parent::prepare_item_for_database( $request );
+
+		// Force blocks to always be published.
+		$prepared_post->post_status = 'publish';
+
+		return $prepared_post;
+	}
+
+	/**
+	 * Given a block from the database, build the array that is returned from an
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * API response.
 	 *
 	 * @since 1.10.0
 	 *
+<<<<<<< HEAD
 	 * @param WP_Post         $post    Post object.
+=======
+	 * @param WP_Post         $post    Post object that backs the block.
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response Response object.
 	 */
@@ -68,6 +122,7 @@ class WP_REST_Blocks_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Handle a DELETE request.
 	 *
 	 * @since 1.10.0
@@ -83,6 +138,8 @@ class WP_REST_Blocks_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+=======
+>>>>>>> 183795979354da53b136df92de933c2cb84a544a
 	 * Builds the block's schema, conforming to JSON Schema.
 	 *
 	 * @since 1.10.0
