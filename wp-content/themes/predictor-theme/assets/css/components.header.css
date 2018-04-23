@@ -1,0 +1,29 @@
+.site-header {
+	padding-top: 2em;
+	margin-bottom: 2em;
+}
+
+.o-sociallinks__item {
+	width: 32px;
+}
+
+.c-navmenu__item--header_menu {
+	float: left;
+	margin-right: .25em;
+}
+
+@media only screen and (max-width: 45.49em) {
+
+	.logo-link {
+		display: block;
+		margin: 0 auto;
+		max-width: 63%;
+	}
+}
+
+@media only screen and (min-width: 45.5em) {
+	.logo-link {
+		float: left;
+		max-width: 6.875em;
+		clear: both;
+	}

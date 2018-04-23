@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font: 400 16px/1.412 'Roboto Mono', monospace;
+    color: #444;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.has-visible-menu {
+    -webkit-transform: translateX(150px);
+    transform: translateX(150px);
+}
+
+@media only screen and (max-width: 59.999em) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 45.499em) {
+
+    .u-hidden\@sm {
+        display: none;
+    }
+
+    .u-wrap {
+        padding: 0 5%;
+    }
+
+}
+
+@media only screen and (min-width: 45.5em) and (max-width: 60.624em) {
+
+    .u-hidden\@md {
+        display: none;
+    }
+
+    .u-wrap {
+        margin: 0 10%;
+    }
+
+}
+
+@media only screen and (min-width: 60.625em) {
+    .u-hidden\@lg {
+        display: none;
+    }
+
+    .u-wrap {
+        margin: 0 15%;
+    }
+
+}
+
+.wp-block-cover-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-position: center;
+}

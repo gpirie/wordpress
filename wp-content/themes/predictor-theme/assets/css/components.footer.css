@@ -1,0 +1,28 @@
+.site-footer {
+	background: #F5F3F4;
+	padding: 1em;
+	margin-top: 1em;
+}
+
+@media only screen and (max-width: 45.49em) {
+	.site-footer {
+		.text-align: center;
+	}
+
+	.c-navmenu__menu--footer_menu {
+		text-align: center;
+		margin-top: 1.5em;
+	}
+
+}
+
+@media only screen and (min-width: 45.5em) {
+	.logo-footer {
+		float: left;
+		margin-right: 5em;
+		display: block;
+	}
+}
+.copyright {
+	margin: 1em 0;
+}
