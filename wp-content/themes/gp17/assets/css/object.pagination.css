@@ -1,0 +1,26 @@
+/*Breadcrumbs*/
+
+.o-breadcrumb {
+	margin: 1em 0;
+}
+
+.o-breadcrumb__crumb {
+	float: left;
+	margin-right: 0.75em;
+	list-style: none;
+}
+
+.o-pagination__item {
+	border: 1px solid;
+	float: left;
+	margin-right: 0.75em;
+	padding: 0.25em 0.5em;
+}
+
+.o-pagination__item--active {
+	background: #003399;
+}
+
+.o-pagination__item--active a {
+	color: #fff;
+}

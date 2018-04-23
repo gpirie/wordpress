@@ -1,0 +1,14 @@
+.c-services__service {
+	margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 45.5em) {
+	.c-services__service {
+		float: left;
+		width: 30%;
+	}
+
+	.c-services__service:not(:nth-child(3n)) {
+		margin-right: 5%;
+	}
+}

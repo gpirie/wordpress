@@ -1,0 +1,33 @@
+/*
+Theme Name: GP Web Design Theme
+Theme URI: http://www.dcthomson.co.uk/
+Author: Graeme Pirie
+Author URI: http://graemepirie.com
+Description: Basis theme for creating new themes.
+Version: 7.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gpwd-theme
+Tags:
+
+Colors:	
+Orange			#edae49
+Red				#d1495b
+Brand Blue:		#003399;
+Light Blue		#00798c
+Dark Blue		#003d5b
+
+Fonts:
+http://www.modularscale.com/?1.125&em&1.462?1.125&em&1.618
+
+$trumps
+
+
+/* $trumps - Really specific styles that override styles set above. */
+
+/* Google Pretty Print*/
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
+  margin: 0;
+}

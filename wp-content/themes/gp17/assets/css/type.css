@@ -1,0 +1,272 @@
+/* ----------------------------
+    
+    $type styles
+    
+---------------------------- */
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 .5em 0;
+    font-weight: 700;
+    font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, "Helvetica neue", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+h2 {
+   font-size: 2.25em;
+}
+
+h2 i {
+    margin: 0 .25em 0 0;
+}
+
+h3 { 
+     font-size: 1.231em;
+}
+
+h4 {
+    font-size: 1.231em;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 1.154em;
+    font-weight: 300;
+}
+
+h6 {
+    font-size: 1.077em;
+    font-weight: 300;
+}
+
+p, .vcard, .vevent, table, li, blockquote {
+    margin: 0 0 1.5em 0;
+    line-height: 2em;
+}
+
+p {
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -o-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+ol ol {
+    margin: 0 0 0 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    
+}
+
+ul ul {
+    
+}
+
+ul ul li {
+    
+}
+
+blockquote {
+    font-size: 1.308em; /*17px*/
+    line-height: 1.412em; /*24px*/
+    padding: 2em 0;
+    margin: 0;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+:lang(en-gb) > q {
+    quotes:"\201C" "\201D" "\2018" "\2019";
+    font-style: italic;
+}
+
+q::before {
+    content:open-quote;
+}
+
+q::after {
+    content:close-quote;
+}
+
+a {
+    text-decoration: none;
+    color: #ee3224;
+}
+
+a:hover {
+    color: #ff3627;
+}
+
+.content a:visited, .content a:active {
+    color: #e02012;
+}
+
+a:hover, a:active {
+    outline: 0;
+}
+
+small {
+    font-size: 0.857em;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+time {
+    
+}
+
+mark {
+    background: #006F4C;
+    color: #fff;
+}
+
+i, em {
+    font-style: italic;
+    font-weight: normal;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+ins {
+    text-decoration: none;
+    color: #006F4C;
+    font-size: 1.154em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+del, s {
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
+code, samp {
+    font: 0.875em/90% Menlo, Monaco,'Courier New',Courier,monospace;
+}
+
+code {
+    color:#369;
+}
+
+kbd {
+    color:#666;
+    font:normal normal 0.875em/90% sans-serif; /* 14px/90% */
+    background-color:#dcd6c6;
+    margin:0 0.25em; /* 0 4px */
+    border:1px solid #ccc6b6;
+    border-radius:4px;
+    padding:0.1429em 0.4286em; /* 2px 6px */
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top: 1px solid #d9d9d9;
+    margin:1em 0;
+    padding:0;
+    clear: both;
+}
+
+abbr[title="Required"] {
+    color: #656565;
+}
+    
+abbr[title]:hover, dfn:hover {
+    border-bottom:1px dotted rgba(0,0,0,0.2);
+    cursor:help;
+}
+
+dfn {
+    border-bottom:1px dotted rgba(0,0,0,0.2);
+}
+
+figcaption, caption {
+    color:#666;    
+    text-align:left;
+    caption-side:bottom;
+    margin:0.818em 0; 
+}
+
+figure {
+    float: left;
+    padding: 15px;
+    border: 1px solid #e5e4e4;
+    background: #ebeaea;
+}
+
+dl {
+    overflow: hidden;
+    width: 100%;
+}
+
+dt, dd {
+    display: block;
+}
+
+dt {
+    font-weight: 700;   
+}
+
+dd {
+    padding: 0 0 0 20px;
+    margin: 0 0 .5em 0;
+}
+
+cite, var {
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 3px;
+}
+
+th {
+    
+}
+
+tr {
+    
+}
+
+tr:nth-child(even) {
+    
+}
