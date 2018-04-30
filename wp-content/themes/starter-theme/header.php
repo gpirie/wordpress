@@ -1,10 +1,12 @@
 <?php
 /**
+ * Theme header file.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Theme Name
  */
+
 ?><!DOCTYPE html>
 
 <html <?php language_attributes(); ?>>
@@ -26,21 +28,19 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<?php do_action( 'body_open' ); ?>
-		
-		<div class="site-wrap">
 
-			<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
+		<a class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter-theme' ); ?></a>
 
-			<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">				
+		<header class="site-header u-overflow" itemscope itemtype="http://schema.org/WPHeader">
 
-				<?php
+			<?php
+				starter_social_links( 'o-sociallinks--header' );
 
-					starter_site_logo();
+				starter_site_logo();
+			?>
 
-					starter_social_links();
+			<h2 class="site-title u-aligncenter"><?php bloginfo( 'name' );?></h2>
 
-					starter_navigation( 'main_menu', true );
-					
-				?>	
+			<?php starter_navigation( 'main_menu', true ); ?>
 
-			</header>
+		</header>

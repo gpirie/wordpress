@@ -93,22 +93,6 @@ img {
 	max-width: 100%;
 }
 
-<<<<<<< HEAD:wp-content/themes/starter-theme/assets/css/generic.reset.css
-=======
-img:before {  
-  content: "";
-  display: block;
-  top: 0;
-  left: 0;
-  height: calc(100% + 10px);
-  width: 100%;
-  background-color: rgb(230, 230, 230);
-  border: 1px solid rgb(200, 200, 200);
-  text-align: center;
-min-height: 50px;
-}
-
->>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/assets/css/generic.reset.css
 video {
 	max-width: 100%;
 }
@@ -229,4 +213,8 @@ textarea {
 .o-notice--error {
 	color: #D8000C;
 	background-color: #FFBABA;
+}
+
+.o-notice li:last-of-type {
+	margin-bottom: 0;
 }

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content for single template.
+ *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Theme Name
@@ -11,21 +13,23 @@
 
 	<header class="o-post__header u-overflow u-relative">
 
-		<?php the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' ); ?>
+		<?php
 
-<<<<<<< HEAD:wp-content/themes/starter-theme/template-parts/content-single.php
+			the_title( '<h1 itemprop="title" class="o-post__title u-clear">', '</h1>' );
+
+			starter_post_meta();
+
+			starter_socialize_sharing_bar();
+
 			starter_post_thumbnail();
 
 		?>
-=======
-		<p class="o-post__date u-inline">Posted on: <?php the_date();?> in</p> <?php gpwd_get_the_categories();?>
->>>>>>> faae6b754d128750c5ba0205495d04013fcb7b59:wp-content/themes/gp17/template-parts/content-single.php
 
-	</header><!-- .entry-header -->
+	</header>
 
 	<div class="o-post__content u-overflow" itemprop="text articleBody">
 
-		<?php the_content();?>
+		<?php the_content(); ?>
 
 	</div>
 
@@ -35,6 +39,10 @@
 			starter_get_the_categories();
 
 			starter_get_the_tags();
+		?>
+
+		<?php
+			comments_template();
 		?>
 
 	</footer>

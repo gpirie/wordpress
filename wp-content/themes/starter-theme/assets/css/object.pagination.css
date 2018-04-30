@@ -10,17 +10,9 @@
 	list-style: none;
 }
 
-.o-pagination__item {
+.o-pagination li {
 	border: 1px solid;
 	float: left;
 	margin-right: 0.75em;
 	padding: 0.25em 0.5em;
-}
-
-.o-pagination__item--active {
-	background: #003399;
-}
-
-.o-pagination__item--active a {
-	color: #fff;
 }

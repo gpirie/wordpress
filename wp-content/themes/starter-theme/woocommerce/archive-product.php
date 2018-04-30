@@ -33,15 +33,16 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-    <header class="woocommerce-products-header">
-
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="o-post__title u-clear"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?>
+	<header class="woocommerce-products-header">
 
 		<?php
+			if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+				<h1 class="o-post__title u-clear"><?php woocommerce_page_title(); ?></h1>
+
+				<?php
+			endif;
+
 			/**
 			 * woocommerce_archive_description hook.
 			 *
@@ -49,13 +50,8 @@ get_header( 'shop' ); ?>
 			 * @hooked woocommerce_product_archive_description - 10
 			 */
 			do_action( 'woocommerce_archive_description' );
-		?>
 
-    </header>
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php
+			if ( have_posts() ) {
 				/**
 				 * woocommerce_before_shop_loop hook.
 				 *
@@ -64,7 +60,12 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
 				do_action( 'woocommerce_before_shop_loop' );
-			?>
+			}
+		?>
+
+	</header>
+
+		<?php if ( have_posts() ) : ?>
 
 			<ul class="o-products u-overflow u-clear">
 
@@ -96,7 +97,10 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_after_shop_loop' );
 			?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+		<?php elseif ( ! woocommerce_product_subcategories( array(
+			'before' => woocommerce_product_loop_start( false ),
+			'after' => woocommerce_product_loop_end( false ),
+		) ) ) : ?>
 
 			<?php
 				/**

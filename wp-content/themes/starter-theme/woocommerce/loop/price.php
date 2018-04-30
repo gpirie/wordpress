@@ -21,8 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-?>
 
-<?php if ( $price_html = $product->get_price_html() ) : ?>
+if ( $price_html = $product->get_price_html() ) : ?>
 	<p class="o-product__price"><?php echo $price_html; ?></p>
-<?php endif; ?>
+<?php endif;

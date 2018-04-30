@@ -1,6 +1,6 @@
 <div class="c-ordercomplete">
 
-    <p class="o-notice o-notice--success"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
+    <p class="o-notice o-notice--success"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'starter-theme' ), $order ); ?></p>
 
     <table class="c-orderdetails">
         <tr>

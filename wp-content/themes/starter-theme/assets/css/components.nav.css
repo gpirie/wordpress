@@ -1,12 +1,24 @@
 @media only screen and (max-width: 45.499em) {
-	.c-navmenu--main_menu {
-		width: 150px;
-		height: 100%;
+	.c-toggle {
+		position: relative;
+  		padding-left: 1.25em;
+	}
+
+	.c-toggle:before {
+		content: "";
 		position: absolute;
-		top: 0;
-		left: -150px;
-		background: #428bca;
-		padding: 15px;
+		left: 0;
+		top: 0.25em;
+		width: 1em;
+		height: 0.15em;
+		background: black;
+		box-shadow:
+		0 0.25em 0 0 black,
+		0 0.5em 0 0 black;
+	}
+
+	#c-toggle--target {
+		display: none;
 	}
 }
 
@@ -14,6 +26,22 @@
 	.c-navmenu__close {
 		display: none;
 	}
+
+	.c-navmenu--main_menu {
+		grid-column: 1 / -1;
+	}
+
+	.c-navmenu__menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.c-navmenu__item {
+		padding: 0 1em;
+	}
+
+}
 
 .o-breadcrumb__crumb {
 	float: left;

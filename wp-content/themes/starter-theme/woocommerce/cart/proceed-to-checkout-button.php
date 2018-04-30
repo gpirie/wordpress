@@ -24,5 +24,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <a class="o-button o-button--proceed" href="<?php echo esc_url( wc_get_checkout_url() );?>" class="o-button o-button--add-to-cart">
-	<?php esc_html_e( 'Proceed to checkout', 'woocommerce' ); ?>
+	<?php esc_html_e( 'Proceed to checkout', 'starter-theme' ); ?>
 </a>

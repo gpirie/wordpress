@@ -23,20 +23,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <?php
-	/**
-	 * woocommerce_before_single_product hook.
-	 *
-	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
+/**
+ * woocommerce_before_single_product hook.
+ *
+ * @hooked wc_print_notices - 10
+ */
+ do_action( 'woocommerce_before_single_product' );
 
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
+if ( post_password_required() ) {
+	echo get_the_password_form();
+	return;
+}
 ?>
 
-<div <?php post_class( 'o-product u-relative u-overflow' ); ?>>
+<div <?php post_class( 'o-product__product u-relative u-overflow' ); ?>>
 
 	<?php
 		/**

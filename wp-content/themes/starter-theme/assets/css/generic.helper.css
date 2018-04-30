@@ -45,10 +45,6 @@
     display: block;
 }
 
-.u-inline {
-    display: inline;
-}
-
 .u-inline-block {
     display: inline-block;
 }
@@ -236,4 +232,16 @@ a img.aligncenter {
     top: 5px;
     width: auto;
     z-index: 100000; /* Above WP toolbar. */
+}
+
+.sticky {
+    position: sticky;
+}
+
+.gallery-caption {
+    font-size: .8em;
+}
+
+.bypostauthor {
+    font-size: 1em;
 }

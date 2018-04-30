@@ -2,7 +2,7 @@
 /**
  * Content wrappers
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/global/wrapper-start.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/global/wrapper-end.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -24,24 +24,27 @@ $template = get_option( 'template' );
 
 switch ( $template ) {
 	case 'twentyeleven' :
-		echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
+		echo '</div>';
+		get_sidebar( 'shop' );
+		echo '</div>';
 		break;
 	case 'twentytwelve' :
-		echo '<div id="primary" class="site-content"><div id="content" role="main" class="twentytwelve">';
+		echo '</div></div>';
 		break;
 	case 'twentythirteen' :
-		echo '<div id="primary" class="site-content"><div id="content" role="main" class="entry-content twentythirteen">';
+		echo '</div></div>';
 		break;
 	case 'twentyfourteen' :
-		echo '<div id="primary" class="content-area"><div id="content" role="main" class="site-content twentyfourteen"><div class="tfwc">';
+		echo '</div></div></div>';
+		get_sidebar( 'content' );
 		break;
 	case 'twentyfifteen' :
-		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
+		echo '</div></div>';
 		break;
 	case 'starter-theme' :
-		echo '<main id="main" class="o-product" role="main">';
+		echo '</main>';
 		break;
 	default :
-		echo '<main itemprop="mainContentOfPage">';
+		echo '</main>';
 		break;
 }
