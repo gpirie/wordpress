@@ -39,7 +39,7 @@ switch ( $template ) {
 		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
 		break;
 	case 'starter-theme' :
-		echo '<main id="main" class="o-product" role="main">';
+		echo '<main id="main" class="o-products" role="main">';
 		break;
 	default :
 		echo '<main itemprop="mainContentOfPage">';

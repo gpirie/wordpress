@@ -83,6 +83,8 @@ function starter_theme_setup() {
 
 		// Product page order.
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 	}
 }
 add_action( 'after_setup_theme', 'starter_theme_setup' );

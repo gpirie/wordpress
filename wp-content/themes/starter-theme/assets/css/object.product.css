@@ -1,11 +1,11 @@
-.o-products {
+.o-productlist {
 	display: grid;
 	grid-template-columns: repeat(auto-fill,minmax(12.5em, 1fr));
 	grid-column-gap: var(--column-gap-small);
 	grid-row-gap: var(--row-gap);
 }
 
-.o-products__item {
+.o-productlist__item {
 	display: flex;
 	flex-direction: column;
 }

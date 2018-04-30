@@ -224,7 +224,7 @@ function starter_post_length( $classes ) {
 
 	$article_type = 'o-' . get_post_type();
 
-	if ( false === get_post_type() ) {
+	if ( false === get_post_type() || 'product' === get_post_type() ) {
 		return;
 	} else {
 		$classes[] = $article_type;

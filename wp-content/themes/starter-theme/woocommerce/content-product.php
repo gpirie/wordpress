@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php post_class( 'o-products__item u-relative u-overflow u-centre-text' ); ?>>
+<li <?php post_class( 'o-productlist__item u-relative u-overflow u-centre-text' ); ?>>
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.

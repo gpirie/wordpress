@@ -67,7 +67,7 @@ get_header( 'shop' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<ul class="o-products u-overflow u-clear">
+			<ul class="o-productlist u-overflow u-clear">
 
 				<?php woocommerce_product_subcategories(); ?>
 
